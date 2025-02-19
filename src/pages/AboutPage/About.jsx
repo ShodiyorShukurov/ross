@@ -106,51 +106,43 @@ const About = () => {
           look like readable English
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] mt-[60px]">
-          {cards.slice(0,2).map((card) => (
-            <div
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-[16px] mt-[60px]">
+          {cards.slice(0, 2).map((card) => (
+            <li
               key={card.id}
-              className="relative rounded-lg overflow-hidden w-full h-[380px] bg-cover bg-center"
+              className="relative rounded-lg overflow-hidden w-full h-[380px] bg-cover bg-center cursor-pointer"
               style={{ backgroundImage: `url(${card.image})` }}
             >
-              {/* Gradient Overlay */}
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
-              ></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
 
-              {/* Matn */}
               <h3
                 style={{ fontFamily: 'Playfair Display' }}
                 className="absolute bottom-5 left-5 text-white font-bold text-[36px] leading-[48px]"
               >
                 {card.id}. {card.text}
               </h3>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-[16px] pt-[16px]">
+        <ul className="grid grid-cols-2 md:grid-cols-3 gap-[16px] pt-[16px]">
           {cards.slice(2).map((card) => (
-            <div
+            <li
               key={card.id}
-              className="relative rounded-lg overflow-hidden w-full h-[380px] bg-cover bg-center"
+              className="relative rounded-lg overflow-hidden w-full h-[380px] bg-cover bg-center cursor-pointer"
               style={{ backgroundImage: `url(${card.image})` }}
             >
-              {/* Gradient Overlay */}
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
-              ></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
 
-              {/* Matn */}
               <h3
                 style={{ fontFamily: 'Playfair Display' }}
                 className="absolute bottom-5 left-5 text-white font-bold text-[36px] leading-[48px]"
               >
                 {card.id}. {card.text}
               </h3>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
