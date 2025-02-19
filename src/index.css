@@ -98,11 +98,11 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1520px;
+  max-width: 90%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 16px;
-  padding-left: 16px;
+  /* padding-right: 16px; */
+  /* padding-left: 16px; */
 }
 
 /* Tablet (≥ 640px) */

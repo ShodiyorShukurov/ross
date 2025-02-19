@@ -44,10 +44,10 @@ const Partners = () => {
           Hamkorlarimiz
         </h2>
 
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-between">
           {partnersArr.map((item) => (
             <div
-              className="p-[30px] flex items-center justify-center cursor-pointer transition-all duration-300"
+              className="p-[30px] flex items-center  cursor-pointer transition-all duration-300 w-[15%]"
               style={{ filter: 'grayscale(100%)' }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.filter = 'grayscale(0%)')
