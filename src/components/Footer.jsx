@@ -150,7 +150,7 @@ const Footer = () => {
         </div>
         <div className=" flex justify-between items-center border-t border-[#D1820233] pt-[20px] text-[#AAAAAA] text-[16px] leading-[19px]">
           <p>© 2025 «COMPANIYA NOMI» MChJ </p>
-          <p>Saytni ishlab chiqdi: ABC GROUP</p>
+          <p>Saytni ishlab chiqdi: Manasoft</p>
         </div>
       </div>
     </footer>

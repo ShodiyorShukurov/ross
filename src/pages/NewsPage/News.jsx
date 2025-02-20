@@ -8,6 +8,7 @@ import card1 from '../../assets/images/newsCard1.png';
 import card2 from '../../assets/images/newsCard2.png';
 import card3 from '../../assets/images/newsCard3.png';
 import card4 from '../../assets/images/newsCard4.png';
+import right from '../../assets/logo/right.svg';
 
 const newsData = [
   {
@@ -49,10 +50,11 @@ const newsData = [
 ];
 
 const NewsSlider = () => {
+  const [isActive, setIsActive] = React.useState('');
+
   return (
     <section className="py-10 bg-white">
       <div className="container">
-        {/* Sarlavha */}
         <div className="flex justify-between items-center px-4">
           <h2
             style={{ fontFamily: 'Playfair Display' }}
@@ -60,20 +62,57 @@ const NewsSlider = () => {
           >
             Yangiliklar
           </h2>
-          {/* Slider navigation */}
+
           <div className="flex space-x-2">
-            <button className="swiper-button-prev-custom w-10 h-10 rounded-full border flex items-center justify-center text-[#D18202] cursor-pointer active:bg-[#D18202]">
-              ←
+            <button
+              className={`swiper-button-prev-custom w-10 h-10 rounded-full border flex items-center justify-center cursor-pointer  ${
+                isActive == 1
+                  ? 'bg-[#D18202] text-[#fff]'
+                  : 'text-[#D18202] bg-transparent'
+              }`}
+              onClick={() => setIsActive(1)}
+            >
+              <svg
+                className="rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M1.66638 10.8333L1.66626 9.16675H15.1428L11.8514 5.87529L13.0299 4.69678L18.3333 10.0001L13.0299 15.3034L11.8514 14.1248L15.1429 10.8334L1.66638 10.8333Z"
+                  fill="currentColor"
+                />
+              </svg>
             </button>
-            <button className="swiper-button-next-custom w-10 h-10 rounded-full border flex items-center justify-center text-[#D18202] cursor-pointer">
-              →
+            <button
+              className={`swiper-button-next-custom w-10 h-10 rounded-full border flex items-center justify-center  cursor-pointer ${
+                isActive == 2
+                  ? 'bg-[#D18202] text-[#fff]'
+                  : 'text-[#D18202] bg-transparent'
+              }`}
+              onClick={() => setIsActive(2)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M1.66638 10.8333L1.66626 9.16675H15.1428L11.8514 5.87529L13.0299 4.69678L18.3333 10.0001L13.0299 15.3034L11.8514 14.1248L15.1429 10.8334L1.66638 10.8333Z"
+                  fill="currentColor"
+                />
+              </svg>
             </button>
           </div>
         </div>
 
         {/* Slider */}
         <Swiper
-          slidesPerView={4}
+          slidesPerView={1}
           spaceBetween={20}
           navigation={{
             nextEl: '.swiper-button-next-custom',
@@ -81,9 +120,11 @@ const NewsSlider = () => {
           }}
           modules={[Navigation]}
           breakpoints={{
-            1024: { slidesPerView: 4 },
-            768: { slidesPerView: 2 },
             480: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
           }}
           className="mt-6"
         >

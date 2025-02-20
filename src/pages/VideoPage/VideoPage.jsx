@@ -14,11 +14,11 @@ const VideoPage = () => {
       <div className="container relative z-10">
         <h2
           style={{ fontFamily: 'Playfair Display Black' }}
-          className="text-[#D18202] font-bold text-[56px] leading-[67px] w-full max-w-[550px] text-center mx-auto"
+          className="text-[#D18202] font-bold text-[56px] leading-[67px] w-full max-w-[700px] text-center mx-auto"
         >
           Bizning qurib bitkazilgan majmualarimiz haqida
         </h2>
-        <p className="text-center text-[24px] leading-[29px] w-full max-w-[810px] mx-auto">
+        <p className="text-center text-[24px] leading-[29px] w-full max-w-[810px] mx-auto mt-[16px]">
           Toshkentdagi birinchi 35000 metr kvadratli turar joy majmuamizning
           ochilish marosimi biz va mijozlarimiz uchun yorqin voqea bo’lib qoldi 
         </p>

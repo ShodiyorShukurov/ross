@@ -8,30 +8,12 @@ import atlant from '../../assets/images/atlant.png';
 
 const Partners = () => {
   const partnersArr = [
-    {
-      id: 1,
-      img: nrg,
-    },
-    {
-      id: 2,
-      img: BIgroup,
-    },
-    {
-      id: 3,
-      img: alutex,
-    },
-    {
-      id: 4,
-      img: enter,
-    },
-    {
-      id: 5,
-      img: korzinka,
-    },
-    {
-      id: 6,
-      img: atlant,
-    },
+    { id: 1, img: nrg },
+    { id: 2, img: BIgroup },
+    { id: 3, img: alutex },
+    { id: 4, img: enter },
+    { id: 5, img: korzinka },
+    { id: 6, img: atlant },
   ];
 
   return (
@@ -39,7 +21,7 @@ const Partners = () => {
       <div className="container">
         <h2
           style={{ fontFamily: 'Playfair Display Black' }}
-          className="text-[#D18202] font-bold text-[56px] leading-[74px] "
+          className="text-[#D18202] font-bold text-[56px] leading-[74px]"
         >
           Hamkorlarimiz
         </h2>
@@ -47,22 +29,15 @@ const Partners = () => {
         <div className="flex flex-wrap justify-between">
           {partnersArr.map((item) => (
             <div
-              className="p-[30px] flex items-center  cursor-pointer transition-all duration-300 w-[15%]"
-              style={{ filter: 'grayscale(100%)' }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.filter = 'grayscale(0%)')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.filter = 'grayscale(100%)')
-              }
               key={item.id}
+              className="p-[30px] flex items-center cursor-pointer transition-all duration-300 w-[15%] grayscale hover:grayscale-0 hover:scale-110 hover:opacity-100 opacity-70"
             >
               <img
                 src={item.img}
-                alt={item.img}
+                alt={`Partner ${item.id}`}
                 width={170}
                 height={170}
-                className="object-fill"
+                className="object-fill transition-all duration-300"
               />
             </div>
           ))}

@@ -16,7 +16,7 @@ const Layout = () => {
       <main>
         <About />
         <Project />
-        {/* <ProjectMap/> */}
+        <ProjectMap/>
         <Partners />
         <NewsSlider />
         <VideoPage />
