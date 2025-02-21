@@ -92,7 +92,7 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 95%;
   margin-right: auto;
   margin-left: auto;
   padding-right: 16px;
@@ -122,11 +122,11 @@ img {
   }
 }
 
-@media (min-width: 1570px) {
+/* @media (min-width: 1570px) {
   .container {
     max-width: 80%;
   }
-}
+} */
 
 ol,
 ul {
