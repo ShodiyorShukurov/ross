@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import calendar from '../../assets/logo/calendar.svg';
-import card1 from '../../assets/images/newsCard1.png';
-import card2 from '../../assets/images/newsCard2.png';
-import card3 from '../../assets/images/newsCard3.png';
-import card4 from '../../assets/images/newsCard4.png';
-import right from '../../assets/logo/right.svg';
+import calendar from '../../../assets/logo/calendar.svg';
+import card1 from '../../../assets/images/newsCard1.png';
+import card2 from '../../../assets/images/newsCard2.png';
+import card3 from '../../../assets/images/newsCard3.png';
+import card4 from '../../../assets/images/newsCard4.png';
+import right from '../../../assets/logo/right.svg';
 
 const newsData = [
   {
@@ -57,8 +57,8 @@ const NewsSlider = () => {
       <div className="container">
         <div className="flex justify-between items-center px-4">
           <h2
-            style={{ fontFamily: 'Playfair Display' }}
-            className="text-[#D18202] text-3xl font-bold"
+            style={{ fontFamily: 'Playfair Display Bold' }}
+            className="text-[#D18202] text-[56px] font-bold"
           >
             Yangiliklar
           </h2>

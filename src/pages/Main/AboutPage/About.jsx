@@ -1,14 +1,14 @@
 import React from 'react';
-import portfolio from '../../assets/logo/portfolio.svg';
-import clock from '../../assets/logo/clock.svg';
-import key from '../../assets/logo/key.svg';
-import area from '../../assets/logo/area.svg';
-import aboutBg from '../../assets/images/about-bg.png';
-import aboutBgCard1 from '../../assets/images/about-card-bg.png';
-import aboutBgCard2 from '../../assets/images/about-card-bg2.png';
-import aboutBgCard3 from '../../assets/images/about-card-bg3.png';
-import aboutBgCard4 from '../../assets/images/about-card-bg4.png';
-import aboutBgCard5 from '../../assets/images/about-card-bg5.png';
+import portfolio from '../../../assets/logo/portfolio.svg';
+import clock from '../../../assets/logo/clock.svg';
+import key from '../../../assets/logo/key.svg';
+import area from '../../../assets/logo/area.svg';
+import aboutBg from '../../../assets/images/about-bg.png';
+import aboutBgCard1 from '../../../assets/images/about-card-bg.png';
+import aboutBgCard2 from '../../../assets/images/about-card-bg2.png';
+import aboutBgCard3 from '../../../assets/images/about-card-bg3.png';
+import aboutBgCard4 from '../../../assets/images/about-card-bg4.png';
+import aboutBgCard5 from '../../../assets/images/about-card-bg5.png';
 
 const cards = [
   { id: 1, text: 'Ko’p yillik tajriba', image: aboutBgCard1 },
@@ -27,7 +27,7 @@ const About = () => {
           style={{ backgroundImage: `url(${aboutBg})` }}
         >
           <h2
-            style={{ fontFamily: 'Playfair Display Black' }}
+            style={{ fontFamily: 'Playfair Display Bold' }}
             className="text-[#D18202] font-bold text-[36px] leading-[48px]"
           >
             KOMPANIYA HAQIDA
@@ -93,7 +93,7 @@ const About = () => {
         </div>
 
         <h2
-          style={{ fontFamily: 'Playfair Display Black' }}
+          style={{ fontFamily: 'Playfair Display Bold' }}
           className="text-[#D18202] font-bold text-[36px] leading-[48px] mt-[59px]"
         >
           Kompaniya haqida 5 ta fakt
@@ -116,7 +116,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
 
               <h3
-                style={{ fontFamily: 'Playfair Display' }}
+                style={{ fontFamily: 'Playfair Display Bold' }}
                 className="absolute bottom-5 left-5 text-white font-bold text-[36px] leading-[48px]"
               >
                 {card.id}. {card.text}
@@ -135,7 +135,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
 
               <h3
-                style={{ fontFamily: 'Playfair Display' }}
+                style={{ fontFamily: 'Playfair Display Bold' }}
                 className="absolute bottom-5 left-5 text-white font-bold text-[36px] leading-[48px]"
               >
                 {card.id}. {card.text}

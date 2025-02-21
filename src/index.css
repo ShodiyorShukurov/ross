@@ -8,52 +8,47 @@
 } */
 
 @font-face {
-  font-family: 'Playfair Display Regular';
+  font-family: 'Playfair Display';
   font-style: normal;
-  font-weight: normal;
-  src: local('Playfair Display Regular'),
-    url('./assets/fonts/PlayfairDisplay-Regular.ttf') format('ttf');
+  font-weight: 400;
+  src: url('./assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Playfair Display Bold';
   font-style: normal;
-  font-weight: normal;
-  src: local('Playfair Display Bold'),
-    url('./assets/fonts/PlayfairDisplay-Bold.ttf') format('ttf');
+  font-weight: 700;
+  src: url('./assets/fonts/PlayfairDisplay-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Playfair Display Black';
   font-style: normal;
-  font-weight: normal;
-  src: local('Playfair Display Black'),
-    url('./assets/fonts/PlayfairDisplay-Black.ttf') format('ttf');
+  font-weight: 900;
+  src: url('./assets/fonts/PlayfairDisplay-Black.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'SF Pro Display Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('SF Pro Display Regular'),
-      url('./assets/fonts/SFPRODISPLAYREGULAR.OTF') format('OTF');
-  }
-  
-  @font-face {
-    font-family: 'SF Pro Display Bold';
-    font-style: normal;
-    font-weight: normal;
-    src: local('SF Pro Display Bold'),
-      url('./assets/fonts/SFPRODISPLAYBOLD.OTF') format('OTF');
-  }
-  
-  @font-face {
-    font-family: 'Playfair Display Black';
-    font-style: normal;
-    font-weight: normal;
-    src: local('SF Pro Display Black'),
-      url('./assets/fonts/SFPRODISPLAYMEDIUM.OTF') format('OTF');
-  }
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+}
+
 
 html {
   box-sizing: border-box;

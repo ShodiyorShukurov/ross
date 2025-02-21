@@ -46,7 +46,7 @@ const ProjectMap = () => {
   return (
     <section className="pt-[140px] relative">
       <div className="container">
-        <h2 className="text-[#D18202] font-bold text-[56px] leading-[74px] text-center">
+        <h2   style={{ fontFamily: 'Playfair Display Bold' }} className="text-[#D18202] font-bold text-[56px] leading-[74px] text-center">
           Toshkent bo‘yicha Loyihalarimiz
         </h2>
         <p className="font-light text-[20px] leading-[20px] text-center mt-[10px]">

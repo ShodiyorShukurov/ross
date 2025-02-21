@@ -1,5 +1,5 @@
 import React from 'react';
-import videobg from '../../assets/images/doneProject.png';
+import videobg from '../../../assets/images/doneProject.png';
 
 const VideoPage = () => {
   return (
@@ -13,7 +13,7 @@ const VideoPage = () => {
 
       <div className="container relative z-10">
         <h2
-          style={{ fontFamily: 'Playfair Display Black' }}
+          style={{ fontFamily: 'Playfair Display Bold' }}
           className="text-[#D18202] font-bold text-[56px] leading-[67px] w-full max-w-[700px] text-center mx-auto"
         >
           Bizning qurib bitkazilgan majmualarimiz haqida

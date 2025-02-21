@@ -1,5 +1,5 @@
 import React from 'react';
-import buttonIcon from '../../assets/logo/right.svg';
+import buttonIcon from '../../../assets/logo/right.svg';
 
 const Contact = () => {
   const [formData, setFormData] = React.useState({
@@ -65,7 +65,7 @@ const Contact = () => {
         <div className="flex bg-[#fff] pt-[50px] pl-[50px] pb-[70px] mb-[50px]">
           <div>
             <h3
-              style={{ fontFamily: 'Playfair Display Black' }}
+              style={{ fontFamily: 'Playfair Display Bold' }}
               className="text-[#D18202] font-bold text-[36px] leading-[47px] w-full max-w-[550px]"
             >
               Ko'proq ma'lumot olishni xohlaysizmi?

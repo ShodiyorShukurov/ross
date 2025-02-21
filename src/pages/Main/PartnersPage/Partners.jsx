@@ -1,10 +1,10 @@
 import React from 'react';
-import nrg from '../../assets/images/nrg.png';
-import BIgroup from '../../assets/images/BIgroup.png';
-import alutex from '../../assets/images/alutex.png';
-import enter from '../../assets/images/enter.png';
-import korzinka from '../../assets/images/korzinka.png';
-import atlant from '../../assets/images/atlant.png';
+import nrg from '../../../assets/images/nrg.png';
+import BIgroup from '../../../assets/images/BIgroup.png';
+import alutex from '../../../assets/images/alutex.png';
+import enter from '../../../assets/images/enter.png';
+import korzinka from '../../../assets/images/korzinka.png';
+import atlant from '../../../assets/images/atlant.png';
 
 const Partners = () => {
   const partnersArr = [
@@ -20,7 +20,7 @@ const Partners = () => {
     <section className="py-[160px]">
       <div className="container">
         <h2
-          style={{ fontFamily: 'Playfair Display Black' }}
+          style={{ fontFamily: 'Playfair Display Bold' }}
           className="text-[#D18202] font-bold text-[56px] leading-[74px]"
         >
           Hamkorlarimiz
