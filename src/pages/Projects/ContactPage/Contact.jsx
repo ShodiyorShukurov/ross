@@ -62,7 +62,7 @@ const Contact = () => {
   return (
     <section className="mt-[100px]">
       <div className="container  ">
-        <div className="flex bg-[#fff] pt-[50px] pl-[50px] pb-[70px] mb-[50px]">
+        <div className="flex justify-around bg-[#fff] pt-[50px]  pb-[70px] mb-[50px]">
           <div>
             <h3
               style={{ fontFamily: 'Playfair Display Bold' }}

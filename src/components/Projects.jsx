@@ -5,6 +5,8 @@ import Project from '../pages/Projects/ProjectsPage/Project';
 import Footer from './Footer';
 import Balance from '../pages/Projects/BalancePage/Balance';
 import Fact from '../pages/Projects/FactPage/Fact';
+import Calculation from '../pages/Projects/CalculationPage/Calculation';
+import BuildingMap from '../pages/Projects/BuildingMap/BuildingMap';
 
 const Projects = () => {
   return (
@@ -12,7 +14,9 @@ const Projects = () => {
       <Hero />
       <main>
         <Balance />
-        <Fact/>
+        <Fact />
+        <Calculation />
+        <BuildingMap />
         <Contact />
         <Project />
       </main>

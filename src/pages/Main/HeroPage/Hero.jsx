@@ -87,7 +87,7 @@ export default function Hero() {
                 className="flex leading-[29px] font-medium items-center gap-[9px] cursor-pointer transition-all duration-700  border border-[#FFFFFF33] px-[14px] py-[5px] rounded-[48px]"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
-                <span>{language}</span>
+                <span>{language.toUpperCase()}</span>
                 <span
                   className={`${isDropdownOpen ? 'rotate-180' : 'rotate-0'}`}
                 >
@@ -107,7 +107,7 @@ export default function Hero() {
               </button>
 
               {isDropdownOpen && (
-                <ul className="absolute top-full left-0 mt-2 bg-white text-black rounded-lg shadow-md w-28">
+                <ul className="absolute top-full left-0 mt-[2px]  bg-transparent border border-[#FFFFFF33] text-white rounded-[20px] shadow-md w-22 font-medium">
                   {['Uz', 'Ru', 'En'].map((lang, i) => (
                     <li
                       key={lang}
@@ -115,11 +115,15 @@ export default function Hero() {
                         setLanguage(lang);
                         setIsDropdownOpen(false);
                       }}
-                      className={`px-4 py-2 hover:bg-gray-200 cursor-pointer ${
-                        i === 0 ? 'rounded-t-lg' : i === 2 ? 'rounded-b-lg' : ''
+                      className={`px-4 py-2 hover:bg-[#FFFFFF55] cursor-pointer ${
+                        i === 0
+                          ? 'rounded-t-[20px]'
+                          : i === 2
+                          ? 'rounded-b-[20px]'
+                          : ''
                       }`}
                     >
-                      {lang}
+                      {lang.toUpperCase()}
                     </li>
                   ))}
                 </ul>

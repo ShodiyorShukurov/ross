@@ -109,7 +109,7 @@ const GallerySection = () => {
                   loop={true}
                   spaceBetween={10}
                   navigation={true}
-                  thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined} // <-- Fix
+                  thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined} 
                   modules={[FreeMode, Navigation, Thumbs]}
                   className="w-full h-[70vh] flex items-center justify-center"
                 >
