@@ -62,7 +62,7 @@ const Contact = () => {
   return (
     <section className="mt-[100px]">
       <div className="container  ">
-        <div className="flex bg-[#fff] pt-[50px] pl-[50px] pb-[70px] mb-[50px]">
+        <div className="flex justify-around bg-[#fff] pt-[50px]  pb-[70px] mb-[50px]">
           <div>
             <h3
               style={{ fontFamily: 'Playfair Display Bold' }}
@@ -70,14 +70,14 @@ const Contact = () => {
             >
               Ko'proq ma'lumot olishni xohlaysizmi?
             </h3>
-            <p className=" font-light text-[20px] leading-[24px] w-full max-w-[500px] mt-[30px]">
+            <p style={{ fontFamily: 'SF Pro Display Light' }} className=" font-light text-[20px] leading-[24px] w-full max-w-[500px] mt-[30px]">
               O'zingizni kontaktingizni qoldiring va menejerimiz sizga yanada
               qiziqarli tafsilotlar bilan tanishtiradi
             </p>
           </div>
 
           <div>
-            <form onSubmit={handleSubmit} className="w-full min-w-[620px]">
+            <form onSubmit={handleSubmit} className="w-full min-w-[620px]" style={{ fontFamily: 'SF Pro Display Medium' }}>
               {/* Full Name */}
               <input
                 type="text"
@@ -94,7 +94,7 @@ const Contact = () => {
               )}
 
               {/* Phone */}
-              <div>
+              <div >
                 <input
                   type="tel"
                   name="phone"
@@ -110,7 +110,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <button className="bg-[#D18202] text-white text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer">
+              <button style={{ fontFamily: 'SF Pro Display Regular' }} className="bg-[#D18202] text-white text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer">
                 Malumotlarni yuborish
                 <span className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-[20px]">
                   <img

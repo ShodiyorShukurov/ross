@@ -1,6 +1,6 @@
 import React from 'react';
 // import { FaInstagram, FaTelegram, FaFacebook } from "react-icons/fa";
-import logo from '../assets/logo/logo.png';
+import logo from '../assets/logo/footerLogo.svg';
 
 const Footer = () => {
   return (
@@ -10,16 +10,109 @@ const Footer = () => {
           {/* Logo va Info */}
           <div className="max-w-sm">
             <a href="/">
-              <img src={logo} alt="Company Logo" width={73} height={73} />
+              <img src={logo} alt="Company Logo" />
             </a>
-            <p className="text-[#000] text-[16px] font-light w-full max-w-[300px]">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
-            </p>
-            <p className="text-[15px] mt-[80px] leading-[19px]">
+          </div>
+
+          {/* Havolalar */}
+          <div className="text-[#151515] text-[20px]  font-semibold leading-[25px]">
+            <div className="flex gap-[60px]">
+              <div
+                style={{ fontFamily: 'SF Pro Medium' }}
+                className="flex flex-col"
+              >
+                <h3
+                  style={{ fontFamily: 'SF Pro Semi Bold' }}
+                  className=" text-[30px] leading-[30px] mb-[24px]"
+                >
+                  INFO
+                </h3>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Biz haqimizda
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Yangiliklar
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Kontakt
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Vakansiyalar
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Lokatsiya
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Kredit Kalkulyator
+                </a>
+              </div>
+              <div
+                style={{ fontFamily: 'SF Pro  Medium' }}
+                className="flex flex-col"
+              >
+                <h3
+                  style={{ fontFamily: 'SF Pro Semi Bold' }}
+                  className=" text-[30px] leading-[30px] mb-[24px]"
+                >
+                  LOYIHALAR
+                </h3>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Balance
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Gorizont
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Brooklyn
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Toza havo
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Qo’yliq residence
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  Yangi hayot
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            <h3
+              style={{ fontFamily: 'Playfair Display' }}
+              className="text-[#D18202] font-medium text-[30px] leading-[30px]"
+            >
+              FIRST CLASS development
+            </h3>
+            <p className="text-[15px] mt-[10px] leading-[19px] w-full max-w-[270px]">
               Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy
             </p>
-            <div className="flex gap-4 mt-[30px]">
+
+            <p
+              style={{ fontFamily: 'SF Pro Display Medium' }}
+              className="text-[16px] text-[#AAAAAA] mt-[30px] leading-[19px]"
+            >
+              CALL CENTER
+            </p>
+            <a
+              style={{ fontFamily: 'SF Pro Display Bold' }}
+              className="text-[#D18202] text-[24px] mt-[4px]"
+              href="tel:+998 91 177 72 22"
+            >
+              +998 91 177 72 22
+            </a>
+            <a
+              style={{ fontFamily: 'SF Pro Medium' }}
+              href="mailto:kompaniyanomi@gmail.com"
+              className="hover:underline mt-[40px] text-[#151515] font-medium"
+            >
+              www.kompaniyanomi@gmail.com
+            </a>
+            <div
+              style={{ fontFamily: 'SF Pro Medium' }}
+              className="flex flex-col gap-4 mt-[30px]"
+            >
               <a
                 className="flex gap-[10px] items-center text-[#151515] hover:text-[#D18202] transition-all duration-300"
                 href="https://www.instagram.com"
@@ -79,78 +172,10 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-          {/* Havolalar */}
-          <div
-            style={{ fontFamily: 'Playfair Display' }}
-            className="text-[#000000] text-[20px] leading-[25px]"
-          >
-            <h3 className="text-[#D18202] font-medium text-[30px] leading-[30px] mb-[55px]">
-              Havola
-            </h3>
-            <div className="flex gap-[60px]">
-              <div className="flex flex-col">
-                <a href="#" className="mb-[30px] hover:underline">
-                  Asosiy
-                </a>
-                <a href="#" className="mb-[30px] hover:underline">
-                  Ob'ektlar
-                </a>
-                <a href="#" className="mb-[30px] hover:underline">
-                  Joylashuv
-                </a>
-                <a href="#" className="mb-[30px] hover:underline">
-                  Yangiliklar
-                </a>
-              </div>
-              <div className="flex flex-col">
-                <a href="#" className="mb-[30px] hover:underline">
-                  Hozirgi loyihalarimiz
-                </a>
-                <a href="#" className="hover:underline">
-                  Aloqa
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-2">
-            <h3
-              style={{ fontFamily: 'Playfair Display' }}
-              className="text-[#D18202] font-medium text-[30px] leading-[30px] mb-[55px]"
-            >
-              Manzil
-            </h3>
-            <a
-              style={{ fontFamily: 'Playfair Display' }}
-              href="mailto:kompaniyanomi@gmail.com"
-              className="font-medium hover:underline"
-            >
-              www.kompaniyanomi@gmail.com
-            </a>
-            <p className="text-[16px] text-[#AAAAAA] mt-[30px] leading-[19px]">
-              QO‘YLIQ SOTUV OFISI
-            </p>
-            <a
-              className="text-[#D18202] font-semibold text-lg"
-              href="tel:+998 91 177 72 22"
-            >
-              +998 91 177 72 22
-            </a>
-            <p className="text-[16px] text-[#AAAAAA] mt-[15px] leading-[19px]">
-              YUNUSOBOD SOTUV OFISI
-            </p>
-            <a
-              className="text-[#D18202] font-semibold text-lg"
-              href="tel:+998 91 177 72 22"
-            >
-              +998 91 177 72 22
-            </a>
-          </div>
         </div>
-        <div className=" flex justify-between items-center border-t border-[#D1820233] pt-[20px] text-[#AAAAAA] text-[16px] leading-[19px]">
+        <div className=" flex flex-col justify-center items-center bg-[#f7f7f7] pt-[20px] text-[#AAAAAA] text-[16px] leading-[19px]">
+          <p>©All rights reserved</p>
           <p>© 2025 «COMPANIYA NOMI» MChJ </p>
-          <p>Saytni ishlab chiqdi: Manasoft</p>
         </div>
       </div>
     </footer>

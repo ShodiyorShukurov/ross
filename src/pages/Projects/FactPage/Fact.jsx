@@ -23,7 +23,10 @@ const Fact = () => {
         >
           Loyiha haqida 5 ta fakt
         </h2>
-        <p className="font-light text-[20px] leading-[24px] w-full max-w-[890px] mt-[20px]">
+        <p
+          style={{ fontFamily: 'SF Pro Display Light' }}
+          className="font-light text-[20px] leading-[24px] w-full max-w-[890px] mt-[20px]"
+        >
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
@@ -60,7 +63,7 @@ const Fact = () => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[36px] leading-[48px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[36px] leading-[48px] w-full max-w-[360px]"
               >
                 {card.id}. {card.text}
               </h3>
@@ -68,23 +71,63 @@ const Fact = () => {
           ))}
         </ul>
 
-        <ul className='bg-[#F1EDE4] px-[50px] py-[50px] flex justify-between items-center flex-wrap text-center rounded-[24px] mt-[16px]'>
-            <li>
-                <p style={{fontFamily: "Playfair Display Bold"}} className='text-[60px] leading-[100px]'>1.7 ga</p>
-                <span className='text-[16px] leading-[20px]'>Loyiha maydoni</span>
-            </li>
-            <li>
-                <p style={{fontFamily: "Playfair Display Bold"}} className='text-[60px] leading-[100px]'>247</p>
-                <span className='text-[16px] leading-[20px]'>Uylar soni</span>
-            </li>
-            <li>
-                <p style={{fontFamily: "Playfair Display Bold"}} className='text-[60px] leading-[100px]'>12</p>
-                <span className='text-[16px] leading-[20px]'>Qavatlar soni</span>
-            </li>
-            <li>
-                <p style={{fontFamily: "Playfair Display Bold"}} className='text-[60px] leading-[100px]'>2026</p>
-                <span className='text-[16px] leading-[20px]'>Qurilish bitkaziladigan sana</span>
-            </li>
+        <ul className="bg-[#F1EDE4] px-[80px] py-[50px] flex justify-between items-center flex-wrap text-center rounded-[24px] mt-[16px]">
+          <li>
+            <p
+              style={{ fontFamily: 'Playfair Display Bold' }}
+              className="text-[80px] leading-[100px]"
+            >
+              1.7 ga
+            </p>
+            <span
+              style={{ fontFamily: 'SF Pro Display Medium' }}
+              className="text-[20px] leading-[24px] mt-[15px] block"
+            >
+              Loyiha maydoni
+            </span>
+          </li>
+          <li>
+            <p
+              style={{ fontFamily: 'Playfair Display Bold' }}
+              className="text-[80px] leading-[100px]"
+            >
+              247
+            </p>
+            <span
+              style={{ fontFamily: 'SF Pro Display Medium' }}
+              className="text-[20px] leading-[24px] mt-[15px] block"
+            >
+              Uylar soni
+            </span>
+          </li>
+          <li>
+            <p
+              style={{ fontFamily: 'Playfair Display Bold' }}
+              className="text-[80px] leading-[100px]"
+            >
+              12
+            </p>
+            <span
+              style={{ fontFamily: 'SF Pro Display Medium' }}
+              className="text-[20px] leading-[24px] mt-[15px] block"
+            >
+              Qavatlar soni
+            </span>
+          </li>
+          <li>
+            <p
+              style={{ fontFamily: 'Playfair Display Bold' }}
+              className="text-[80px] leading-[100px]"
+            >
+              2026
+            </p>
+            <span
+              style={{ fontFamily: 'SF Pro Display Medium' }}
+              className="text-[20px] leading-[24px] mt-[15px] block"
+            >
+              Qurilish bitkaziladigan sana
+            </span>
+          </li>
         </ul>
       </div>
     </section>

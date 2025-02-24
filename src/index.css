@@ -29,24 +29,66 @@
 }
 
 @font-face {
-  font-family: 'SF Pro Display';
+  font-family: 'SF Pro Display Light';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/SF-Pro-Display-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display Regular';
   font-style: normal;
   font-weight: 400;
   src: url('./assets/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
 }
 
 @font-face {
-  font-family: 'SF Pro Display';
+  font-family: 'SF Pro Display Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display Semibold';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display Bold';
   font-style: normal;
   font-weight: 700;
   src: url('./assets/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
 }
 
 @font-face {
-  font-family: 'SF Pro Display';
+  font-family: 'SF Pro Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/SF-Pro-Text-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Medium';
   font-style: normal;
   font-weight: 500;
-  src: url('./assets/fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  src: url('./assets/fonts/SF-Pro-Text-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Semi Bold';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/SF-Pro-Text-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Bold';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/SF-Pro-Text-Bold.otf') format('opentype');
 }
 
 html {
@@ -66,7 +108,7 @@ body {
   flex-direction: column;
   height: 100%;
   margin: 0;
-  font-family: 'SF Pro Display' serif;
+  font-family: 'SF Pro Display Regular';
   font-weight: 400;
   background-color: #f7f7f7;
   overflow-x: hidden;
@@ -121,8 +163,6 @@ img {
     padding-left: 48px;
   }
 }
-
-
 
 ol,
 ul {

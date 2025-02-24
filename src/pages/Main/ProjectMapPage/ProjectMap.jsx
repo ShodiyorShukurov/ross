@@ -54,7 +54,7 @@ const ProjectMap = () => {
         >
           Toshkent bo‘yicha Loyihalarimiz
         </h2>
-        <p className="font-light text-[20px] leading-[20px] text-center mt-[10px]">
+        <p style={{fontFamily: "SF Pro Medium"}} className="font-light text-[20px] leading-[20px] text-center mt-[10px]">
           Shahar bo‘ylab o‘zingizga qulay joylashuvdagi loyihamizda istiqomat
           qiling
         </p>

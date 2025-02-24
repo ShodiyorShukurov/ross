@@ -51,8 +51,8 @@ const BuildingMap = () => {
 
         <div className="pt-[36px] grid grid-cols-3 gap-6">
           <div className="flex flex-col gap-6">
-            <div className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]">
-              <h3 className="text-[#C4A058] font-medium text-[26px] leading-[30px] mb-[30px] flex items-center">
+            <div style={{ fontFamily: 'SF Pro Display Medium' }}  className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]">
+              <h3 className="text-[#C4A058] text-[26px] leading-[30px] mb-[30px] flex items-center">
                 <span className="mr-[8px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ const BuildingMap = () => {
               {hoveredLocation ? (
                 <ul
                   style={{ listStyle: 'inside' }}
-                  className="font-medium text-[20px] leading-[24px]"
+                  className="text-[20px] leading-[24px]"
                 >
                   {hoveredLocation.foot.map((item) => (
                     <li className="mb-[25px]">{item}</li>
@@ -81,7 +81,7 @@ const BuildingMap = () => {
               ) : (
                 <ul
                   style={{ listStyle: 'inside' }}
-                  className="font-medium text-[20px] leading-[24px]"
+                  className="text-[20px] leading-[24px]"
                 >
                   <li className="mb-[25px]">5 min Bog'gacha</li>
                   <li className="mb-[25px]">5 min Supermarketgacha</li>
@@ -91,8 +91,8 @@ const BuildingMap = () => {
               )}
             </div>
 
-            <div className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]">
-              <h3 className="text-[#C4A058] font-medium text-[26px] leading-[30px] mb-[30px] flex items-center">
+            <div style={{ fontFamily: 'SF Pro Display Medium' }}  className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]">
+              <h3 className="text-[#C4A058] text-[26px] leading-[30px] mb-[30px] flex items-center">
                 <span className="mr-[8px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ const BuildingMap = () => {
               {hoveredLocation ? (
                 <ul
                   style={{ listStyle: 'inside' }}
-                  className="font-medium text-[20px] leading-[24px]"
+                  className="text-[20px] leading-[24px]"
                 >
                   {hoveredLocation.car.map((item) => (
                     <li className="mb-[25px]">{item}</li>
@@ -121,7 +121,7 @@ const BuildingMap = () => {
               ) : (
                 <ul
                   style={{ listStyle: 'inside' }}
-                  className="font-medium text-[20px] leading-[24px]"
+                  className="text-[20px] leading-[24px]"
                 >
                   <li className="mb-[25px]">5 min Bog'gacha</li>
                   <li className="mb-[25px]">5 min Supermarketgacha</li>

@@ -21,8 +21,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70 z-0"></div>
 
       <div className="z-10 container">
-        <nav className="flex justify-between items-center bg-transparent text-white relative z-50">
-          <ul className="hidden md:flex space-x-6">
+      <nav className="flex justify-between items-center bg-transparent text-white relative z-50">
+          <ul
+            style={{ fontFamily: 'SF Pro Display Medium' }}
+            className="hidden md:flex space-x-6 font-medium text-[18px]"
+          >
             <li className="hover:text-gray-300 cursor-pointer">
               <NavLink to="/">Kompaniya haqida</NavLink>
             </li>
@@ -31,7 +34,7 @@ export default function Hero() {
             </li>
             <li className="hover:text-gray-300 cursor-pointer">Yangiliklar</li>
             <li className="hover:text-gray-300 cursor-pointer">Kontakt</li>
-            <li className="hover:text-gray-300 cursor-pointer">Vakansiyalar</li>
+            <NavLink to="/vacancies">Vakansiyalar</NavLink>
           </ul>
 
           <div className="relative w-[100px] h-[100px]">
@@ -49,18 +52,27 @@ export default function Hero() {
 
           <div className="flex items-center gap-[40px]">
             <div className="flex items-center space-x-4">
-              <a href="tel:+998911777222" className="flex items-center">
-                <div className="w-[56px] h-[56px] rounded-full border-[2px] flex items-center justify-center">
-                  <img src={phone} alt="phone icon" width={24} height={24} />
+              <a
+                href="tel:+998911777222"
+                className="flex items-center font-medium text-[18px]"
+              >
+                <div className="w-[50px] h-[50px] rounded-full border-[2px] flex items-center justify-center">
+                  <img src={phone} alt="phone icon" width={22} height={22} />
                 </div>
-                <span className="ml-[12px]">91 177 72 22</span>
+                <span
+                  style={{ fontFamily: 'SF Pro Display Medium' }}
+                  className="ml-[12px]"
+                >
+                  91 177 72 22
+                </span>
               </a>
-              <button className="bg-[#D18202] text-[#fff] px-4 py-2 rounded-[48px] hover:bg-yellow-600">
+              <button className="bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
                 Konsultatsiya olish
               </button>
             </div>
             <div className="relative z-50">
               <button
+                style={{ fontFamily: 'SF Pro Display Medium' }}
                 className="flex leading-[29px] font-medium items-center gap-[9px] cursor-pointer transition-all duration-700  border border-[#FFFFFF33] px-[14px] py-[5px] rounded-[48px]"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
@@ -84,7 +96,10 @@ export default function Hero() {
               </button>
 
               {isDropdownOpen && (
-                <ul className="absolute top-full left-0 mt-[2px]  bg-transparent border border-[#FFFFFF33] text-white rounded-[20px] shadow-md w-22 font-medium">
+                <ul
+                  style={{ fontFamily: 'SF Pro Display Medium' }}
+                  className="absolute top-full left-0 mt-[2px]  bg-transparent border border-[#FFFFFF33] text-white rounded-[20px] shadow-md w-22 font-medium"
+                >
                   {['Uz', 'Ru', 'En'].map((lang, i) => (
                     <li
                       key={lang}
@@ -93,7 +108,11 @@ export default function Hero() {
                         setIsDropdownOpen(false);
                       }}
                       className={`px-4 py-2 hover:bg-[#FFFFFF55] cursor-pointer ${
-                        i === 0 ? 'rounded-t-[20px]' : i === 2 ? 'rounded-b-[20px]' : ''
+                        i === 0
+                          ? 'rounded-t-[20px]'
+                          : i === 2
+                          ? 'rounded-b-[20px]'
+                          : ''
                       }`}
                     >
                       {lang.toUpperCase()}
@@ -120,8 +139,8 @@ export default function Hero() {
               />
             </svg>
             <div className="w-full max-w-[160px]">
-              <h4 className="text-[18px] font-semibold">Chilonzor tumani</h4>
-              <p className="text-[14px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] ">
+              <h4 style={{ fontFamily: 'SF Pro Display SemiBold' }} className="text-[20px] font-semibold">Chilonzor tumani</h4>
+              <p style={{ fontFamily: 'SF Pro Display Medium' }} className="text-[16px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] ">
                 Chilonzor tumani Archa ko’chasi, 12/5
               </p>
             </div>
@@ -141,8 +160,8 @@ export default function Hero() {
               />
             </svg>
             <div className="w-full max-w-[160px]">
-              <h4 className="text-[18px] font-semibold">Maktab</h4>
-              <p className="text-[14px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] ">
+              <h4 style={{ fontFamily: 'SF Pro Display SemiBold' }} className="text-[20px] font-semibold">Maktab</h4>
+              <p style={{ fontFamily: 'SF Pro Display Medium' }} className="text-[16px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] ">
                 105 maktab gacha 10 daqiqalik yo’l
               </p>
             </div>
@@ -162,8 +181,8 @@ export default function Hero() {
               />
             </svg>
             <div className="w-full max-w-[160px]">
-              <h4 className="text-[18px] font-semibold">Biznes markazi</h4>
-              <p className="text-[14px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] ">
+              <h4 style={{ fontFamily: 'SF Pro Display SemiBold' }} className="text-[20px] font-semibold">Biznes markazi</h4>
+              <p style={{ fontFamily: 'SF Pro Display Medium' }} className="text-[16px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] ">
                 Apex biznes markazi uchun 5 daqiqalik yo’l
               </p>
             </div>
@@ -182,9 +201,9 @@ export default function Hero() {
                 fill="#D18202"
               />
             </svg>
-            <div className="w-full max-w-[160px]">
-              <h4 className="text-[18px] font-semibold">Sport kompleksi</h4>
-              <p className="text-[14px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] ">
+            <div className="w-full max-w-[170px]">
+              <h4 style={{ fontFamily: 'SF Pro Display SemiBold' }} className="text-[20px] font-semibold">Sport kompleksi</h4>
+              <p style={{ fontFamily: 'SF Pro Display Medium' }} className="text-[16px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] ">
                 Altius sport kompleksi uchun 15 daqiqalik yo’l
               </p>
             </div>
@@ -193,18 +212,18 @@ export default function Hero() {
 
         <div className="absolute flex flex-col text-center items-center text-[#fff] left-1/2 transform -translate-x-1/2 bottom-20">
           <h1
-            className="text-[60px] leading-[70px] font-bold w-[100%] "
+            className="text-[70px] leading-[70px] font-bold w-[100%] "
             style={{ fontFamily: 'Playfair Display Bold' }}
           >
             Balance
           </h1>
-          <p className="text-[20px] mt-[13px] w-full max-w-[300px]">
+          <p className="text-[24px] mt-[13px] w-full max-w-[300px] leading-[33px]">
             Hayotingiz balansini saqlash uchun eng to‘g‘ri tanlov!
           </p>
-          <button className="mt-5 bg-[#D18202] text-white py-2 px-[50px] rounded-full w-fit cursor-pointer">
+          <button className="mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
             Ariza qoldirish
           </button>
-          <button className="mt-5 bg-[#fff] text-[#000] py-2 px-[50px] rounded-full w-fit cursor-pointer">
+          <button className="mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
             Qo'ngiroq qilish
           </button>
         </div>

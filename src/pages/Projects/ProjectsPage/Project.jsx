@@ -58,15 +58,20 @@ const Project = () => {
     <section className="bg-[#C4A0581F] pt-[50px] pb-[150px]">
       <div className="container">
         <h2
-          style={{ fontFamily: 'Playfair Display Bold' }}
-          className="text-[#D18202] font-bold text-[46px] leading-[48px]"
+          style={{ fontFamily: 'Playfair Display Black' }}
+          className="text-[#D18202] font-bold text-[36px] leading-[48px]"
         >
-          Sizga qiziq bo‘lishi mumkin
+          Toshkentdagi Bizning qurib bitkazilgam majmualarimiz
         </h2>
-        <p className="font-light text-[24px] leading-[28px] tracking-[0px] w-full max-w-[970px] mt-[20px]">
-          Quyida sizga qiziq bo’lishi mumkin bo’lgan boshqa loyihalarimiz ilan
-          tanishishingiz mumkin. fact that a reader will be distracted by the
-          readable content of a page when looking at its layout.
+        <p
+          style={{ fontFamily: 'SF Pro Display Light' }}
+          className="font-light text-[24px] leading-[28px] tracking-[0px] w-full max-w-[1300px] mt-[20px]"
+        >
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution of
+          letters, as opposed to using 'Content here, content here', making it
+          look like readable English
         </p>
 
         {/* Filter Buttons */}
@@ -79,7 +84,7 @@ const Project = () => {
                   borderImageSource:
                     'linear-gradient(180deg, #EBB956 0%, #D7AC56 100%)',
                 }}
-                className={`text-[16px] px-4 py-2 rounded-[48px] transition-colors duration-200 cursor-pointer ${
+                className={`text-[18px] px-4 py-2 rounded-[48px] transition-colors duration-200 cursor-pointer ${
                   selectedButton === btn.type
                     ? 'bg-[#D18202] text-white'
                     : 'bg-white text-black'
@@ -127,7 +132,7 @@ const Project = () => {
                   >
                     {item?.title.toUpperCase()}
                   </h3>
-                  <p className="text-[18px] mt-[8px] leading-[18px] font-normal flex items-center">
+                  <p className="text-[20px] mt-[8px] leading-[18px] font-normal flex items-center">
                     <span className="mr-[8px]">
                       <img
                         src={location}

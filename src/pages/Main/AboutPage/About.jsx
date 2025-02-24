@@ -32,7 +32,7 @@ const About = () => {
           >
             KOMPANIYA HAQIDA
           </h2>
-          <p className="font-light text-[20px] leading-[24px] w-full max-w-[860px] mt-[36px]">
+          <p style={{ fontFamily: 'SF Pro Display Light' }} className="font-light text-[20px] leading-[24px] w-full max-w-[860px] mt-[36px]">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a more-or-less normal
@@ -44,7 +44,7 @@ const About = () => {
             years, sometimes by accident, sometimes on purpose
           </p>
 
-          <ul className="mt-[84px] flex items-center gap-[30px]">
+          <ul style={{ fontFamily: 'SF Pro Display Regular' }} className="mt-[84px] flex items-center gap-[30px]">
             <li>
               <div className="w-[50px] h-[50px] flex justify-center items-center bg-[#D18202] rounded-full">
                 <img src={portfolio} alt="portfolio" width={20} height={20} />
@@ -98,7 +98,7 @@ const About = () => {
         >
           Kompaniya haqida 5 ta fakt
         </h2>
-        <p className="font-light text-[20px] leading-[24px] w-full max-w-[890px] mt-[20px]">
+        <p style={{ fontFamily: 'SF Pro Display Light' }} className="text-[20px] leading-[24px] w-full max-w-[890px] mt-[20px]">
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
@@ -136,7 +136,7 @@ const About = () => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[36px] leading-[48px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[36px] leading-[48px] w-full max-w-[360px]"
               >
                 {card.id}. {card.text}
               </h3>

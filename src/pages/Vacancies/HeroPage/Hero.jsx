@@ -1,43 +1,19 @@
-import { useState, useEffect } from 'react';
-
+import { useState } from 'react';
 import bg1 from '../../../assets/images/hero-bg.png';
-import bg2 from '../../../assets/images/hero-bg.png';
-import bg3 from '../../../assets/images/about-bg.png';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
 import logo from '../../../assets/logo/logo.png';
-import carouselItem from '../../../assets/logo/carousel item.svg';
 import { NavLink } from 'react-router-dom';
 
 export default function Hero() {
-  const backgrounds = [bg1, bg2, bg3];
-  const [activeIndex, setActiveIndex] = useState(0);
   const [language, setLanguage] = useState('Uz');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % backgrounds.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % backgrounds.length);
-  };
-
-  const prevSlide = () => {
-    setActiveIndex(
-      (prev) => (prev - 1 + backgrounds.length) % backgrounds.length
-    );
-  };
 
   return (
     <div
       className="relative min-h-screen bg-center transition-all duration-500"
       style={{
-        backgroundImage: `url(${backgrounds[activeIndex]})`,
+        backgroundImage: `url(${bg1})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
@@ -148,50 +124,18 @@ export default function Hero() {
           </div>
         </nav>
 
-        <div className="absolute bottom-50 left-1/2 transform -translate-x-1/2 text-center flex flex-col items-center text-white z-10">
+        <div className="absolute flex flex-col text-center items-center text-[#fff] left-1/2 transform -translate-x-1/2 bottom-20">
           <h1
-            className="text-[70px] leading-[70px] font-bold w-[100%]"
+            className="text-[60px] leading-[70px] font-bold w-[100%] max-w-[700px]"
             style={{ fontFamily: 'Playfair Display Bold' }}
           >
-            Qurilish kompaniyasi nomi
+            First Class kompaniyasi bilan ozruyingizdagi ishni toping
           </h1>
-          <p
-            className="text-[24px] mt-[13px]"
-          >
-            Qurilish Toshkent shahrida joylashgan
+          <p className="text-[20px] mt-[13px] w-full max-w-[300px]">
+            Siz kutgan ayni jamoa!
           </p>
-          <button 
-            className="mt-5 bg-[#D18202] text-white text-[18px] py-[10px] px-[30px] rounded-[48px] hover:bg-yellow-600 transition-all duration-300 cursor-pointer"
-          >
-            Konsultatsiya olish
-          </button>
-        </div>
-
-        <div className="flex justify-center items-center space-x-3 mt-10 absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
-          <button
-            onClick={prevSlide}
-            className="text-white text-2xl hover:text-gray-400 transition cursor-pointer"
-          >
-            <img src={carouselItem} alt="item" />
-          </button>
-
-          {backgrounds.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`relative rounded-full transition-all duration-300 cursor-pointer ${
-                activeIndex === index
-                  ? 'w-[18px] h-[18px] bg-[#D18202]'
-                  : 'w-[12px] h-[12px] bg-[#D1820233] border border-[#D18202]'
-              }`}
-            ></button>
-          ))}
-
-          <button
-            onClick={nextSlide}
-            className="text-white text-2xl hover:text-gray-400 transition cursor-pointer"
-          >
-            <img className="rotate-180" src={carouselItem} alt="item" />
+          <button className="mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
+            Jamoaga qo’shiling
           </button>
         </div>
       </div>

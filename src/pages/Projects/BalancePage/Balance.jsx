@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 const images = [
-  "https://placehold.co/800x500",
-  "https://placehold.co/400x250",
-  "https://placehold.co/400x250",
-  "https://placehold.co/400x250",
-  "https://placehold.co/800x500",
-  "https://placehold.co/800x500",
-  "https://placehold.co/800x500",
+  'https://placehold.co/800x500',
+  'https://placehold.co/400x250',
+  'https://placehold.co/400x250',
+  'https://placehold.co/400x250',
+  'https://placehold.co/800x500',
+  'https://placehold.co/800x500',
+  'https://placehold.co/800x500',
 ];
 
 const GallerySection = () => {
@@ -29,55 +29,61 @@ const GallerySection = () => {
   }, [isOpen]);
 
   return (
-    <section>
+    <section className="py-[50px]">
       <div className="container">
         <h2
-          style={{ fontFamily: "Playfair Display Bold" }}
+          style={{ fontFamily: 'Playfair Display Bold' }}
           className="text-[50px] font-bold text-[#D18202] leading-[100px]"
         >
           Balance
         </h2>
-        <p className="text-[20px] font-light mb-6 w-full max-w-[1000px]">
+        <p
+          style={{ fontFamily: 'SF Pro Display Light' }}
+          className="text-[20px]  mb-6 w-full max-w-[850px]"
+        >
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters.
         </p>
 
-        {/* Gallery Images */}
         <div className="grid grid-cols-3 gap-4">
-          <motion.div className="col-span-2 h-[500px]">
+          <div
+            className="col-span-2 h-[500px] cursor-pointer"
+            onClick={() => setIsOpen(true)}
+          >
             <img
               src={images[0]}
               alt="Main Image"
-              className="w-full h-full rounded-xl object-cover"
+              className="w-full rounded-xl object-cover"
+              height={500}
             />
-          </motion.div>
+          </div>
 
-          <div className="flex flex-col gap-4">
-            <motion.img
+          <div className="flex flex-col gap-2">
+            <img
               src={images[1]}
               alt="Thumbnail 1"
-              className="w-full h-[250px] rounded-xl object-cover"
+              className="w-full h-[200px] rounded-xl cursor-pointer"
+              onClick={() => setIsOpen(true)}
             />
 
-            <motion.div
+            <div
               className="relative w-full rounded-xl cursor-pointer"
               onClick={() => setIsOpen(true)}
             >
               <img
                 src={images[3]}
                 alt="More Images"
-                className="w-full h-full rounded-xl object-cover"
+                className="w-full h-[200px] rounded-xl "
               />
               <div className="absolute inset-0 bg-black/50 flex justify-center items-center rounded-xl">
                 <span className="text-white text-xl font-semibold">+12</span>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
-
-        {/* Modal */}
+    
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -103,13 +109,13 @@ const GallerySection = () => {
                 {/* Main Swiper */}
                 <Swiper
                   style={{
-                    "--swiper-navigation-color": "#fff",
-                    "--swiper-pagination-color": "#fff",
+                    '--swiper-navigation-color': '#fff',
+                    '--swiper-pagination-color': '#fff',
                   }}
                   loop={true}
                   spaceBetween={10}
                   navigation={true}
-                  thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined} 
+                  thumbs={{ swiper: thumbsSwiper }}
                   modules={[FreeMode, Navigation, Thumbs]}
                   className="w-full h-[70vh] flex items-center justify-center"
                 >

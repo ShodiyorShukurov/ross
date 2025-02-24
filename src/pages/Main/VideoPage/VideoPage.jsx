@@ -18,7 +18,7 @@ const VideoPage = () => {
         >
           Bizning qurib bitkazilgan majmualarimiz haqida
         </h2>
-        <p className="text-center text-[24px] leading-[29px] w-full max-w-[810px] mx-auto mt-[16px]">
+        <p style={{ fontFamily: 'SF Pro Display Light' }}  className="text-center text-[24px] leading-[29px] w-full max-w-[810px] mx-auto mt-[16px]">
           Toshkentdagi birinchi 35000 metr kvadratli turar joy majmuamizning
           ochilish marosimi biz va mijozlarimiz uchun yorqin voqea bo’lib qoldi 
         </p>

@@ -8,7 +8,7 @@ import card1 from '../../../assets/images/newsCard1.png';
 import card2 from '../../../assets/images/newsCard2.png';
 import card3 from '../../../assets/images/newsCard3.png';
 import card4 from '../../../assets/images/newsCard4.png';
-import right from '../../../assets/logo/right.svg';
+
 
 const newsData = [
   {
@@ -130,15 +130,15 @@ const NewsSlider = () => {
         >
           {newsData.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="overflow-hidden">
+              <div style={{ fontFamily: 'SF Pro Display Medium' }} className="overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-48 object-cover"
                 />
                 <div>
-                  <h3 className="font-semibold text-lg">{item.title}</h3>
-                  <p className="flex items-center text-gray-500 text-sm mt-2">
+                  <h3   className="text-[24px] leading-[28px] mt-[16px]">{item.title}</h3>
+                  <p className="flex items-center gap-2 text-gray-500 text-[16px] mt-4">
                     <img src={calendar} alt="calendar" width={18} height={18} />
                     {item.date}
                   </p>

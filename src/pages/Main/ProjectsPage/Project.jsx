@@ -52,7 +52,7 @@ const Project = () => {
   const filteredArr =
     selectedButton === 'all'
       ? projects
-      : projects.filter((arr) =>( arr.type === selectedButton && arr.isActive));
+      : projects.filter((arr) => arr.type === selectedButton && arr.isActive);
 
   return (
     <section className="bg-[#C4A0581F] pt-[50px] pb-[150px]">
@@ -63,9 +63,15 @@ const Project = () => {
         >
           Toshkentdagi Bizning qurib bitkazilgam majmualarimiz
         </h2>
-        <p className="font-light text-[24px] leading-[28px] tracking-[0px] w-full max-w-[1300px]">
+        <p
+          style={{ fontFamily: 'SF Pro Display Light' }}
+          className="font-light text-[24px] leading-[28px] tracking-[0px] w-full max-w-[1300px] mt-[20px]"
+        >
           It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout...
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution of
+          letters, as opposed to using 'Content here, content here', making it
+          look like readable English
         </p>
 
         {/* Filter Buttons */}
@@ -78,7 +84,7 @@ const Project = () => {
                   borderImageSource:
                     'linear-gradient(180deg, #EBB956 0%, #D7AC56 100%)',
                 }}
-                className={`text-[16px] px-4 py-2 rounded-[48px] transition-colors duration-200 cursor-pointer ${
+                className={`text-[18px] px-4 py-2 rounded-[48px] transition-colors duration-200 cursor-pointer ${
                   selectedButton === btn.type
                     ? 'bg-[#D18202] text-white'
                     : 'bg-white text-black'
@@ -120,10 +126,13 @@ const Project = () => {
                 )}
                 <div className="absolute inset-0 bg-black/60 z-0"></div>
                 <div className="absolute bottom-0 left-0 right-0 h-auto pl-[32px] pb-[32px] text-white">
-                  <h3   style={{ fontFamily: 'Playfair Display Bold' }} className="text-[30px] font-semibold leading-[48px]">
+                  <h3
+                    style={{ fontFamily: 'Playfair Display Bold' }}
+                    className="text-[30px] font-semibold leading-[48px]"
+                  >
                     {item?.title.toUpperCase()}
                   </h3>
-                  <p className="text-[18px] mt-[8px] leading-[18px] font-normal flex items-center">
+                  <p className="text-[20px] mt-[8px] leading-[18px] font-normal flex items-center">
                     <span className="mr-[8px]">
                       <img
                         src={location}
@@ -135,28 +144,29 @@ const Project = () => {
                     {item.location}
                   </p>
 
-                 {
-                  item.isActive ? 
-                
-                  <motion.button
-                    whileHover={{ scale: 1.05, backgroundColor: '#B66D02' }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-[#D18202] text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer"
-                  >
-                    Narxini bilish
-                    <motion.span
-                      whileHover={{ rotate: 45 }}
+                  {item.isActive ? (
+                    <motion.button
+                      whileHover={{ scale: 1.05, backgroundColor: '#B66D02' }}
                       transition={{ duration: 0.3 }}
-                      className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-[20px]"
+                      className="bg-[#D18202] text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer"
                     >
-                      <img
-                        src={buttonIcon}
-                        alt="buttonIcon"
-                        width={20}
-                        height={20}
-                      />
-                    </motion.span>
-                  </motion.button> : ""}
+                      Narxini bilish
+                      <motion.span
+                        whileHover={{ rotate: 45 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-[20px]"
+                      >
+                        <img
+                          src={buttonIcon}
+                          alt="buttonIcon"
+                          width={20}
+                          height={20}
+                        />
+                      </motion.span>
+                    </motion.button>
+                  ) : (
+                    ''
+                  )}
                 </div>
               </motion.div>
             ))}
