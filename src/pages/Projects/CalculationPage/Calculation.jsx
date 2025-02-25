@@ -26,7 +26,7 @@ const Calculation = () => {
 
               <select
                 style={{ fontFamily: 'SF Pro Bold' }}
-                className="w-full max-w-[240px] py-3 px-4 rounded-lg bg-white text-[#151515] text-[16px]  outline-none"
+                className="w-full py-3 px-4 rounded-lg bg-white text-[#151515] text-[16px]  outline-none"
               >
                 <option value="C Blok">C Blok</option>
                 <option value="A Blok">A Blok</option>

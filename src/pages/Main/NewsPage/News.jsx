@@ -4,53 +4,13 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import calendar from '../../../assets/logo/calendar.svg';
-import card1 from '../../../assets/images/newsCard1.png';
-import card2 from '../../../assets/images/newsCard2.png';
-import card3 from '../../../assets/images/newsCard3.png';
-import card4 from '../../../assets/images/newsCard4.png';
-
-
-const newsData = [
-  {
-    id: 1,
-    image: card1,
-    title: 'Do‘stlaringiz bilan qo‘shni bo‘ling va bonusga ega bo‘ling!',
-    date: '12/03/2025',
-  },
-  {
-    id: 2,
-    image: card2,
-    title: 'Do‘stlaringiz bilan qo‘shni bo‘ling va bonusga ega bo‘ling!',
-    date: '12/03/2025',
-  },
-  {
-    id: 3,
-    image: card3,
-    title: 'Do‘stlaringiz bilan qo‘shni bo‘ling va bonusga ega bo‘ling!',
-    date: '12/03/2025',
-  },
-  {
-    id: 4,
-    image: card4,
-    title: 'Do‘stlaringiz bilan qo‘shni bo‘ling va bonusga ega bo‘ling!',
-    date: '12/03/2025',
-  },
-  {
-    id: 5,
-    image: card1,
-    title: 'Do‘stlaringiz bilan qo‘shni bo‘ling va bonusga ega bo‘ling!',
-    date: '12/03/2025',
-  },
-  {
-    id: 6,
-    image: card2,
-    title: 'Do‘stlaringiz bilan qo‘shni bo‘ling va bonusga ega bo‘ling!',
-    date: '12/03/2025',
-  },
-];
+import { useTranslation } from 'react-i18next';
+import { getNewsData } from '../../../mock/news';
 
 const NewsSlider = () => {
   const [isActive, setIsActive] = React.useState('');
+  const { t } = useTranslation();
+  const newsData = getNewsData(t);
 
   return (
     <section className="py-10 bg-white">
@@ -60,7 +20,7 @@ const NewsSlider = () => {
             style={{ fontFamily: 'Playfair Display Bold' }}
             className="text-[#D18202] text-[56px] font-bold"
           >
-            Yangiliklar
+            {t('news.title')}
           </h2>
 
           <div className="flex space-x-2">
@@ -130,14 +90,19 @@ const NewsSlider = () => {
         >
           {newsData.map((item) => (
             <SwiperSlide key={item.id}>
-              <div style={{ fontFamily: 'SF Pro Display Medium' }} className="overflow-hidden">
+              <div
+                style={{ fontFamily: 'SF Pro Display Medium' }}
+                className="overflow-hidden"
+              >
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-48 object-cover"
                 />
                 <div>
-                  <h3   className="text-[24px] leading-[28px] mt-[16px]">{item.title}</h3>
+                  <h3 className="text-[24px] leading-[28px] mt-[16px]">
+                    {item.title}
+                  </h3>
                   <p className="flex items-center gap-2 text-gray-500 text-[16px] mt-4">
                     <img src={calendar} alt="calendar" width={18} height={18} />
                     {item.date}

@@ -1,52 +1,20 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import projectImg1 from '../../../assets/images/projects-img1.png';
-import projectImg2 from '../../../assets/images/projects-img2.png';
 import location from '../../../assets/logo/location.svg';
 import buttonIcon from '../../../assets/logo/right.svg';
+import { getProjectsData } from '../../../mock/projects';
+import { useTranslation } from 'react-i18next';
 
 const Project = () => {
+  const { t } = useTranslation();
+
+  const projects = getProjectsData(t);
   const [selectedButton, setSelectedButton] = React.useState('all');
 
   const buttons = [
-    { label: 'Barchasi', type: 'all' },
-    { label: 'Qurilishi yakunlangan', type: 'done' },
-    { label: 'Qurilish jarayonida', type: 'isHold' },
-  ];
-
-  const projects = [
-    {
-      id: 1,
-      title: "YUNUSOBOD YANGI MO'JIZA",
-      location: 'Yunusobod t. Yettichinor koʻchasi',
-      bgImg: projectImg1,
-      type: 'done',
-      isActive: true,
-    },
-    {
-      id: 2,
-      title: 'Qoyliq yangi mavze',
-      location: 'Qo’yliq t. Farobiy koʻchasi',
-      bgImg: projectImg2,
-      type: 'isHold',
-      isActive: false,
-    },
-    {
-      id: 3,
-      title: "YUNUSOBOD YANGI MO'JIZA",
-      location: 'Yunusobod t. Yettichinor koʻchasi',
-      bgImg: projectImg1,
-      type: 'done',
-      isActive: true,
-    },
-    {
-      id: 4,
-      title: 'Qoyliq yangi mavze',
-      location: 'Qo’yliq t. Farobiy koʻchasi',
-      bgImg: projectImg2,
-      type: 'isHold',
-      isActive: true,
-    },
+    { label: t('project.filter_button1'), type: 'all' },
+    { label: t('project.filter_button2'), type: 'done' },
+    { label: t('project.filter_button3'), type: 'isHold' },
   ];
 
   const filteredArr =
@@ -61,17 +29,13 @@ const Project = () => {
           style={{ fontFamily: 'Playfair Display Black' }}
           className="text-[#D18202] font-bold text-[36px] leading-[48px]"
         >
-          Toshkentdagi Bizning qurib bitkazilgam majmualarimiz
+          {t('project.project_title')}
         </h2>
         <p
           style={{ fontFamily: 'SF Pro Display Light' }}
           className="font-light text-[24px] leading-[28px] tracking-[0px] w-full max-w-[1300px] mt-[20px]"
         >
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English
+          {t('project.project_desc')}
         </p>
 
         {/* Filter Buttons */}
@@ -97,7 +61,6 @@ const Project = () => {
           ))}
         </ul>
 
-        {/* Project Cards */}
         <div className="grid md:grid-cols-2 gap-6">
           <AnimatePresence>
             {filteredArr.map((item) => (
@@ -119,7 +82,7 @@ const Project = () => {
               >
                 {!item.isActive ? (
                   <span className="relative text-[#CACACA] font-light py-[10px] px-[16px] bg-[#EDEDED] rounded-[48px] block w-fit mt-[32px] ml-auto mr-[32px] z-50">
-                    Sotib bo’lingan
+                    {t('project.sold')}
                   </span>
                 ) : (
                   ''
@@ -150,7 +113,7 @@ const Project = () => {
                       transition={{ duration: 0.3 }}
                       className="bg-[#D18202] text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer"
                     >
-                      Narxini bilish
+                      {t('project.card_button')}
                       <motion.span
                         whileHover={{ rotate: 45 }}
                         transition={{ duration: 0.3 }}

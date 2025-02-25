@@ -1,0 +1,104 @@
+{
+    "navbar": {
+        "nav1": "Kompaniya haqida",
+        "nav2": "Loyihalar",
+        "nav3": "Yangiliklar",
+        "nav4": "Kontakt",
+        "nav5": "Vakansiyalar",
+        "nav_button": "Konsultatsiya olish"
+    },
+    "hero": {
+        "title": "Qurilish kompaniyasi nomi",
+        "subtitle": "Qurilish Toshkent shahrida joylashgan",
+        "button_text": "Konsultatsiya olish"
+    },
+    "vacancies_hero":{
+        "title": "First Class kompaniyasi bilan ozruyingizdagi ishni toping",
+        "subtitle": "Siz kutgan ayni jamoa!",
+        "button_text": "Jamoaga qo'shilish"
+    },
+    "about": {
+        "title": "KOMPANIYA HAQIDA",
+        "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
+        "card1_title": "Kompaniya portfelidagi loyihalar",
+        "card1_desc": "3 ta",
+        "card2_title": "Ko'chmas mulk bozorida",
+        "card2_desc": "5 yil",
+        "card3_title": "Bizning loyihalarimizda odamlar yashaydi",
+        "card3_desc": "1000",
+        "card4_title": "Turar joy hududlari M",
+        "card4_desc": "77 000",
+        "fact_title": "Kompaniya haqida 5 ta fakt",
+        "fact_desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+        "fact_card1": "Ko’p yillik tajriba",
+        "fact_card2": "Har qanday qurilish loyihalari",
+        "fact_card3": "Sifat va ishonchlilik kafolati",
+        "fact_card4": "Individual yondashuv",
+        "fact_card5": "Sifat va ishonchlilik kafolati"
+    },
+    "project": {
+        "project_title": "Toshkentdagi Bizning qurib bitkazilgam majmualarimiz",
+        "project_desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+        "filter_button1": "Barchasi",
+        "filter_button2": "Qurilishi yakunlangan",
+        "filter_button3": "Qurilish jarayonida",
+        "card_button": "Narxini bilish",
+        "card1_title": "Yunusobod Yangi Mo’jiza",
+        "card1_location": "Yunusobod t. Yettichinor koʻchasi",
+        "card2_title": "Qoyliq yangi mavze",
+        "card2_location": "Qo’yliq t. Farobiy koʻchasi",
+        "sold": "Sotib bo’lingan"
+    },
+    "project_map": {
+        "title": "Toshkent bo‘yicha Loyihalarimiz",
+        "subtitle": "Shahar bo‘ylab o‘zingizga qulay joylashuvdagi loyihamizda istiqomat qiling",
+        "location1_title": "Luxury residence",
+        "location1_desc": "Chilonzor tumani",
+        "location2_title": "Premium Apartments",
+        "location2_desc": "Yunusobod tumani",
+        "location3_title": "Eco-friendly Homes",
+        "location3_desc": "Mirzo Ulug’bek tumani"
+    },
+    "partners": {
+        "title": "Hamkorlarimiz"
+    },
+    "news": {
+        "title": "Yangiliklar",
+        "card1_title": "Do'stlaringiz bilan qo'shni bo'ling va bonusga ega bo'ling!"
+    },
+    "video_page": {
+        "title": "Bizning qurib bitkazilgan majmualarimiz haqida",
+        "subtitle": "Toshkentdagi birinchi 35000 metr kvadratli turar joy majmuamizning ochilish marosimi biz va mijozlarimiz uchun yorqin voqea bo’lib qoldi"
+    },
+    "contact_page": {
+        "title": "Ko'proq ma'lumot olishni xohlaysizmi?",
+        "subtitle": "O'zingizni kontaktingizni qoldiring va menejerimiz sizga yanada qiziqarli tafsilotlar bilan tanishtiradi",
+        "name": "Ismingiz",
+        "phone_number": "Telefon raqamingiz",
+        "button_text": "Malumotlarni yuborish",
+        "error": "Bu maydon to‘ldirilishi shart!",
+        "name_error1": "Kamida 5 ta belgi kiritish kerak",
+        "name_error2": "Kamida bitta katta harf bo‘lishi kerak",
+        "name_error3": "Kamida bitta kichik harf bo‘lishi kerak",
+        "phone_number_error": "Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak"
+    },
+    "vacancies_page": {
+        "title": "Karyerangizni biz bilan boshlang",
+        "button_text": "Ariza topshirish",
+        "table_title1": "Vakansiyalar",
+        "table_title2": "Yo’nalish",
+        "table_title3": "Ish formati",
+        "vacancies1_role": "Bosh xisobchi",
+        "vacancies1_direction": "Buhgalteriya, Hisob-kitob",
+        "vacancies1_format": "Ofisda ishlash",
+        "vacancies2_role": "Injiner arxitektor",
+        "vacancies2_direction": "Dizayn, mahsulot va arxitektura boshqaruvi",
+        "vacancies2_format": "Ofisda ishlash",
+        "vacancies3_role": "Interier Dizayner",
+        "vacancies3_direction": "Dizayn, mahsulot va arxitektura boshqaruvi",
+        "vacancies3_format": "Ofisda ishlash",
+        "vacancies4_role": "Exterier Dizayner",
+        "vacancies4_direction": "Dizayn, mahsulot va arxitektura boshqaruvi",
+        "vacancies4_format": "Remote"
+    }
+}

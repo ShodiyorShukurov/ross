@@ -6,6 +6,7 @@ import {
   InfoWindow,
 } from '@react-google-maps/api';
 import marker from '../../../assets/logo/Frame.png';
+import { useTranslation } from 'react-i18next';
 
 const containerStyle = {
   width: '100%',
@@ -18,32 +19,32 @@ const center = {
   lng: 69.2401,
 };
 
-const locations = [
-  {
-    id: 1,
-    position: { lat: 41.295, lng: 69.2405 },
-    description: 'Luxury residence',
-    district: 'Chilonzor tumani',
-    image: 'https://placehold.co/600x400',
-  },
-  {
-    id: 2,
-    position: { lat: 41.3205, lng: 69.2256 },
-    description: 'Premium Apartments',
-    district: 'Yunusobod tumani',
-    image: 'https://placehold.co/600x400',
-  },
-  {
-    id: 3,
-    position: { lat: 41.3101, lng: 69.2554 },
-    description: 'Eco-friendly Homes',
-    district: 'Mirzo Ulug’bek tumani',
-    image: 'https://placehold.co/600x400',
-  },
-];
-
 const ProjectMap = () => {
+  const { t } = useTranslation();
   const [hoveredLocation, setHoveredLocation] = useState(null);
+  const locations = [
+    {
+      id: 1,
+      position: { lat: 41.295, lng: 69.2405 },
+      description: t('project_map.location1_title'),
+      district: t('project_map.location1_desc'),
+      image: 'https://placehold.co/600x400',
+    },
+    {
+      id: 2,
+      position: { lat: 41.3205, lng: 69.2256 },
+      description: t('project_map.location2_title'),
+      district: t('project_map.location2_desc'),
+      image: 'https://placehold.co/600x400',
+    },
+    {
+      id: 3,
+      position: { lat: 41.3101, lng: 69.2554 },
+      description: t('project_map.location3_title'),
+      district: t('project_map.location3_desc'),
+      image: 'https://placehold.co/600x400',
+    },
+  ];
 
   return (
     <section className="pt-[140px] relative">
@@ -52,11 +53,13 @@ const ProjectMap = () => {
           style={{ fontFamily: 'Playfair Display Bold' }}
           className="text-[#D18202] font-bold text-[56px] leading-[74px] text-center"
         >
-          Toshkent bo‘yicha Loyihalarimiz
+          {t('project_map.title')}
         </h2>
-        <p style={{fontFamily: "SF Pro Medium"}} className="font-light text-[20px] leading-[20px] text-center mt-[10px]">
-          Shahar bo‘ylab o‘zingizga qulay joylashuvdagi loyihamizda istiqomat
-          qiling
+        <p
+          style={{ fontFamily: 'SF Pro Medium' }}
+          className="font-light text-[20px] leading-[20px] text-center mt-[10px]"
+        >
+          {t('project_map.subtitle')}
         </p>
       </div>
 

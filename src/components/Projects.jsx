@@ -7,8 +7,12 @@ import Balance from '../pages/Projects/BalancePage/Balance';
 import Fact from '../pages/Projects/FactPage/Fact';
 import Calculation from '../pages/Projects/CalculationPage/Calculation';
 import BuildingMap from '../pages/Projects/BuildingMap/BuildingMap';
+import { useParams } from 'react-router-dom';
 
 const Projects = () => {
+  const {id}= useParams()
+
+  console.log(id)
   return (
     <>
       <Hero />

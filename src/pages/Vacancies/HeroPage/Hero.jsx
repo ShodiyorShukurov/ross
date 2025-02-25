@@ -1,13 +1,27 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import bg1 from '../../../assets/images/hero-bg.png';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
 import logo from '../../../assets/logo/logo.png';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
-  const [language, setLanguage] = useState('Uz');
+  const savedLang = localStorage.getItem('lng') || 'uz'; 
+  const [language, setLanguage] = useState(savedLang.toUpperCase());
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+
+  React.useEffect(() => {
+    i18n.changeLanguage(savedLang);
+  }, [savedLang, i18n]);
+
+  const changeValues = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('lng', lng);
+    setLanguage(lng.toUpperCase()); 
+  };
 
   return (
     <div
@@ -27,14 +41,18 @@ export default function Hero() {
             className="hidden md:flex space-x-6 font-medium text-[18px]"
           >
             <li className="hover:text-gray-300 cursor-pointer">
-              <NavLink to="/">Kompaniya haqida</NavLink>
+              <NavLink to="/">{t('navbar.nav1')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <NavLink to="/projects">Loyihalar</NavLink>
+              <a href="#projects">{t('navbar.nav2')}</a>
             </li>
-            <li className="hover:text-gray-300 cursor-pointer">Yangiliklar</li>
-            <li className="hover:text-gray-300 cursor-pointer">Kontakt</li>
-            <NavLink to="/vacancies">Vakansiyalar</NavLink>
+            <li className="hover:text-gray-300 cursor-pointer">
+              {t('navbar.nav3')}
+            </li>
+            <li className="hover:text-gray-300 cursor-pointer">
+              {t('navbar.nav4')}
+            </li>
+            <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
 
           <div className="relative w-[100px] h-[100px]">
@@ -67,14 +85,16 @@ export default function Hero() {
                 </span>
               </a>
               <button className="bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
-                Konsultatsiya olish
+                {t('navbar.nav_button')}
               </button>
             </div>
             <div className="relative z-50">
               <button
                 style={{ fontFamily: 'SF Pro Display Medium' }}
                 className="flex leading-[29px] font-medium items-center gap-[9px] cursor-pointer transition-all duration-700  border border-[#FFFFFF33] px-[14px] py-[5px] rounded-[48px]"
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                onClick={() => {
+                  setIsDropdownOpen(!isDropdownOpen);
+                }}
               >
                 <span>{language.toUpperCase()}</span>
                 <span
@@ -105,6 +125,7 @@ export default function Hero() {
                       key={lang}
                       onClick={() => {
                         setLanguage(lang);
+                        changeValues(lang.toLowerCase());
                         setIsDropdownOpen(false);
                       }}
                       className={`px-4 py-2 hover:bg-[#FFFFFF55] cursor-pointer ${
@@ -129,14 +150,17 @@ export default function Hero() {
             className="text-[60px] leading-[70px] font-bold w-[100%] max-w-[700px]"
             style={{ fontFamily: 'Playfair Display Bold' }}
           >
-            First Class kompaniyasi bilan ozruyingizdagi ishni toping
+            {t('vacancies_hero.title')}
           </h1>
           <p className="text-[20px] mt-[13px] w-full max-w-[300px]">
-            Siz kutgan ayni jamoa!
+            {t('vacancies_hero.subtitle')}
           </p>
-          <button className="mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
-            Jamoaga qo’shiling
-          </button>
+          <a
+            className="mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]"
+            href="#vacansies"
+          >
+            {t('vacancies_hero.button_text')}
+          </a>
         </div>
       </div>
     </div>

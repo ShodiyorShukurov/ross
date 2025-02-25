@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-
 import bg1 from '../../../assets/images/hero-bg.png';
 import bg2 from '../../../assets/images/hero-bg.png';
 import bg3 from '../../../assets/images/about-bg.png';
@@ -8,12 +7,25 @@ import logobg from '../../../assets/images/logo-bg.png';
 import logo from '../../../assets/logo/logo.png';
 import carouselItem from '../../../assets/logo/carousel item.svg';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
   const backgrounds = [bg1, bg2, bg3];
   const [activeIndex, setActiveIndex] = useState(0);
-  const [language, setLanguage] = useState('Uz');
+  const savedLang = localStorage.getItem('lng') || 'uz';
+  const [language, setLanguage] = useState(savedLang.toUpperCase());
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(savedLang);
+  }, [savedLang, i18n]);
+
+  const changeValues = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('lng', lng);
+    setLanguage(lng.toUpperCase());
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,14 +63,18 @@ export default function Hero() {
             className="hidden md:flex space-x-6 font-medium text-[18px]"
           >
             <li className="hover:text-gray-300 cursor-pointer">
-              <NavLink to="/">Kompaniya haqida</NavLink>
+              <NavLink to="/">{t('navbar.nav1')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <NavLink to="/projects">Loyihalar</NavLink>
+              <a href="#projects">{t('navbar.nav2')}</a>
             </li>
-            <li className="hover:text-gray-300 cursor-pointer">Yangiliklar</li>
-            <li className="hover:text-gray-300 cursor-pointer">Kontakt</li>
-            <NavLink to="/vacancies">Vakansiyalar</NavLink>
+            <li className="hover:text-gray-300 cursor-pointer">
+              {t('navbar.nav3')}
+            </li>
+            <li className="hover:text-gray-300 cursor-pointer">
+              {t('navbar.nav4')}
+            </li>
+            <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
 
           <div className="relative w-[100px] h-[100px]">
@@ -91,14 +107,16 @@ export default function Hero() {
                 </span>
               </a>
               <button className="bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
-                Konsultatsiya olish
+                {t('navbar.nav_button')}
               </button>
             </div>
             <div className="relative z-50">
               <button
                 style={{ fontFamily: 'SF Pro Display Medium' }}
                 className="flex leading-[29px] font-medium items-center gap-[9px] cursor-pointer transition-all duration-700  border border-[#FFFFFF33] px-[14px] py-[5px] rounded-[48px]"
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                onClick={() => {
+                  setIsDropdownOpen(!isDropdownOpen);
+                }}
               >
                 <span>{language.toUpperCase()}</span>
                 <span
@@ -129,6 +147,7 @@ export default function Hero() {
                       key={lang}
                       onClick={() => {
                         setLanguage(lang);
+                        changeValues(lang.toLowerCase());
                         setIsDropdownOpen(false);
                       }}
                       className={`px-4 py-2 hover:bg-[#FFFFFF55] cursor-pointer ${
@@ -155,14 +174,10 @@ export default function Hero() {
           >
             Qurilish kompaniyasi nomi
           </h1>
-          <p
-            className="text-[24px] mt-[13px]"
-          >
+          <p className="text-[24px] mt-[13px]">
             Qurilish Toshkent shahrida joylashgan
           </p>
-          <button 
-            className="mt-5 bg-[#D18202] text-white text-[18px] py-[10px] px-[30px] rounded-[48px] hover:bg-yellow-600 transition-all duration-300 cursor-pointer"
-          >
+          <button className="mt-5 bg-[#D18202] text-white text-[18px] py-[10px] px-[30px] rounded-[48px] hover:bg-yellow-600 transition-all duration-300 cursor-pointer">
             Konsultatsiya olish
           </button>
         </div>

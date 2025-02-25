@@ -1,5 +1,6 @@
 import React from 'react';
 import buttonIcon from '../../../assets/logo/right.svg';
+import bg from '../../../assets/images/form.png'
 
 const Contact = () => {
   const [formData, setFormData] = React.useState({
@@ -61,8 +62,8 @@ const Contact = () => {
 
   return (
     <section className="mt-[100px]">
-      <div className="container  ">
-        <div className="flex justify-around bg-[#fff] pt-[50px]  pb-[70px] mb-[50px]">
+      <div className="container">
+        <div className="flex justify-around bg-[#fff] pt-[50px]  pb-[70px] mb-[50px]" style={{backgroundImage: `url(${bg})`, backgroundRepeat: 'no-repeat',}}>
           <div>
             <h3
               style={{ fontFamily: 'Playfair Display Bold' }}

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Loader2, FileText, Trash2, Download } from 'lucide-react';
+import { getVacansies } from '../../../mock/vacansiesData';
+import useVacansies from '../../../hooks/UseVacansies';
+import { useTranslation } from 'react-i18next';
 
 const FormPage = () => {
+  const { t } = useTranslation();
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -9,6 +13,7 @@ const FormPage = () => {
     email: '',
   });
   const [errors, setErrors] = useState({});
+  const vacanciesData = getVacansies(t);
 
   const handleFileChange = (event) => {
     if (event.target.files.length > 0) {
@@ -57,7 +62,7 @@ const FormPage = () => {
   };
 
   return (
-    <section className='py-[100px]'>
+    <section className="py-[100px]" id="vacansiesPage">
       <div className="container">
         <div className="bg-white p-[60px] rounded-[20px]">
           <h2
@@ -66,7 +71,10 @@ const FormPage = () => {
           >
             Ariza qoldirish
           </h2>
-          <form onSubmit={handleSubmit} style={{ fontFamily: 'SF Pro Regular' }} >
+          <form
+            onSubmit={handleSubmit}
+            style={{ fontFamily: 'SF Pro Regular' }}
+          >
             <div className="grid grid-cols-4 gap-4">
               <div>
                 <input
@@ -108,6 +116,14 @@ const FormPage = () => {
                   <p className="text-red-500 text-sm">{errors.email}</p>
                 )}
 
+                <select className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]">
+                  {vacanciesData.map((item) => (
+                    <option key={item.id} value={item.id}>
+                      {item.title}
+                    </option>
+                  ))}
+                </select>
+
                 <button
                   type="submit"
                   className="bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4"
@@ -118,7 +134,7 @@ const FormPage = () => {
 
               <div>
                 {selectedFiles.length > 0 ? (
-                  <div className="flex justify-center items-center w-full h-[72%] p-4 border-2 border-dashed border-[#D9D9D9] rounded-lg cursor-pointer bg-[#F5F5F5]">
+                  <div className="flex justify-center items-center w-full h-[75%] p-4 border-2 border-dashed border-[#D9D9D9] rounded-lg cursor-pointer bg-[#F5F5F5]">
                     <div className="mt-4 space-y-2 w-full">
                       {selectedFiles.map((item, index) => (
                         <div
@@ -152,12 +168,14 @@ const FormPage = () => {
                     </div>
                   </div>
                 ) : (
-                  <label className="flex justify-center items-center w-full h-[72%] p-4 border-2 border-dashed border-[#D9D9D9] rounded-lg cursor-pointer bg-[#F5F5F5]">
+                  <label
+                    className={`flex justify-center items-center w-full h-[72%] p-4 border-2 border-dashed border-[#D9D9D9] rounded-lg cursor-pointer hover:bg-[#F5F5F5]`}
+                  >
                     <input
                       type="file"
                       className="hidden"
                       onChange={handleFileChange}
-                      accept='.doc, .docx, .pdf'
+                      accept=".doc, .docx, .pdf"
                     />
                     <div className="flex items-center justify-center gap-4">
                       <svg
@@ -180,9 +198,7 @@ const FormPage = () => {
                         </defs>
                       </svg>
                       <div>
-                        <p>
-                          Drag files here or click to select files
-                        </p>
+                        <p>Drag files here or click to select files</p>
                         <p className="text-xs text-gray-400">
                           Each file should not exceed 5MB
                         </p>
@@ -193,7 +209,10 @@ const FormPage = () => {
               </div>
 
               <div className="col-span-2">
-                <p style={{ fontFamily: 'SF Pro Display Light' }}  className="text-[20px] leading-[28px] ">
+                <p
+                  style={{ fontFamily: 'SF Pro Display Light' }}
+                  className="text-[20px] leading-[28px] "
+                >
                   Bizning HR mutaxassislarimiz olingan barcha rezyumelarni
                   diqqat bilan ko'rib chiqadilar. Sizning ish tajribangiz,
                   ko'nikma va malakalaringiz hozirda mavjud bo'sh ish o'rinlari

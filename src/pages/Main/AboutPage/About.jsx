@@ -9,16 +9,19 @@ import aboutBgCard2 from '../../../assets/images/about-card-bg2.png';
 import aboutBgCard3 from '../../../assets/images/about-card-bg3.png';
 import aboutBgCard4 from '../../../assets/images/about-card-bg4.png';
 import aboutBgCard5 from '../../../assets/images/about-card-bg5.png';
-
-const cards = [
-  { id: 1, text: 'Ko’p yillik tajriba', image: aboutBgCard1 },
-  { id: 2, text: 'Har qanday qurilish loyihalari', image: aboutBgCard2 },
-  { id: 3, text: 'Sifat va ishonchlilik kafolati', image: aboutBgCard3 },
-  { id: 4, text: 'Individual yondashuv', image: aboutBgCard4 },
-  { id: 5, text: 'Sifat va ishonchlilik kafolati', image: aboutBgCard5 },
-];
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+
+  const cards = [
+    { id: 1, text: t('about.fact_card1'), image: aboutBgCard1 },
+    { id: 2, text: t('about.fact_card2'), image: aboutBgCard2 },
+    { id: 3, text: t('about.fact_card3'), image: aboutBgCard3 },
+    { id: 4, text: t('about.fact_card4'), image: aboutBgCard4 },
+    { id: 5, text: t('about.fact_card5'), image: aboutBgCard5 },
+  ];
+
   return (
     <section className="about-section my-[100px]">
       <div className="container">
@@ -30,30 +33,28 @@ const About = () => {
             style={{ fontFamily: 'Playfair Display Bold' }}
             className="text-[#D18202] font-bold text-[36px] leading-[48px]"
           >
-            KOMPANIYA HAQIDA
+            {t('about.title')}
           </h2>
-          <p style={{ fontFamily: 'SF Pro Display Light' }} className="font-light text-[20px] leading-[24px] w-full max-w-[860px] mt-[36px]">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose
+          <p
+            style={{ fontFamily: 'SF Pro Display Light' }}
+            className="font-light text-[20px] leading-[24px] w-full max-w-[860px] mt-[36px]"
+          >
+           {t('about.desc')}
           </p>
 
-          <ul style={{ fontFamily: 'SF Pro Display Regular' }} className="mt-[84px] flex items-center gap-[30px]">
+          <ul
+            style={{ fontFamily: 'SF Pro Display Regular' }}
+            className="mt-[84px] flex items-center gap-[30px]"
+          >
             <li>
               <div className="w-[50px] h-[50px] flex justify-center items-center bg-[#D18202] rounded-full">
                 <img src={portfolio} alt="portfolio" width={20} height={20} />
               </div>
               <h3 className="text-[20px] leading-[24px] w-full max-w-[190px] mt-[8px]">
-                Kompaniya portfelidagi loyihalar
+              {t('about.card1_title')}
               </h3>
               <p className="text-[70px] text-[#D18202] leading-[84px] mt-[12px]">
-                3 ta
+              {t('about.card1_desc')}
               </p>
             </li>
             <li>
@@ -61,10 +62,10 @@ const About = () => {
                 <img src={clock} alt="portfolio" width={20} height={20} />
               </div>
               <h3 className="text-[20px] leading-[24px] w-full max-w-[190px]  mt-[8px]">
-                Ko'chmas mulk bozorida
+              {t('about.card2_title')}
               </h3>
               <p className="text-[70px] text-[#D18202] leading-[84px] mt-[12px]">
-                5 yil
+              {t('about.card2_desc')}
               </p>
             </li>
             <li>
@@ -72,10 +73,10 @@ const About = () => {
                 <img src={key} alt="portfolio" width={20} height={20} />
               </div>
               <h3 className="text-[20px] leading-[24px] w-full max-w-[210px]  mt-[8px]">
-                Bizning loyihalarimizda odamlar yashaydi
+              {t('about.card3_title')}
               </h3>
               <p className="text-[70px] text-[#D18202] leading-[84px] mt-[12px]">
-                1000
+              {t('about.card3_desc')}
               </p>
             </li>
             <li>
@@ -83,7 +84,7 @@ const About = () => {
                 <img src={area} alt="portfolio" width={20} height={20} />
               </div>
               <h3 className="text-[20px] leading-[24px] w-full max-w-[190px]  mt-[8px]">
-                Turar joy hududlari M<sup>2</sup>
+                T{t('about.card4_title')}<sup>2</sup>
               </h3>
               <p className="text-[70px] text-[#D18202] leading-[84px] mt-[12px]">
                 77 000
@@ -96,14 +97,13 @@ const About = () => {
           style={{ fontFamily: 'Playfair Display Bold' }}
           className="text-[#D18202] font-bold text-[36px] leading-[48px] mt-[59px]"
         >
-          Kompaniya haqida 5 ta fakt
+          {t('about.fact_title')}
         </h2>
-        <p style={{ fontFamily: 'SF Pro Display Light' }} className="text-[20px] leading-[24px] w-full max-w-[890px] mt-[20px]">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English
+        <p
+          style={{ fontFamily: 'SF Pro Display Light' }}
+          className="text-[20px] leading-[24px] w-full max-w-[890px] mt-[20px]"
+        >
+         {t('about.fact_desc')}
         </p>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-[16px] mt-[60px]">

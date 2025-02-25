@@ -1,10 +1,12 @@
 import React from 'react';
 import videobg from '../../../assets/images/doneProject.png';
+import { useTranslation } from 'react-i18next';
 
 const VideoPage = () => {
+const {t} = useTranslation()
+
   return (
     <section className="pt-[120px] relative">
-      {/* Background Image */}
       <img
         src={videobg}
         alt="background img"
@@ -16,11 +18,10 @@ const VideoPage = () => {
           style={{ fontFamily: 'Playfair Display Bold' }}
           className="text-[#D18202] font-bold text-[56px] leading-[67px] w-full max-w-[700px] text-center mx-auto"
         >
-          Bizning qurib bitkazilgan majmualarimiz haqida
+          {t('video_page.title')}
         </h2>
         <p style={{ fontFamily: 'SF Pro Display Light' }}  className="text-center text-[24px] leading-[29px] w-full max-w-[810px] mx-auto mt-[16px]">
-          Toshkentdagi birinchi 35000 metr kvadratli turar joy majmuamizning
-          ochilish marosimi biz va mijozlarimiz uchun yorqin voqea bo’lib qoldi 
+        {t('video_page.subtitle')}
         </p>
 
         <iframe
