@@ -1,20 +1,19 @@
 import React from 'react';
-// import { FaInstagram, FaTelegram, FaFacebook } from "react-icons/fa";
 import logo from '../assets/logo/footerLogo.svg';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
-    <footer className="bg-white text-black py-[50px]">
+    <footer className="bg-white text-black pt-[50px]">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between  gap-10 pb-[80px]">
-          {/* Logo va Info */}
           <div className="max-w-sm">
             <a href="/">
               <img src={logo} alt="Company Logo" />
             </a>
           </div>
 
-          {/* Havolalar */}
           <div className="text-[#151515] text-[20px]  font-semibold leading-[25px]">
             <div className="flex gap-[60px]">
               <div
@@ -25,25 +24,25 @@ const Footer = () => {
                   style={{ fontFamily: 'SF Pro Semi Bold' }}
                   className=" text-[30px] leading-[30px] mb-[24px]"
                 >
-                  INFO
+                  {t('footer.links_title1')}
                 </h3>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Biz haqimizda
+                {t('footer.links1')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Yangiliklar
+                {t('footer.links2')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Kontakt
+                {t('footer.links3')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Vakansiyalar
+                {t('footer.links4')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Lokatsiya
+                {t('footer.links5')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Kredit Kalkulyator
+                {t('footer.links6')}
                 </a>
               </div>
               <div
@@ -54,25 +53,19 @@ const Footer = () => {
                   style={{ fontFamily: 'SF Pro Semi Bold' }}
                   className=" text-[30px] leading-[30px] mb-[24px]"
                 >
-                  LOYIHALAR
+                  {t('footer.links_title2')}
                 </h3>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Balance
+                {t('footer.links7')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Gorizont
+                {t('footer.links8')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Brooklyn
+                {t('footer.links9')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                  Toza havo
-                </a>
-                <a href="#" className="mb-[24px] hover:underline">
-                  Qo’yliq residence
-                </a>
-                <a href="#" className="mb-[24px] hover:underline">
-                  Yangi hayot
+                {t('footer.links10')}
                 </a>
               </div>
             </div>
@@ -83,17 +76,17 @@ const Footer = () => {
               style={{ fontFamily: 'Playfair Display' }}
               className="text-[#D18202] font-medium text-[30px] leading-[30px]"
             >
-              FIRST CLASS development
+              {t('footer.title')}
             </h3>
             <p className="text-[15px] mt-[10px] leading-[19px] w-full max-w-[270px]">
-              Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy
+            {t('footer.location')}
             </p>
 
             <p
               style={{ fontFamily: 'SF Pro Display Medium' }}
               className="text-[16px] text-[#AAAAAA] mt-[30px] leading-[19px]"
             >
-              CALL CENTER
+              {t('footer.call_center')}
             </p>
             <a
               style={{ fontFamily: 'SF Pro Display Bold' }}
@@ -173,10 +166,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col justify-center items-center bg-[#f7f7f7] pt-[20px] text-[#AAAAAA] text-[16px] leading-[19px]">
-          <p>©All rights reserved</p>
-          <p>© 2025 «COMPANIYA NOMI» MChJ </p>
-        </div>
+      </div>
+      <div className=" flex flex-col justify-center items-center bg-[#f7f7f7] pt-[20px] text-[#AAAAAA] text-[16px] leading-[19px] pb-[10px]">
+        <p>©All rights reserved</p>
+        <p>© 2025 «COMPANIYA NOMI» MChJ </p>
       </div>
     </footer>
   );

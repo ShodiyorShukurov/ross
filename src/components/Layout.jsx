@@ -22,7 +22,6 @@ const Layout = () => {
         <NewsSlider />
         <VideoPage />
         <Contact />
-        {/* <BuildingMap/> */}
       </main>
       <Footer />
     </>

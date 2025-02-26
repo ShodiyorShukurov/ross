@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import marker from '../../../assets/logo/Frame.png';
 
@@ -14,31 +14,18 @@ const center = {
   lng: 69.2401,
 };
 
-const locations = [
-  {
-    id: 1,
-    position: { lat: 41.295, lng: 69.2405 },
-    description: 'Luxury residence',
-    district: 'Chilonzor tumani',
-    foot: [
-      "5 min Bog'",
-      '5 min Supermarketgacha',
-      '5 min Poliklinikagacha',
-      '5 min Kafe va Restoranlargacha',
-    ],
-    car: [
-      "5 min Bolalar bog'chasigacha",
-      '5 min Maktabgacha',
-      '15 min Shahar Markazigacha',
-      '10 min Savdo Markazigacha',
-    ],
-  },
-];
+const BuildingMap = ({ module }) => {
+  const apiKey = 'AIzaSyDfe-B3bRqFV6yNU3t7rhMR4Nsm_kzsaf4';
 
-const BuildingMap = () => {
-  const [hoveredLocation, setHoveredLocation] = useState(null);
+  const markerIcon = {
+    url: marker,
+    scaledSize: null,
+  };
 
-  console.log(hoveredLocation);
+  const onLoad = (map) => {
+    markerIcon.scaledSize = new window.google.maps.Size(40, 40);
+  };
+
   return (
     <section className="py-[100px] bg-[#FFFFFF]">
       <div className="container">
@@ -46,12 +33,15 @@ const BuildingMap = () => {
           style={{ fontFamily: 'Playfair Display Bold' }}
           className="text-[36px] font-bold text-[#D18202] leading-[48px] uppercase"
         >
-          Joylashuvning qulayligi
+          {module?.map_page.title}
         </h2>
 
         <div className="pt-[36px] grid grid-cols-3 gap-6">
           <div className="flex flex-col gap-6">
-            <div style={{ fontFamily: 'SF Pro Display Medium' }}  className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]">
+            <div
+              style={{ fontFamily: 'SF Pro Display Medium' }}
+              className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]"
+            >
               <h3 className="text-[#C4A058] text-[26px] leading-[30px] mb-[30px] flex items-center">
                 <span className="mr-[8px]">
                   <svg
@@ -67,31 +57,24 @@ const BuildingMap = () => {
                     />
                   </svg>
                 </span>
-                Piyoda
+                {module?.map_page.foot}
               </h3>
-              {hoveredLocation ? (
-                <ul
-                  style={{ listStyle: 'inside' }}
-                  className="text-[20px] leading-[24px]"
-                >
-                  {hoveredLocation.foot.map((item) => (
-                    <li className="mb-[25px]">{item}</li>
-                  ))}
-                </ul>
-              ) : (
-                <ul
-                  style={{ listStyle: 'inside' }}
-                  className="text-[20px] leading-[24px]"
-                >
-                  <li className="mb-[25px]">5 min Bog'gacha</li>
-                  <li className="mb-[25px]">5 min Supermarketgacha</li>
-                  <li className="mb-[25px]">5 min Poliklinikagacha</li>
-                  <li>5 min Kafe va Restoranlargacha</li>
-                </ul>
-              )}
+              <ul
+                style={{ listStyle: 'inside' }}
+                className="text-[20px] leading-[24px]"
+              >
+                {module?.map_page.foot_location.map((item, index) => (
+                  <li key={index} className="mb-[25px]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div style={{ fontFamily: 'SF Pro Display Medium' }}  className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]">
+            <div
+              style={{ fontFamily: 'SF Pro Display Medium' }}
+              className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]"
+            >
               <h3 className="text-[#C4A058] text-[26px] leading-[30px] mb-[30px] flex items-center">
                 <span className="mr-[8px]">
                   <svg
@@ -107,33 +90,24 @@ const BuildingMap = () => {
                     />
                   </svg>
                 </span>
-                Avtomobilda
+                {module?.map_page.car}
               </h3>
-              {hoveredLocation ? (
-                <ul
-                  style={{ listStyle: 'inside' }}
-                  className="text-[20px] leading-[24px]"
-                >
-                  {hoveredLocation.car.map((item) => (
-                    <li className="mb-[25px]">{item}</li>
-                  ))}
-                </ul>
-              ) : (
-                <ul
-                  style={{ listStyle: 'inside' }}
-                  className="text-[20px] leading-[24px]"
-                >
-                  <li className="mb-[25px]">5 min Bog'gacha</li>
-                  <li className="mb-[25px]">5 min Supermarketgacha</li>
-                  <li className="mb-[25px]">5 min Poliklinikagacha</li>
-                  <li>5 min Kafe va Restoranlargacha</li>
-                </ul>
-              )}
+
+              <ul
+                style={{ listStyle: 'inside' }}
+                className="text-[20px] leading-[24px]"
+              >
+                {module?.map_page.car_location.map((item, index) => (
+                  <li key={index} className="mb-[25px]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          <div className="col-span-2 rounded-xl overflow-hidden">
-            <LoadScript googleMapsApiKey="AIzaSyDfe-B3bRqFV6yNU3t7rhMR4Nsm_kzsaf4">
+          <div className="col-span-2 rounded-xl overflow-hidden h-[500px]">
+            <LoadScript googleMapsApiKey={apiKey}>
               <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
@@ -152,21 +126,12 @@ const BuildingMap = () => {
                     },
                   ],
                 }}
+                onLoad={onLoad} // API yuklanganda ishlatiladi
               >
-                {locations.map((location) => (
-                  <Marker
-                    key={location.id}
-                    position={location.position}
-                    icon={{
-                      url: marker,
-                      scaledSize: window.google
-                        ? new window.google.maps.Size(40, 40)
-                        : undefined,
-                    }}
-                    onClick={() => setHoveredLocation(location)}
-                    // onMouseOut={() => setHoveredLocation(null)}
-                  />
-                ))}
+                <Marker
+                  position={module?.map_page.position || center} // Agar position bo'lmasa, default center
+                  icon={markerIcon}
+                />
               </GoogleMap>
             </LoadScript>
           </div>

@@ -4,6 +4,7 @@ import location from '../../../assets/logo/location.svg';
 import buttonIcon from '../../../assets/logo/right.svg';
 import { getProjectsData } from '../../../mock/projects';
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 
 const Project = () => {
   const { t } = useTranslation();
@@ -23,7 +24,7 @@ const Project = () => {
       : projects.filter((arr) => arr.type === selectedButton && arr.isActive);
 
   return (
-    <section className="bg-[#C4A0581F] pt-[50px] pb-[150px]">
+    <section className="bg-[#C4A0581F] pt-[50px] pb-[150px]" id='projects'>
       <div className="container">
         <h2
           style={{ fontFamily: 'Playfair Display Black' }}
@@ -108,10 +109,10 @@ const Project = () => {
                   </p>
 
                   {item.isActive ? (
-                    <motion.button
-                      whileHover={{ scale: 1.05, backgroundColor: '#B66D02' }}
+                    <NavLink
                       transition={{ duration: 0.3 }}
-                      className="bg-[#D18202] text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer"
+                      className="bg-[#D18202] text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer w-fit"
+                      to={'/projects/' + item.id}
                     >
                       {t('project.card_button')}
                       <motion.span
@@ -126,7 +127,7 @@ const Project = () => {
                           height={20}
                         />
                       </motion.span>
-                    </motion.button>
+                    </NavLink>
                   ) : (
                     ''
                   )}

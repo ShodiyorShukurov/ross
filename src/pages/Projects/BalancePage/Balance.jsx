@@ -7,64 +7,50 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
-const images = [
-  'https://placehold.co/800x500',
-  'https://placehold.co/400x250',
-  'https://placehold.co/400x250',
-  'https://placehold.co/400x250',
-  'https://placehold.co/800x500',
-  'https://placehold.co/800x500',
-  'https://placehold.co/800x500',
-];
-
-const GallerySection = () => {
+const GallerySection = ({ module }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  // Modal yopilganda thumbsSwiper-ni reset qilish
   useEffect(() => {
     if (!isOpen) {
       setThumbsSwiper(null);
     }
   }, [isOpen]);
 
+
   return (
-    <section className="py-[50px]">
-      <div className="container">
+    <section className="py-12 md:py-[50px]">
+      <div className="container mx-auto px-4">
         <h2
           style={{ fontFamily: 'Playfair Display Bold' }}
-          className="text-[50px] font-bold text-[#D18202] leading-[100px]"
+          className="text-3xl md:text-[50px] font-bold text-[#D18202] leading-tight md:leading-[100px]"
         >
-          Balance
+          {module?.image_page.title}
         </h2>
         <p
           style={{ fontFamily: 'SF Pro Display Light' }}
-          className="text-[20px]  mb-6 w-full max-w-[850px]"
+          className="text-base md:text-[20px] mb-6 max-w-full md:max-w-[850px]"
         >
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters.
+         {module?.image_page.desc}
         </p>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div
-            className="col-span-2 h-[500px] cursor-pointer"
+            className="md:col-span-2 cursor-pointer"
             onClick={() => setIsOpen(true)}
           >
             <img
-              src={images[0]}
+              src={module?.image_page.images[0]}
               alt="Main Image"
-              className="w-full rounded-xl object-cover"
-              height={500}
+              className="w-full h-auto max-h-[650px] rounded-xl object-cover"
             />
           </div>
 
           <div className="flex flex-col gap-2">
             <img
-              src={images[1]}
+              src={module?.image_page.images[1]}
               alt="Thumbnail 1"
-              className="w-full h-[200px] rounded-xl cursor-pointer"
+              className="w-full h-auto max-h-[320px] rounded-xl cursor-pointer object-cover"
               onClick={() => setIsOpen(true)}
             />
 
@@ -73,17 +59,19 @@ const GallerySection = () => {
               onClick={() => setIsOpen(true)}
             >
               <img
-                src={images[3]}
+                src={module?.image_page.images[2]}
                 alt="More Images"
-                className="w-full h-[200px] rounded-xl "
+                className="w-full h-auto max-h-[320px] rounded-xl object-cover"
               />
               <div className="absolute inset-0 bg-black/50 flex justify-center items-center rounded-xl">
-                <span className="text-white text-xl font-semibold">+12</span>
+                <span className="text-white text-lg md:text-xl font-semibold">
+                  +{module?.image_page.images.slice(3).length}
+                </span>
               </div>
             </div>
           </div>
         </div>
-    
+
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -93,14 +81,13 @@ const GallerySection = () => {
               exit={{ opacity: 0 }}
             >
               <motion.div
-                className="bg-transparent rounded-lg max-w-[90%] max-h-[90vh] relative"
+                className="bg-transparent rounded-lg w-full max-w-[90vw] max-h-[90vh] relative"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.8 }}
               >
-                {/* Close Button */}
                 <button
-                  className="absolute top-4 right-4 text-white text-3xl cursor-pointer z-50"
+                  className="absolute top-4 right-4 text-white text-2xl md:text-3xl cursor-pointer z-50"
                   onClick={() => setIsOpen(false)}
                 >
                   ✕
@@ -117,13 +104,13 @@ const GallerySection = () => {
                   navigation={true}
                   thumbs={{ swiper: thumbsSwiper }}
                   modules={[FreeMode, Navigation, Thumbs]}
-                  className="w-full h-[70vh] flex items-center justify-center"
+                  className="w-full h-[60vh] md:h-[70vh] flex items-center justify-center"
                 >
-                  {images.map((img, index) => (
+                  {module?.image_page.images.map((img, index) => (
                     <SwiperSlide key={index}>
                       <img
                         src={img}
-                        className="w-full h-full max-h-[65vh] object-contain"
+                        className="w-full h-full max-h-[60vh] md:max-h-[65vh] object-contain"
                         alt={`Slide ${index}`}
                       />
                     </SwiperSlide>
@@ -135,17 +122,25 @@ const GallerySection = () => {
                   onSwiper={setThumbsSwiper}
                   loop={true}
                   spaceBetween={10}
-                  slidesPerView={10}
+                  slidesPerView={4}
                   freeMode={true}
                   watchSlidesProgress={true}
                   modules={[FreeMode, Navigation, Thumbs]}
                   className="w-full mt-4"
+                  breakpoints={{
+                    640: { slidesPerView: 6 },
+                    768: { slidesPerView: 8 },
+                    1024: { slidesPerView: 10 },
+                  }}
                 >
-                  {images.map((img, index) => (
-                    <SwiperSlide key={index} className="w-20 h-20">
+                  {module?.image_page.images.map((img, index) => (
+                    <SwiperSlide
+                      key={index}
+                      className="aspect-square w-16 h-16 md:w-20 md:h-20"
+                    >
                       <img
                         src={img}
-                        className="w-full h-full object-cover rounded-md cursor-pointer"
+                        className="w-full max-h-full object-cover rounded-md cursor-pointer"
                         alt={`Thumbnail ${index}`}
                       />
                     </SwiperSlide>
