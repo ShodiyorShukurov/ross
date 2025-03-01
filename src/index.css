@@ -177,3 +177,15 @@ a {
   text-decoration: none;
   background-size: 'contain';
 }
+
+@media (max-width: 1024px) {
+  .about-section {
+    background-size: 250px auto !important; 
+    background-position: right bottom !important; 
+  }
+}
+@media (max-width: 768px) {
+  .about-section {
+    background-size: 150px auto !important; 
+  }
+}
