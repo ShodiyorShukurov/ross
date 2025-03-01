@@ -20,8 +20,8 @@ const Layout = () => {
         {/* <ProjectMap /> */}
         <Partners />
         <NewsSlider />
-        {/* <VideoPage />
-        <Contact /> */}
+        <VideoPage />
+        <Contact />
       </main>
       {/* <Footer /> */}
     </>

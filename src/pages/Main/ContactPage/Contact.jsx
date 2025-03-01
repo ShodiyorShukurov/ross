@@ -61,34 +61,36 @@ const Contact = () => {
   };
 
   return (
-    <section className="mt-[100px]">
+    <section className="py-[60px] sm:py-[100px]">
       <div className="container">
         <div
-          className="flex justify-around bg-[#fff] pt-[50px]  pb-[70px] mb-[50px]"
+          className="grid grid-cols-1 lg:grid-cols-2 bg-[#fff] rounded-[16px]"
           style={{
             backgroundImage: `url(${bg})`,
             backgroundRepeat: 'no-repeat',
+            backgroundPosition: "top left",
+            backgroundSize: 'contain'
           }}
         >
-          <div>
+          <div className='px-[16px] pt-[32px] sm:px-[50px] sm:pt-[50px]'>
             <h3
               style={{ fontFamily: 'Playfair Display Bold' }}
-              className="text-[#D18202] font-bold text-[36px] leading-[47px] w-full max-w-[550px]"
+              className="text-[#D18202] font-bold text-[32px] sm:text-[36px] leading-[42px] sm:leading-[47px] w-full max-w-[550px]"
             >
                {t('contact_page.title')}
             </h3>
             <p
               style={{ fontFamily: 'SF Pro Display Light' }}
-              className=" font-light text-[20px] leading-[24px] w-full max-w-[500px] mt-[30px]"
+              className=" text-[16px] sm:text-[20px] leading-[24px] w-full max-w-[500px] mt-[10px] sm:mt-[20px] md:mt-[30px]"
             >
               {t('contact_page.subtitle')}
             </p>
           </div>
 
-          <div>
+          <div className='px-[16px] py-[32px] sm:p-[50px]'>
             <form
               onSubmit={handleSubmit}
-              className="w-full min-w-[620px]"
+              className="w-full "
               style={{ fontFamily: 'SF Pro Display Medium' }}
             >
               <input
@@ -127,10 +129,10 @@ const Contact = () => {
 
               <button
                 style={{ fontFamily: 'SF Pro Display Regular' }}
-                className="bg-[#D18202] text-white text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer"
+                className="bg-[#D18202] text-white text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer w-full sm:w-fit"
               >
                 Malumotlarni yuborish
-                <span className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-[20px]">
+                <span className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-auto sm:ml-[20px]">
                   <img
                     src={buttonIcon}
                     alt="buttonIcon"
