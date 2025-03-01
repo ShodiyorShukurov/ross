@@ -18,7 +18,7 @@ const NewsSlider = () => {
         <div className="flex justify-between items-center px-4">
           <h2
             style={{ fontFamily: 'Playfair Display Bold' }}
-            className="text-[#D18202] text-[56px] font-bold"
+            className="text-[#D18202] text-[32px] sm:text-[56px] font-bold"
           >
             {t('news.title')}
           </h2>
@@ -99,8 +99,8 @@ const NewsSlider = () => {
                   alt={item.title}
                   className="w-full h-48 object-cover"
                 />
-                <div>
-                  <h3 className="text-[24px] leading-[28px] mt-[16px]">
+                <div className='p-[5px]'>
+                  <h3 className="text-[16px] sm:text-[24px] leading-[28px] mt-[10px] sm:mt-[16px]">
                     {item.title}
                   </h3>
                   <p className="flex items-center gap-2 text-gray-500 text-[16px] mt-4">

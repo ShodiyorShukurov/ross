@@ -16,11 +16,11 @@ const Layout = () => {
       <Hero />
       <main>
         <About />
-        {/* <Project />
-        <ProjectMap />
+        {/* <Project /> */}
+        {/* <ProjectMap /> */}
         <Partners />
         <NewsSlider />
-        <VideoPage />
+        {/* <VideoPage />
         <Contact /> */}
       </main>
       {/* <Footer /> */}

@@ -20,20 +20,20 @@ const Partners = () => {
   ];
 
   return (
-    <section className="py-[160px]">
+    <section className="py-[60px] sm:py-[100px] md:py-[160px]">
       <div className="container">
         <h2
           style={{ fontFamily: 'Playfair Display Bold' }}
-          className="text-[#D18202] font-bold text-[56px] leading-[74px]"
+          className="text-[#D18202] font-bold text-[32px] sm:text-[56px] leading-[74px]"
         >
           {t('partners.title')}
         </h2>
 
-        <div className="flex flex-wrap justify-between">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
           {partnersArr.map((item) => (
             <div
               key={item.id}
-              className="p-[30px] flex items-center cursor-pointer transition-all duration-300 w-[15%] grayscale hover:grayscale-0 hover:scale-110 hover:opacity-100 opacity-70"
+              className="flex items-center cursor-pointer transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110 hover:opacity-100 opacity-70"
             >
               <img
                 src={item.img}
