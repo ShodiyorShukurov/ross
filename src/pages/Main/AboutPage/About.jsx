@@ -23,7 +23,7 @@ const About = () => {
   ];
 
   return (
-    <section className="py-[100px]">
+    <section className="py-[60px] sm:py-[100px]">
       <div className="container">
         <div
           className="bg-[#C4A0581F] px-[20px] mt:px-[45px] pt-[20px] md:pt-[45px] pb-[200px] md:pb-[75px] rounded-[16px] bg-no-repeat about-section"

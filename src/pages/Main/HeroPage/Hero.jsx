@@ -90,7 +90,7 @@ export default function Hero() {
         {/* DESKTOP MENU  */}
         <nav className="flex justify-between items-center bg-transparent text-white relative z-50">
           <button
-            className="flex gap-2.5 text-[16px] font-medium cursor-pointer"
+            className="flex 2xl:hidden gap-2.5 text-[16px] font-medium cursor-pointer"
             onClick={() => setShowMobileMenu((prev) => !prev)}
           >
             <img src={burgerMenu} alt="burgerMenu" />
@@ -133,10 +133,10 @@ export default function Hero() {
             <div className="flex items-center 2xl:space-x-4">
               <a
                 href="tel:+998911777222"
-                className="flex items-center font-medium text-[16px] sm:text-[18px]"
+                className="hidden 2xl:flex items-center font-medium text-[16px] sm:text-[18px]"
               >
-                <div className="w-[27px] h-[27px] sm:w-[35px] sm:h-[35px] md:w-[50px] md:h-[50px] rounded-full border-[2px] flex items-center justify-center">
-                  <img className='w-[12px] h-[12px] sm:w-[15px] sm:h-[15px] md:w-[22px] md:h-[22px] ' src={phone} alt="phone icon"/>
+                <div className="w-[50px] h-[50px] rounded-full border-[2px] flex items-center justify-center">
+                  <img className='w-[22px] h-[22px]' src={phone} alt="phone icon"/>
                 </div>
                 <span
                   style={{ fontFamily: 'SF Pro Display Medium' }}
@@ -149,10 +149,11 @@ export default function Hero() {
                 {t('navbar.nav_button')}
               </button>
             </div>
-            <div className="hidden 2xl:block relative z-50">
+
+            <div className="relative z-50">
               <button
                 style={{ fontFamily: 'SF Pro Display Medium' }}
-                className="flex leading-[29px] font-medium items-center gap-[9px] cursor-pointer transition-all duration-700  border border-[#FFFFFF33] px-[14px] py-[5px] rounded-[48px] text-white"
+                className="flex text-[16px] md:text-[18px] leading-[29px] font-medium items-center gap-[9px] cursor-pointer transition-all duration-700 border border-[#FFFFFF33] px-[10px] md:px-[14px] py-[5px] rounded-[48px] text-white"
                 onClick={() => {
                   setIsDropdownOpen(!isDropdownOpen);
                 }}
@@ -294,62 +295,6 @@ export default function Hero() {
               {t('navbar.nav_button')}
             </button>
 
-            <div className="flex items-center justify-center mt-[32px]">
-              <div className="relative z-50 ">
-                <button
-                  style={{ fontFamily: 'SF Pro Display Medium' }}
-                  className="flex leading-[29px] font-medium items-center gap-[9px] cursor-pointer transition-all duration-700  border border-[#FFFFFF33] px-[14px] py-[5px] rounded-[48px] text-white"
-                  onClick={() => {
-                    setIsDropdownOpen(!isDropdownOpen);
-                  }}
-                >
-                  <span>{language.toUpperCase()}</span>
-                  <span
-                    className={`${isDropdownOpen ? 'rotate-180' : 'rotate-0'}`}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M12.0001 13.1714L16.9499 8.22168L18.3641 9.63589L12.0001 15.9999L5.63623 9.63589L7.05044 8.22168L12.0001 13.1714Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </span>
-                </button>
-
-                {isDropdownOpen && (
-                  <ul
-                    style={{ fontFamily: 'SF Pro Display Medium' }}
-                    className="absolute top-full left-0 mt-[2px]  bg-transparent border border-[#FFFFFF33] text-white rounded-[20px] shadow-md w-22 font-medium"
-                  >
-                    {['Uz', 'Ru', 'En'].map((lang, i) => (
-                      <li
-                        key={lang}
-                        onClick={() => {
-                          setLanguage(lang);
-                          changeValues(lang.toLowerCase());
-                          setIsDropdownOpen(false);
-                        }}
-                        className={`px-4 py-2 hover:bg-[#FFFFFF55] cursor-pointer ${
-                          i === 0
-                            ? 'rounded-t-[20px]'
-                            : i === 2
-                            ? 'rounded-b-[20px]'
-                            : ''
-                        }`}
-                      >
-                        {lang.toUpperCase()}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
 
             <p className="text-[#FFFFFFB2] text-[18px] mt-[38px] text-center">
               Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy
