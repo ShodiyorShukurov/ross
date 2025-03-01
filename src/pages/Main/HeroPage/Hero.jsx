@@ -210,7 +210,7 @@ export default function Hero() {
         {showMobileMenu && (
           <nav
             ref={mobileMenuRef}
-            className="fixed top-0 left-0 block 2xl:hidden bg-[#141414] w-full h-[100%] z-50 px-4 sm:px-6"
+            className="fixed top-0 left-0 block 2xl:hidden bg-[#141414] w-full h-full z-50 px-4 sm:px-6"
           >
             <button
               className="absolute top-4 left-4 cursor-pointer"
