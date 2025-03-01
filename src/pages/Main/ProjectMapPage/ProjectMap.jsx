@@ -70,10 +70,7 @@ const ProjectMap = () => {
           options={{
             disableDefaultUI: true,
             styles: [
-              {
-                featureType: 'poi.business',
-                stylers: [{ visibility: 'off' }],
-              },
+              { featureType: 'poi.business', stylers: [{ visibility: 'off' }] },
               {
                 featureType: 'transit.station',
                 elementType: 'labels.icon',
@@ -92,8 +89,17 @@ const ProjectMap = () => {
                   ? new window.google.maps.Size(40, 40)
                   : undefined,
               }}
-              onMouseOver={() => setHoveredLocation(location)}
-              onMouseOut={() => setHoveredLocation(null)}
+              animation={
+                hoveredLocation?.id === location.id
+                  ? window.google.maps.Animation.BOUNCE
+                  : null
+              }
+              onMouseOver={() => {
+                if (window.innerWidth > 768) setHoveredLocation(location); // Desktop: hover
+              }}
+              onClick={() => {
+                if (window.innerWidth <= 768) setHoveredLocation(location); // Mobile: click
+              }}
             />
           ))}
 
@@ -106,20 +112,21 @@ const ProjectMap = () => {
               options={{
                 disableAutoPan: true,
                 pixelOffset: new window.google.maps.Size(0, -30),
-                disableCloseButton: true,
+                disableCloseButton: false, 
               }}
+              onCloseClick={() => setHoveredLocation(null)}
             >
               <div
                 style={{
-                  backgroundImage: ` url(${hoveredLocation.image})`,
+                  backgroundImage: `url(${hoveredLocation.image})`,
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat',
                 }}
-                className="bg-white p-[5px] rounded-[12px] w-[250px] transform h-[200px] overflow-hidden"
+                className="bg-white p-3 rounded-xl w-[250px] h-[200px] overflow-hidden relative"
               >
-                <div className="bg-[#00000055] absolute bottom-3 left-3 p-[12px] rounded-[12px]">
-                  <h3 className="text-[#D18202] font-bold text-lg mt-2">
+                <div className="bg-black/50 absolute bottom-3 left-3 p-3 rounded-lg">
+                  <h3 className="text-[#D18202] font-bold text-lg">
                     {hoveredLocation.title}
                   </h3>
                   <p className="text-gray-700">{hoveredLocation.description}</p>
