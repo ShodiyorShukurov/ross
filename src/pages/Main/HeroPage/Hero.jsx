@@ -210,7 +210,7 @@ export default function Hero() {
         {showMobileMenu && (
           <nav
             ref={mobileMenuRef}
-            className="fixed top-0 left-0 block 2xl :hidden bg-[#141414] w-full h-screen z-50 px-4 sm:px-6"
+            className="fixed top-0 left-0 block 2xl:hidden bg-[#141414] w-full h-[100%] z-50 px-4 sm:px-6"
           >
             <button
               className="absolute top-4 left-4 cursor-pointer"
@@ -219,7 +219,7 @@ export default function Hero() {
               <img src={close} alt="close" />
             </button>
 
-            <div className="relative w-[100px] h-[100px] mx-auto">
+            <div className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px] mx-auto">
               <img
                 src={logobg}
                 alt="logobg"
@@ -232,7 +232,7 @@ export default function Hero() {
               />
             </div>
 
-            <ul className="flex flex-col items-center justify-center space-y-6 mt-[100px] text-[18px] font-semibold text-white ">
+            <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[18px] font-semibold text-white ">
               <li className="w-full text-center">
                 <NavLink
                   to="/"
