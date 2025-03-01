@@ -129,7 +129,7 @@ export default function Hero() {
             />
           </div>
 
-          <div className="flex items-center gap-[40px]">
+          <div className="flex items-center 2xl:gap-[40px]">
             <div className="flex items-center 2xl:space-x-4">
               <a
                 href="tel:+998911777222"

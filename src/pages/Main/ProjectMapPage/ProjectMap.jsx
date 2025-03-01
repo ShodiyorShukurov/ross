@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next';
 const containerStyle = {
   width: '100%',
   height: '700px',
-  marginTop: '40px',
 };
 
 const center = {
@@ -47,17 +46,17 @@ const ProjectMap = () => {
   ];
 
   return (
-    <section className="pt-[140px] relative">
+    <section className="pt-[80px] md:pt-[140px] relative">
       <div className="container">
         <h2
           style={{ fontFamily: 'Playfair Display Bold' }}
-          className="text-[#D18202] font-bold text-[56px] leading-[74px] text-center"
+          className="text-[#D18202] font-bold text-[32px] sm:text-[40px] md:text-[56px] sm:leading-[53px] md:leading-[74px] text-center"
         >
           {t('project_map.title')}
         </h2>
         <p
           style={{ fontFamily: 'SF Pro Medium' }}
-          className="font-light text-[20px] leading-[20px] text-center mt-[10px]"
+          className="font-light text-[16px] md:text-[20px] leading-[20px] text-center mt-[10px] mb-[24px] md:mb-[40px]"
         >
           {t('project_map.subtitle')}
         </p>
