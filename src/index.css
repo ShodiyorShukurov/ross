@@ -134,7 +134,6 @@ img {
 
 .container {
   width: 100%;
-  max-width: 90%;
   margin-right: auto;
   margin-left: auto;
   padding-right: 16px;
@@ -151,6 +150,7 @@ img {
 /* Laptop (≥ 1024px) */
 @media (min-width: 1024px) {
   .container {
+    max-width: 90%;
     padding-right: 32px;
     padding-left: 32px;
   }
@@ -159,6 +159,7 @@ img {
 /* Katta ekran (≥ 1280px) */
 @media (min-width: 1280px) {
   .container {
+    max-width: 90%;
     padding-right: 48px;
     padding-left: 48px;
   }

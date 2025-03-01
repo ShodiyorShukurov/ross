@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import bg1 from '../../../assets/images/hero-bg.png';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
@@ -6,13 +6,13 @@ import logo from '../../../assets/logo/logo.png';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-export default function Hero() {
+export default function Hero({ module }) {
   const savedLang = localStorage.getItem('lng') || 'uz';
   const [language, setLanguage] = useState(savedLang.toUpperCase());
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     i18n.changeLanguage(savedLang);
   }, [savedLang, i18n]);
 
@@ -46,7 +46,7 @@ export default function Hero() {
               <a href="#projects">{t('navbar.nav2')}</a>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <NavLink to="/news">{t('navbar.nav3')}</NavLink>
+              {t('navbar.nav3')}
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
               {t('navbar.nav4')}
@@ -146,20 +146,14 @@ export default function Hero() {
 
         <div className="absolute flex flex-col text-center items-center text-[#fff] left-1/2 transform -translate-x-1/2 bottom-20">
           <h1
-            className="text-[60px] leading-[70px] font-bold w-[100%] max-w-[700px]"
+            className="text-[80px] leading-[96px] font-bold w-[100%]"
             style={{ fontFamily: 'Playfair Display Bold' }}
           >
-            {t('vacancies_hero.title')}
+            Yangiliklar
           </h1>
-          <p className="text-[20px] mt-[13px] w-full max-w-[300px]">
-            {t('vacancies_hero.subtitle')}
+          <p className="text-[28px] mt-[16px] w-full leading-[33px]">
+            Kompaniyamiz dagi eng so’nggi yangiliklar bilan tanishing
           </p>
-          <a
-            className="mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]"
-            href="#vacansies"
-          >
-            {t('vacancies_hero.button_text')}
-          </a>
         </div>
       </div>
     </div>

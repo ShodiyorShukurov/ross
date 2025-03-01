@@ -46,7 +46,7 @@ export default function Hero({ module }) {
               <a href="#projects">{t('navbar.nav2')}</a>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              {t('navbar.nav3')}
+              <NavLink to="/news">{t('navbar.nav3')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
               {t('navbar.nav4')}
@@ -147,7 +147,7 @@ export default function Hero({ module }) {
         <ul className="absolute flex flex-col gap-[40px] text-[#fff] bottom-15">
           {module?.hero.desc.map((item) => (
             <li className="flex gap-[12px]" key={item.id}>
-               <span dangerouslySetInnerHTML={{ __html: item.img }} /> 
+              <span dangerouslySetInnerHTML={{ __html: item.img }} />
               <div className="w-full max-w-[160px]">
                 <h4
                   style={{ fontFamily: 'SF Pro Display SemiBold' }}

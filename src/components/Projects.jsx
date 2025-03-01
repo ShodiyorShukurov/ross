@@ -17,7 +17,7 @@ const Projects = () => {
 
   const changeIdVacansies = async (id) => {
     try {
-      const importedModule = await import(`../mock/${id}.js`);
+      const importedModule = await import(`../mock/project${id}.js`);
       setModule(() => importedModule.default);
     } catch (error) {
       console.error('JavaScript faylni yuklashda xatolik:', error);
