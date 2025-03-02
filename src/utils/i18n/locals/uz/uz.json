@@ -52,10 +52,13 @@
     "project_map": {
         "title": "Toshkent bo‘yicha Loyihalarimiz",
         "subtitle": "Shahar bo‘ylab o‘zingizga qulay joylashuvdagi loyihamizda istiqomat qiling",
+        "location1_subtitle": "Toza havo",
         "location1_title": "Luxury residence",
         "location1_desc": "Chilonzor tumani",
+        "location2_subtitle": "Toza havo",
         "location2_title": "Premium Apartments",
         "location2_desc": "Yunusobod tumani",
+        "location3_subtitle": "Toza havo",
         "location3_title": "Eco-friendly Homes",
         "location3_desc": "Mirzo Ulug’bek tumani"
     },
@@ -170,7 +173,7 @@
         "car_text3": "5 min Poliklinikagacha",
         "car_text4": "5 min Kafe va Restoranlargacha"
     },
-    "footer":{
+    "footer": {
         "links_title1": "INFO",
         "links1": "Biz haqimizda",
         "links2": "Yangiliklar",
@@ -185,6 +188,6 @@
         "links10": "Yangi hayot",
         "title": "FIRST CLASS development",
         "location": "Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy",
-        "call_center":"Call center"
+        "call_center": "Call center"
     }
 }

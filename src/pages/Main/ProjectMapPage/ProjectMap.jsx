@@ -6,6 +6,7 @@ import {
   InfoWindow,
 } from '@react-google-maps/api';
 import marker from '../../../assets/logo/Frame.png';
+import location from '../../../assets/logo/location.svg';
 import { useTranslation } from 'react-i18next';
 
 const containerStyle = {
@@ -25,6 +26,7 @@ const ProjectMap = () => {
     {
       id: 1,
       position: { lat: 41.295, lng: 69.2405 },
+      title: t('project_map.location1_subtitle'),
       description: t('project_map.location1_title'),
       district: t('project_map.location1_desc'),
       image: 'https://placehold.co/600x400',
@@ -32,6 +34,7 @@ const ProjectMap = () => {
     {
       id: 2,
       position: { lat: 41.3205, lng: 69.2256 },
+      title: t('project_map.location1_subtitle'),
       description: t('project_map.location2_title'),
       district: t('project_map.location2_desc'),
       image: 'https://placehold.co/600x400',
@@ -39,6 +42,7 @@ const ProjectMap = () => {
     {
       id: 3,
       position: { lat: 41.3101, lng: 69.2554 },
+      title: t('project_map.location1_subtitle'),
       description: t('project_map.location3_title'),
       district: t('project_map.location3_desc'),
       image: 'https://placehold.co/600x400',
@@ -112,7 +116,8 @@ const ProjectMap = () => {
               options={{
                 disableAutoPan: true,
                 pixelOffset: new window.google.maps.Size(0, -30),
-                disableCloseButton: false, 
+                disableCloseButton: false,
+                maxWidth: 600,
               }}
               onCloseClick={() => setHoveredLocation(null)}
             >
@@ -123,15 +128,37 @@ const ProjectMap = () => {
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat',
                 }}
-                className="bg-white p-3 rounded-xl w-[250px] h-[200px] overflow-hidden relative"
+                className="bg-white  rounded-xl w-[300px] sm:w-[500px] h-[200px] sm:h-[240px] overflow-hidden relative"
               >
-                <div className="bg-black/50 absolute bottom-3 left-3 p-3 rounded-lg">
+                <div className="bg-[#FFFFFFD9] absolute bottom-3 left-3 p-3 rounded-[12px]">
                   <h3 className="text-[#D18202] font-bold text-lg">
                     {hoveredLocation.title}
                   </h3>
-                  <p className="text-gray-700">{hoveredLocation.description}</p>
-                  <p className="text-gray-500 text-sm flex items-center mt-1">
-                    <span className="mr-2">📍</span> {hoveredLocation.district}
+                  <p
+                    style={{ fontFamily: 'SF Pro Regular' }}
+                    className="text-[#151515] text-[14px]"
+                  >
+                    {hoveredLocation.description}
+                  </p>
+                  <p
+                    style={{ fontFamily: 'SF Pro Regular' }}
+                    className="text-[#151515] text-sm flex items-center mt-[20px]"
+                  >
+                    <span className="mr-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"
+                          fill="#D18202"
+                        />
+                      </svg>
+                    </span>
+                    {hoveredLocation.district}
                   </p>
                 </div>
               </div>

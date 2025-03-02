@@ -23,7 +23,7 @@ const Layout = () => {
         <VideoPage />
         <Contact />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

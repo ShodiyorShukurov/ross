@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import nrg from '../../../assets/images/nrg.png';
 import BIgroup from '../../../assets/images/BIgroup.png';
 import alutex from '../../../assets/images/alutex.png';
@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 const Partners = () => {
   const { t } = useTranslation();
+  const [activeId, setActiveId] = useState(null); // Mobil uchun state
 
   const partnersArr = [
     { id: 1, img: nrg },
@@ -33,7 +34,10 @@ const Partners = () => {
           {partnersArr.map((item) => (
             <div
               key={item.id}
-              className="flex items-center cursor-pointer transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110 hover:opacity-100 opacity-70"
+              className={`flex items-center cursor-pointer transition-all duration-300 
+                ${activeId === item.id ? 'grayscale-0 scale-110 opacity-100' : 'grayscale opacity-70'} 
+                hover:grayscale-0 hover:scale-110 hover:opacity-100`}
+              onClick={() => setActiveId(item.id)} // Mobil qurilmalar uchun bosilganda aktiv bo‘lishi
             >
               <img
                 src={item.img}
