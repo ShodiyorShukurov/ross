@@ -1,20 +1,115 @@
 import React from 'react';
 import logo from '../assets/logo/footerLogo.svg';
+import accardion from '../assets/logo/accardion.svg';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen1, setIsOpen1] = React.useState(false);
+
   return (
     <footer className="bg-white text-black pt-[50px]">
       <div className="container">
-        <div className="flex flex-col md:flex-row justify-between  gap-10 pb-[80px]">
-          <div className="max-w-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-[80px] ">
+          <div className="max-w-sm mx-auto md:mx-0 lg:row-start-1 lg:order-1">
             <a href="/">
-              <img src={logo} alt="Company Logo" />
+              <img
+                className="w-[150px] lg:w-full h-[150px] lg:h-full"
+                src={logo}
+                alt="Company Logo"
+              />
             </a>
           </div>
 
-          <div className="text-[#151515] text-[20px]  font-semibold leading-[25px]">
+          <div>
+            <div
+              style={{ fontFamily: 'SF Pro Medium' }}
+              className="flex flex-col mx-auto md:hidden pb-2 order-2"
+            >
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-[32px] leading-[30px] flex justify-center items-center gap-2.5 w-full mb-2 "
+                style={{ fontFamily: 'SF Pro Semi Bold' }}
+              >
+                {t('footer.links_title1')}
+                <span
+                  className={`transition-transform duration-300 ${
+                    isOpen ? 'rotate-180' : 'rotate-0'
+                  }`}
+                >
+                  <img src={accardion} alt="accardion" />
+                </span>
+              </button>
+
+              <div
+                className={`overflow-hidden transition-max-height duration-500 ease-in-out mx-auto text-center ${
+                  isOpen ? 'max-h-[500px]' : 'max-h-0'
+                }`}
+              >
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links1')}
+                </a>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links2')}
+                </a>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links3')}
+                </a>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links4')}
+                </a>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links5')}
+                </a>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links6')}
+                </a>
+              </div>
+            </div>
+
+            <div
+              style={{ fontFamily: 'SF Pro Medium' }}
+              className="flex flex-col mx-auto md:hidden pb-2 order-2"
+            >
+              <button
+                onClick={() => setIsOpen1(!isOpen1)}
+                className="text-[30px] leading-[30px] flex justify-center items-center gap-2.5 w-full mb-2 "
+                style={{ fontFamily: 'SF Pro Semi Bold' }}
+              >
+                {t('footer.links_title2')}
+                <span
+                  className={`transition-transform duration-300 ${
+                    isOpen1 ? 'rotate-180' : 'rotate-0'
+                  }`}
+                >
+                  <img src={accardion} alt="accardion" />
+                </span>
+              </button>
+
+              {/* Agar isOpen true bo‘lsa, menyu ochiladi */}
+              <div
+                className={`overflow-hidden transition-max-height duration-500 ease-in-out mx-auto text-center ${
+                  isOpen1 ? 'max-h-[500px]' : 'max-h-0'
+                }`}
+              >
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links7')}
+                </a>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links8')}
+                </a>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links9')}
+                </a>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links10')}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden md:flex justify-center text-[#151515] text-[20px] font-semibold leading-[25px] lg:col-span-2 md:row-start-2 md:order-3 lg:order-2 lg:row-start-1">
             <div className="flex gap-[60px]">
               <div
                 style={{ fontFamily: 'SF Pro Medium' }}
@@ -27,24 +122,25 @@ const Footer = () => {
                   {t('footer.links_title1')}
                 </h3>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links1')}
+                  {t('footer.links1')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links2')}
+                  {t('footer.links2')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links3')}
+                  {t('footer.links3')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links4')}
+                  {t('footer.links4')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links5')}
+                  {t('footer.links5')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links6')}
+                  {t('footer.links6')}
                 </a>
               </div>
+
               <div
                 style={{ fontFamily: 'SF Pro  Medium' }}
                 className="flex flex-col"
@@ -56,30 +152,30 @@ const Footer = () => {
                   {t('footer.links_title2')}
                 </h3>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links7')}
+                  {t('footer.links7')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links8')}
+                  {t('footer.links8')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links9')}
+                  {t('footer.links9')}
                 </a>
                 <a href="#" className="mb-[24px] hover:underline">
-                {t('footer.links10')}
+                  {t('footer.links10')}
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col text-center md:text-left md:row-start-2 lg:row-start-1 order-3 md:order-2 lg:order-3">
             <h3
               style={{ fontFamily: 'Playfair Display' }}
               className="text-[#D18202] font-medium text-[30px] leading-[30px]"
             >
               {t('footer.title')}
             </h3>
-            <p className="text-[15px] mt-[10px] leading-[19px] w-full max-w-[270px]">
-            {t('footer.location')}
+            <p className="text-[15px] mt-[10px] leading-[19px] w-full md:max-w-[270px]">
+              {t('footer.location')}
             </p>
 
             <p
@@ -104,7 +200,7 @@ const Footer = () => {
             </a>
             <div
               style={{ fontFamily: 'SF Pro Medium' }}
-              className="flex flex-col gap-4 mt-[30px]"
+              className="flex flex-col gap-4 mt-[30px] mx-auto md:mx-0"
             >
               <a
                 className="flex gap-[10px] items-center text-[#151515] hover:text-[#D18202] transition-all duration-300"
