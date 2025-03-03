@@ -64,10 +64,10 @@ const FormPage = () => {
   return (
     <section className="py-[100px]" id="vacansiesPage">
       <div className="container">
-        <div className="bg-white p-[60px] rounded-[20px]">
+        <div className="bg-white p-[16px] md:p-[40px] lg:p-[60px] rounded-[20px]">
           <h2
             style={{ fontFamily: 'Playfair Display Bold' }}
-            className="text-[50px] font-bold text-[#D18202] mb-6"
+            className="text-[32px] md:text-[40px] lg:text-[50px] leading-[42px] md:leading-[53px] lg:leading-[74px] font-bold text-[#D18202] mb-6"
           >
             Ariza qoldirish
           </h2>
@@ -75,8 +75,8 @@ const FormPage = () => {
             onSubmit={handleSubmit}
             style={{ fontFamily: 'SF Pro Regular' }}
           >
-            <div className="grid grid-cols-4 gap-4">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="row-start-2 lg:row-start-1">
                 <input
                   type="text"
                   placeholder="Ism Familiya"
@@ -126,15 +126,15 @@ const FormPage = () => {
 
                 <button
                   type="submit"
-                  className="bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4"
+                  className="hidden lg:block bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 cursor-pointer"
                 >
                   Ariza topshirish
                 </button>
               </div>
 
-              <div>
+              <div className="row-start-3 md:row-start-2 lg:row-start-1">
                 {selectedFiles.length > 0 ? (
-                  <div className="flex justify-center items-center w-full h-[75%] p-4 border-2 border-dashed border-[#D9D9D9] rounded-lg cursor-pointer bg-[#F5F5F5]">
+                  <div className="flex justify-center items-center w-full h-[200px] md:h-[100%] lg:h-[75%] p-4 border-2 border-dashed border-[#D9D9D9] rounded-lg cursor-pointer bg-[#F5F5F5]">
                     <div className="mt-4 space-y-2 w-full">
                       {selectedFiles.map((item, index) => (
                         <div
@@ -169,7 +169,7 @@ const FormPage = () => {
                   </div>
                 ) : (
                   <label
-                    className={`flex justify-center items-center w-full h-[72%] p-4 border-2 border-dashed border-[#D9D9D9] rounded-lg cursor-pointer hover:bg-[#F5F5F5]`}
+                    className={`flex justify-center items-center w-full h-[200px] md:h-[100%] lg:h-[72%] p-4 border-2 border-dashed border-[#D9D9D9] rounded-lg cursor-pointer hover:bg-[#F5F5F5]`}
                   >
                     <input
                       type="file"
@@ -208,10 +208,17 @@ const FormPage = () => {
                 )}
               </div>
 
+              <button
+                type="submit"
+                className="block lg:hidden bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 row-start-4 md:row-start-3 col-span-2 cursor-pointer"
+              >
+                Ariza topshirish
+              </button>
+
               <div className="col-span-2">
                 <p
                   style={{ fontFamily: 'SF Pro Display Light' }}
-                  className="text-[20px] leading-[28px] "
+                  className="text-[16px] lg:text-[20px] leading-[19px] lg:leading-[28px] "
                 >
                   Bizning HR mutaxassislarimiz olingan barcha rezyumelarni
                   diqqat bilan ko'rib chiqadilar. Sizning ish tajribangiz,
