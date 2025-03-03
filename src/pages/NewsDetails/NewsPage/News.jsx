@@ -18,7 +18,7 @@ const NewsSlider = () => {
         <div className="flex justify-between items-center px-4">
           <h2
             style={{ fontFamily: 'Playfair Display Bold' }}
-            className="text-[#D18202] text-[56px] font-bold leading-[72px]"
+            className="text-[#D18202] text-[32px] md:text-[40px] lg:text-[56px] font-bold leading-[42px] md:leading-[53px] lg:leading-[72px]"
           >
             O‘xshash yangiliklar
           </h2>
