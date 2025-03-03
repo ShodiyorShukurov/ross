@@ -6,27 +6,27 @@ const Calculation = ({ module }) => {
 
   return (
     <section className="pb-12 md:pb-[100px]">
-      <div className="container mx-auto px-4">
+      <div className="container">
         <h2
           style={{ fontFamily: 'Playfair Display Bold' }}
-          className="text-3xl md:text-[56px] font-bold text-[#D18202] leading-tight md:leading-[100px]"
+          className="text-[32px] md:text-[56px] font-bold text-[#D18202] leading-tight md:leading-[100px]"
         >
           {module?.calculator_page.title}
         </h2>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-[16px] mt-6 md:mt-[50px]">
+        <div className="flex flex-col lg:flex-row items-start md:items-center gap-4 md:gap-[16px] mt-6 md:mt-[50px]">
           <div className="flex flex-col gap-4 w-full md:w-[40%]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <h4
                 style={{ fontFamily: 'SF Pro Display Bold' }}
-                className="text-xl sm:text-[32px] text-[#D18202] whitespace-nowrap"
+                className="text-xl sm:text-[32px] text-[#D18202] 2xl:whitespace-nowrap"
               >
                 {module?.calculator_page.subtitle}
               </h4>
 
               <select
                 style={{ fontFamily: 'SF Pro Bold' }}
-                className="w-full py-3 px-4 rounded-lg bg-white text-[#151515] text-sm sm:text-[16px] outline-none"
+                className="w-full py-3 px-4 rounded-lg bg-white text-[#151515] text-[16px] sm:text-[18px] outline-none h-fit"
               >
                 <option value={module?.calculator_page.block1}>
                   {module?.calculator_page.block1}
@@ -49,7 +49,7 @@ const Calculation = ({ module }) => {
                 <input
                   type="number"
                   placeholder={module?.calculator_page.area_input}
-                  className="w-full outline-none bg-transparent text-sm sm:text-[16px] text-gray-600 placeholder:text-gray-400"
+                  className="w-full outline-none bg-transparent text-[16px] sm:text-[18px] text-gray-600 placeholder:text-gray-400"
                   value={squareMeters}
                   onChange={(e) =>
                     setSquareMeters(
@@ -67,7 +67,7 @@ const Calculation = ({ module }) => {
 
               <select
                 style={{ fontFamily: 'SF Pro Regular' }}
-                className="w-full py-3 px-4 rounded-lg bg-white text-gray-700 text-sm sm:text-[16px] outline-none"
+                className="w-full py-3 px-4 rounded-lg bg-white text-gray-700 text-[16px] sm:text-[18px] outline-none"
               >
                 <option value={module?.calculator_page.floor1}>{module?.calculator_page.floor1}</option>
                 <option value={module?.calculator_page.floor2}>{module?.calculator_page.floor2}</option>
@@ -80,13 +80,13 @@ const Calculation = ({ module }) => {
             <div>
               <h4
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="text-[#D18202] font-bold text-xl md:text-[32px] leading-8 md:leading-[42px]"
+                className="text-[#D18202] font-bold text-[24px] md:text-[32px] leading-8 md:leading-[42px]"
               >
                {module?.hero.title}
               </h4>
               <p
                 style={{ fontFamily: 'SF Pro Display Medium' }}
-                className="text-sm md:text-[18px]"
+                className="text-[16px] md:text-[18px]"
               >
                 {module?.calculator_page.calculator_business}
               </p>
@@ -101,7 +101,7 @@ const Calculation = ({ module }) => {
               </p>
               <p
                 style={{ fontFamily: 'SF Pro Regular' }}
-                className="text-sm md:text-[18px] mt-2 md:mt-[10px]"
+                className="text-[16px] md:text-[18px] mt-[1px] md:mt-[10px]"
               >
                 {module?.calculator_page.area_sum_text}
               </p>
@@ -117,7 +117,7 @@ const Calculation = ({ module }) => {
               </p>
               <p
                 style={{ fontFamily: 'SF Pro Regular' }}
-                className="text-sm md:text-[18px] mt-2 md:mt-[10px]"
+                className="text-[16px] md:text-[18px] mt-[1px] md:mt-[10px]"
               >
                 {module?.calculator_page.total_amount}
               </p>

@@ -34,11 +34,11 @@ const Projects = () => {
 
   return (
     <>
-      {/* <Hero module={projectData} /> */}
+      <Hero module={projectData} />
       <main>
-        {/* <Balance module={projectData} /> */}
+        <Balance module={projectData} />
         <Fact module={projectData} />
-        {/* <Calculation module={projectData} /> */}
+        <Calculation module={projectData} />
         <BuildingMap module={projectData}/>
         <Contact />
         <Project />

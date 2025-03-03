@@ -62,6 +62,7 @@ const Fact = ({ module }) => {
             backgroundImage: `url(${factBg})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom right',
+            backgroundSize: 'contain'
           }}
         >
           {module?.fact_page.area_cards.map((item) => (
