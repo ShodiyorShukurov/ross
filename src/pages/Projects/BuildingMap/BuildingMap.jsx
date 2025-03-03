@@ -27,27 +27,26 @@ const BuildingMap = ({ module }) => {
   };
 
   return (
-    <section className="py-[100px] bg-[#FFFFFF]">
+    <section className="pt-[40px] lg:py-[100px] bg-[#FFFFFF]">
       <div className="container">
         <h2
           style={{ fontFamily: 'Playfair Display Bold' }}
-          className="text-[36px] font-bold text-[#D18202] leading-[48px] uppercase"
+          className="text-[32px] md:text-[36px] text-center lg:text-left font-bold text-[#D18202] leading-[42px] md:leading-[48px] uppercase w-full"
         >
           {module?.map_page.title}
         </h2>
 
-        <div className="pt-[36px] grid grid-cols-3 gap-6">
-          <div className="flex flex-col gap-6">
+        <div className="pt-[36px] grid grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-1 col-span-2 gap-6 lg:col-span-1">
             <div
               style={{ fontFamily: 'SF Pro Display Medium' }}
               className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]"
             >
-              <h3 className="text-[#C4A058] text-[26px] leading-[30px] mb-[30px] flex items-center">
+              <h3 className="text-[#C4A058] text-[18px] md:text-[20px] lg:text-[26px] leading-[24px] lg:leading-[30px] mb-[24px] lg:mb-[30px] flex items-center">
                 <span className="mr-[8px]">
                   <svg
+                    className="w-[24px] md:w-[30px]"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="36"
-                    height="36"
                     viewBox="0 0 36 36"
                     fill="none"
                   >
@@ -61,10 +60,10 @@ const BuildingMap = ({ module }) => {
               </h3>
               <ul
                 style={{ listStyle: 'inside' }}
-                className="text-[20px] leading-[24px]"
+                className="text-[14px] lg:text-[20px] leading-[16px] lg:leading-[24px]"
               >
                 {module?.map_page.foot_location.map((item, index) => (
-                  <li key={index} className="mb-[25px]">
+                  <li key={index} className="mb-[16px] lg:mb-[25px] last:mb-0">
                     {item}
                   </li>
                 ))}
@@ -75,12 +74,11 @@ const BuildingMap = ({ module }) => {
               style={{ fontFamily: 'SF Pro Display Medium' }}
               className="bg-[#C4A0581C] px-[24px] py-[20px] rounded-[12px]"
             >
-              <h3 className="text-[#C4A058] text-[26px] leading-[30px] mb-[30px] flex items-center">
+              <h3 className="text-[#C4A058] text-[18px] md:text-[20px] lg:text-[26px] leading-[24px] lg:leading-[30px] mb-[24px] lg:mb-[30px] flex items-center">
                 <span className="mr-[8px]">
                   <svg
+                  className='w-[24px] md:w-[30px]'
                     xmlns="http://www.w3.org/2000/svg"
-                    width="29"
-                    height="29"
                     viewBox="0 0 29 29"
                     fill="none"
                   >
@@ -95,10 +93,10 @@ const BuildingMap = ({ module }) => {
 
               <ul
                 style={{ listStyle: 'inside' }}
-                className="text-[20px] leading-[24px]"
+                className="text-[14px] lg:text-[20px] leading-[16px] lg:leading-[24px]"
               >
                 {module?.map_page.car_location.map((item, index) => (
-                  <li key={index} className="mb-[25px]">
+                  <li key={index} className="mb-[16px] lg:mb-[25px] last:mb-0">
                     {item}
                   </li>
                 ))}
@@ -106,7 +104,7 @@ const BuildingMap = ({ module }) => {
             </div>
           </div>
 
-          <div className="col-span-2 rounded-xl overflow-hidden h-[500px]">
+          <div className="col-span-2 rounded-[16px] lg:block min-h-[400px]">
             <LoadScript googleMapsApiKey={apiKey}>
               <GoogleMap
                 mapContainerStyle={containerStyle}
@@ -126,10 +124,10 @@ const BuildingMap = ({ module }) => {
                     },
                   ],
                 }}
-                onLoad={onLoad} // API yuklanganda ishlatiladi
+                onLoad={onLoad}
               >
                 <Marker
-                  position={module?.map_page.position || center} // Agar position bo'lmasa, default center
+                  position={module?.map_page.position || center}
                   icon={markerIcon}
                 />
               </GoogleMap>

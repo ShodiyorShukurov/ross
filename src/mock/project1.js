@@ -46,7 +46,7 @@ const id1 = (t) => ({
     },
     fact_page: {
       title: t('projects1.fact_title'),
-      desc: t('projects1.desc'),
+      desc: t('projects1.fact_desc'),
       fact_cards: [
         {
           id: 1,
@@ -87,7 +87,7 @@ const id1 = (t) => ({
           text: t('projects1.floor_title'),
         },
         {
-          id: 1,
+          id: 4,
           count: t('projects1.done_project'),
           text: t('projects1.done_project_title'),
         },
