@@ -13,14 +13,14 @@ const NewsSlider = () => {
   const newsData = getNewsData(t);
 
   return (
-    <section className="py-[100px]">
+    <section className="py-10">
       <div className="container">
-        <div className="flex justify-between items-center px-4">
+        <div className="flex justify-between items-center">
           <h2
             style={{ fontFamily: 'Playfair Display Bold' }}
-            className="text-[#D18202] text-[32px] md:text-[40px] lg:text-[56px] font-bold leading-[42px] md:leading-[53px] lg:leading-[72px]"
+            className="text-[#D18202] text-[32px] md:text-[40px] xl:text-[56px] font-bold"
           >
-            O‘xshash yangiliklar
+           {t('news.news_detail_title2')}
           </h2>
 
           <div className="flex space-x-2">
@@ -92,15 +92,15 @@ const NewsSlider = () => {
             <SwiperSlide key={item.id}>
               <div
                 style={{ fontFamily: 'SF Pro Display Medium' }}
-                className="overflow-hidden"
+                className="overflow-hidden cursor-pointer"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full max-h-[300px] md:max-h-[450px]"
                 />
-                <div>
-                  <h3 className="text-[24px] leading-[28px] mt-[16px]">
+                <div className='p-[5px]'>
+                  <h3 className="text-[16px] sm:text-[24px] leading-[28px] mt-[10px] sm:mt-[16px]">
                     {item.title}
                   </h3>
                   <p className="flex items-center gap-2 text-gray-500 text-[16px] mt-4">

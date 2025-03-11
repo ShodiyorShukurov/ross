@@ -85,7 +85,7 @@ export default function Hero({ module }) {
               <a href="#projects">{t('navbar.nav2')}</a>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <NavLink to="/news">{t('navbar.nav3')}</NavLink>
+              <a href="#news">{t('navbar.nav3')}</a>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
               {t('navbar.nav4')}
@@ -368,11 +368,11 @@ export default function Hero({ module }) {
             className="text-[40px] md:text-[60px] lg:text-[80px] leading-[53px] md:leading-[70px] lg:leading-[96px] font-bold w-full max-w-[1350px] "
             style={{ fontFamily: 'Playfair Display Bold' }}
           >
-            Do'stlaringiz bilan qo'shni bo'ling va bonusga ega bo'ling!
+            {t('news.news_detail_title1')}
           </h1>
           <button className="p-[12px] text-[14px] text-[#00000080] bg-white mt-[24px] w-fit leading-[16px] flex gap-2.5 rounded-[20px] items-center">
             <img src={calendar} alt="calendar" width={18} height={18} />
-            Sana: {module?.fullDate}
+            {t('news.sana')}: {module?.fullDate}
           </button>
         </div>
       </div>

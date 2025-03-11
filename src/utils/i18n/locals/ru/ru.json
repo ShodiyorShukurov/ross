@@ -12,7 +12,7 @@
         "subtitle": "Qurilish Toshkent shahrida joylashgan",
         "button_text": "Konsultatsiya olish"
     },
-    "vacancies_hero":{
+    "vacancies_hero": {
         "title": "First Class kompaniyasi bilan ozruyingizdagi ishni toping",
         "subtitle": "Siz kutgan ayni jamoa!",
         "button_text": "Jamoaga qo'shilish"
@@ -52,10 +52,13 @@
     "project_map": {
         "title": "Toshkent bo‘yicha Loyihalarimiz",
         "subtitle": "Shahar bo‘ylab o‘zingizga qulay joylashuvdagi loyihamizda istiqomat qiling",
+        "location1_subtitle": "Toza havo",
         "location1_title": "Luxury residence",
         "location1_desc": "Chilonzor tumani",
+        "location2_subtitle": "Toza havo",
         "location2_title": "Premium Apartments",
         "location2_desc": "Yunusobod tumani",
+        "location3_subtitle": "Toza havo",
         "location3_title": "Eco-friendly Homes",
         "location3_desc": "Mirzo Ulug’bek tumani"
     },
@@ -63,8 +66,21 @@
         "title": "Hamkorlarimiz"
     },
     "news": {
-        "title": "Yangiliklar",
-        "card1_title": "Do'stlaringiz bilan qo'shni bo'ling va bonusga ega bo'ling!"
+        "home_title": "Yangiliklar",
+        "news_page_title": "Yangiliklar",
+        "news_page_subtitle": "Kompaniyamiz dagi eng so’nggi yangiliklar bilan tanishing",
+        "news_page_body_title": "Yangiliklar",
+        "news_detail_title1": "Do'stlaringiz bilan qo'shni bo'ling va bonusga ega bo'ling!",
+        "news_detail_title2": "O‘xshash yangiliklar",
+        "sana": "Sana",
+        "all": "Barchasi",
+        "aksiya": "Aksiyalar",
+        "type_news": "Yangiliklar",
+        "card1_title": "Do'stlaringiz bilan qo'shni bo'ling va bonusga ega bo'ling!",
+        "card1_more_title": "“Orient Group” va “Golden House” kompaniyalari “Anhor” va “Navro‘z” bog‘lari atrofidagi vaziyatga izoh berdi",
+        "card1_info": "So‘nggi paytlarda ommaviy axborot vositalari va ijtimoiy tarmoqlarda “Anhor” va “Navro‘z” istirohat bog‘lari hududida ko‘p qavatli uylar qurilayotgani haqida xabarlar tarqaldi. Ular bilan bir qatorda, ushbu bog'lar hududida joylashgan loyihaning vizualizatsiyasi tarqatiladi. Orient Group Management rasmiy ravishda na Golden House ishlab chiqaruvchisi, na Orient guruhining boshqa korxonalari ushbu loyihani amalga oshirishni va ushbu saytda qurishni rejalashtirmaganligini rasman e'lon qiladi. Internetda aylanib yurgan renderlar 2024 yilda kompaniyani tark etgan Oltin uyning sobiq xodimining ichki taqdimotidan olingan. Bundan tashqari: ishchi guruhlar muntazam ravishda kompaniya va tashqi hamkorlar tomonidan ko'rib chiqish uchun turli loyihalarni taqdim etadilar, lekin ularning hammasi ham oxir-oqibat ma'qullanmaydi. Oltin uyga bunday niyatlarni bildirgan nashrlar bizni juda hayratda qoldirdi. Toshkentliklarning noroziligiga sabab bo‘lgan kompaniyaning ichki taqdimotidagi ma’lumotlarni kim va qanday maqsadda internetga joylaganini bilmaymiz. Afsuski, ushbu masalani yoritayotgan OAV vakillari va blogerlarning hech biri bizga rasmiy tushuntirish olish uchun murojaat qilmadi. Orient Group Management va Golden House jurnalistlar va bloggerlarni zarur hollarda kompaniya matbuot xizmatlariga birinchi qo‘ldan operativ ma’lumot olish uchun rasmiy so‘rovlar yuborishga taklif qiladi.",
+        "card1_full_day": "20 Fevral 2025",
+        "card1_day": "12/03/2025"
     },
     "video_page": {
         "title": "Bizning qurib bitkazilgan majmualarimiz haqida",
@@ -101,6 +117,19 @@
         "vacancies4_direction": "Dizayn, mahsulot va arxitektura boshqaruvi",
         "vacancies4_format": "Remote"
     },
+    "vacancies_form": {
+        "title": "Ariza qoldirish",
+        "desc": "Bizning HR mutaxassislarimiz olingan barcha rezyumelarni diqqat bilan ko'rib chiqadilar. Sizning ish tajribangiz, ko'nikma va malakalaringiz hozirda mavjud bo'sh ish o'rinlari talablariga javob bermasa ham, biz sizning rezyumeingizni albatta ma'lumotlar bazamizga qo'shamiz va mos narsa paydo bo'lganda siz bilan bog'lanamiz.",
+        "name": "Ism Familya",
+        "phone_number": "+998 99 123 45 67",
+        "email": "Email",
+        "button_text": "Ariza topshirish",
+        "file_input_text1": "Drag files here or click to select files",
+        "file_input_text2": "Attach as many files as you like, each file should not exceed 5mb",
+        "name_error": "Ism Familiya bo‘sh bo‘lishi mumkin emas!",
+        "phone_number_error1": "Telefon raqam kiritilishi shart!",
+        "phone_number_error2": "Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak"
+    },
     "projects1": {
         "title": "Balance",
         "subtitle": "Hayotingiz balansini saqlash uchun eng to‘g‘ri tanlov!",
@@ -114,7 +143,7 @@
         "business_center_location": "Apex biznes markazi uchun 5 daqiqalik yo’l",
         "sports_complex": "Sport kompleksi",
         "sports_complex_location": "Altius sport kompleksi uchun 15 daqiqalik yo’l",
-        "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "image_desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
         "fact_title": "Loyiha haqida 5 ta fakt",
         "fact_desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
         "fact_card1": "Yaxshi lokatsia",
@@ -128,6 +157,8 @@
         "home_count_title": "Uylar soni",
         "floor": "12",
         "floor_title": "Qavvatlar soni",
+        "done_project": "2026",
+        "done_project_title": "Qurilish bitkaziladigan sana",
         "calculator": "Kalkulyator",
         "calculator_title": "Binoni tanlang",
         "area_input": "Kvadraturani kiriting",
@@ -155,7 +186,7 @@
         "car_text3": "5 min Poliklinikagacha",
         "car_text4": "5 min Kafe va Restoranlargacha"
     },
-    "footer":{
+    "footer": {
         "links_title1": "INFO",
         "links1": "Biz haqimizda",
         "links2": "Yangiliklar",
@@ -170,6 +201,6 @@
         "links10": "Yangi hayot",
         "title": "FIRST CLASS development",
         "location": "Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy",
-        "call_center":"Call center"
+        "call_center": "Call center"
     }
 }

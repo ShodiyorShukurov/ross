@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import bg1 from '../../../assets/images/hero-bg.png';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
-import logo from '../../../assets/logo/logo.png';
+import logo from '../../../assets/logo/ross.svg';
 import burgerMenu from '../../../assets/logo/burgerMenu.svg';
 import close from '../../../assets/logo/close.svg';
 import { NavLink } from 'react-router-dom';

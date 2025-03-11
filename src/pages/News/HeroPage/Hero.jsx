@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import bg1 from '../../../assets/images/hero-bg.png';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
-import logo from '../../../assets/logo/logo.png';
+import logo from '../../../assets/logo/ross.svg';
 import burgerMenu from '../../../assets/logo/burgerMenu.svg';
 import close from '../../../assets/logo/close.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export default function Hero({ module }) {
@@ -16,6 +16,7 @@ export default function Hero({ module }) {
   const menuRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     i18n.changeLanguage(savedLang);
@@ -52,6 +53,17 @@ export default function Hero({ module }) {
     };
   }, [showMobileMenu, isDropdownOpen]);
 
+  const scrollToProjects = () => {
+    navigate('/');
+    setTimeout(() => {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+    setShowMobileMenu(false);
+  };
+
   return (
     <div
       className="relative min-h-screen bg-center transition-all duration-500"
@@ -81,7 +93,7 @@ export default function Hero({ module }) {
               <NavLink to="/">{t('navbar.nav1')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <a href="#projects">{t('navbar.nav2')}</a>
+              <span onClick={() => scrollToProjects()}>{t('navbar.nav2')}</span>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
               <NavLink to="/news">{t('navbar.nav3')}</NavLink>
@@ -213,57 +225,35 @@ export default function Hero({ module }) {
               />
             </div>
 
-            <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[18px] font-semibold text-white ">
+            <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[20px] font-semibold text-white ">
               <li className="w-full text-center">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
+                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
                   Kompaniya haqida
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink
-                  to="#projects"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
+                <span
+                  onClick={() => {
+                    setShowMobileMenu(false);
+                    scrollToProjects();
+                  }}
                 >
                   Loyihalar
-                </NavLink>
+                </span>
               </li>
               <li className="w-full text-center">
-                <NavLink
-                  to="/news"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
+                <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
                   Yangiliklar
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
+                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
                   Kontakt
                 </NavLink>
               </li>
-              <li className="w-fulltext-center">
+              <li className="w-full text-center">
                 <NavLink
                   to="/vacancies"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
                   onClick={() => setShowMobileMenu(false)}
                 >
                   Vakansiyalar
@@ -367,10 +357,10 @@ export default function Hero({ module }) {
             className="text-[40px] md:text-[60px] lg:text-[80px] leading-[53px] md:leading-[70px] lg:leading-[96px] font-bold w-[100%]"
             style={{ fontFamily: 'Playfair Display Bold' }}
           >
-            Yangiliklar
+            {t('news.news_page_title')}
           </h1>
           <p className="text-[20px] md:text-[24px] lg:text-[28px] mt-[16px] w-full leading-[23px] md:leading-[33px]">
-            Kompaniyamiz dagi eng so’nggi yangiliklar bilan tanishing
+          {t('news.news_page_subtitle')}
           </p>
         </div>
       </div>

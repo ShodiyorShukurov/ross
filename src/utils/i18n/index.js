@@ -18,7 +18,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'uz',
+  lng: localStorage.getItem('lng') ? localStorage.getItem('lng') : 'uz',
   interpolation: {
     escapeValue: false,
   },

@@ -4,7 +4,7 @@ import bg2 from '../../../assets/images/hero-bg.png';
 import bg3 from '../../../assets/images/about-bg.png';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
-import logo from '../../../assets/logo/logo.png';
+import logo from '../../../assets/logo/ross.svg';
 import carouselItem from '../../../assets/logo/carousel item.svg';
 import burgerMenu from '../../../assets/logo/burgerMenu.svg';
 import close from '../../../assets/logo/close.svg';
@@ -125,7 +125,7 @@ export default function Hero() {
             <img
               src={logo}
               alt="Logo"
-              className="absolute inset-0 w-[90px] h-[90px] mx-auto mt-[5px]"
+              className="absolute inset-0 w-[120px] h-[90px] mx-auto mt-[5px]"
             />
           </div>
 
@@ -136,7 +136,11 @@ export default function Hero() {
                 className="hidden 2xl:flex items-center font-medium text-[16px] sm:text-[18px]"
               >
                 <div className="w-[50px] h-[50px] rounded-full border-[2px] flex items-center justify-center">
-                  <img className='w-[22px] h-[22px]' src={phone} alt="phone icon"/>
+                  <img
+                    className="w-[22px] h-[22px]"
+                    src={phone}
+                    alt="phone icon"
+                  />
                 </div>
                 <span
                   style={{ fontFamily: 'SF Pro Display Medium' }}
@@ -233,57 +237,35 @@ export default function Hero() {
               />
             </div>
 
-            <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[18px] font-semibold text-white ">
+            <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[20px] font-semibold text-white ">
               <li className="w-full text-center">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
+                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
                   Kompaniya haqida
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink
-                  to="#projects"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
+                <a
+                href='#projects'
+                  onClick={() => {
+                    setShowMobileMenu(false);
+                  }}
                 >
                   Loyihalar
-                </NavLink>
+                </a>
               </li>
               <li className="w-full text-center">
-                <NavLink
-                  to="/news"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
+                <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
                   Yangiliklar
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
+                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
                   Kontakt
                 </NavLink>
               </li>
-              <li className="w-fulltext-center">
+              <li className="w-full text-center">
                 <NavLink
                   to="/vacancies"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
                   onClick={() => setShowMobileMenu(false)}
                 >
                   Vakansiyalar
@@ -294,7 +276,6 @@ export default function Hero() {
             <button className="bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer mx-auto block mt-[32px]">
               {t('navbar.nav_button')}
             </button>
-
 
             <p className="text-[#FFFFFFB2] text-[18px] mt-[38px] text-center">
               Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy

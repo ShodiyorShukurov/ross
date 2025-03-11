@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo/footerLogo.svg';
+import logo from '../assets/logo/ross.svg';
 import accardion from '../assets/logo/accardion.svg';
 import { useTranslation } from 'react-i18next';
 

@@ -91,7 +91,7 @@ const NewsPages = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full max-h-[200px] md:h-48 object-cover rounded-[16px]"
+                  className="w-full max-h-[200px] md:max-h-[450px] rounded-[16px]"
                 />
                 <div className="p-[5px]">
                   <h3 className="text-[24px] leading-[28px] mt-[16px]">
