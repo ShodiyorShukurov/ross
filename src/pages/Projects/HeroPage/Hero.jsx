@@ -91,7 +91,10 @@ export default function Hero({ module }) {
             <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
 
-          <div className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px]">
+          <a
+            href="/"
+            className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px]"
+          >
             <img
               src={logobg}
               alt="logobg"
@@ -102,7 +105,7 @@ export default function Hero({ module }) {
               alt="Logo"
               className="absolute inset-0 w-[90px] h-[90px] mx-auto mt-[5px]"
             />
-          </div>
+          </a>
 
           <div className="flex items-center 2xl:gap-[40px]">
             <div className="flex items-center 2xl:space-x-4">
@@ -212,60 +215,38 @@ export default function Hero({ module }) {
               />
             </div>
 
-            <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[18px] font-semibold text-white ">
+            <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[20px] font-semibold text-white ">
               <li className="w-full text-center">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
-                  Kompaniya haqida
+                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
+                  {t('navbar.nav1')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink
-                  to="#projects"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
+                <a
+                  href="#projects"
+                  onClick={() => {
+                    setShowMobileMenu(false);
+                  }}
                 >
-                  Loyihalar
+                  {t('navbar.nav2')}
+                </a>
+              </li>
+              <li className="w-full text-center">
+                <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
+                  {t('navbar.nav3')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink
-                  to="/news"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
-                  Yangiliklar
-                </NavLink>
-              </li>
-              <li className="w-full text-center">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
-                  onClick={() => setShowMobileMenu(false)}
-                >
+                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
                   Kontakt
                 </NavLink>
               </li>
-              <li className="w-fulltext-center">
+              <li className="w-full text-center">
                 <NavLink
                   to="/vacancies"
-                  className={({ isActive }) =>
-                    isActive ? '' : 'hover:text-gray-400 transition text-[21px]'
-                  }
                   onClick={() => setShowMobileMenu(false)}
                 >
-                  Vakansiyalar
+                  {t('navbar.nav4')}
                 </NavLink>
               </li>
             </ul>
@@ -275,11 +256,11 @@ export default function Hero({ module }) {
             </button>
 
             <p className="text-[#FFFFFFB2] text-[18px] mt-[38px] text-center">
-              Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy
+              {t('footer.location')}
             </p>
 
             <h5 className="text-[#AAAAAA] text-[18px] mt-[16px] text-center uppercase">
-              Call center
+              {t('footer.call_center')}
             </h5>
 
             <a
@@ -363,7 +344,10 @@ export default function Hero({ module }) {
 
         <ul className="absolute grid grid-cols-2  left-1/2 lg:left-auto transform -translate-x-1/2  lg:translate-0 lg:grid-cols-1 gap-[24px] md:gap-[40px] text-[#fff] bottom-0 md:bottom-20 w-full p-[16px] md:p-0 md:w-auto">
           {module?.hero.desc.map((item) => (
-            <li className="flex flex-col justify-center lg:justify-baseline md:items-center lg:items-baseline md:text-center lg:text-left lg:flex-row gap-[12px]" key={item.id}>
+            <li
+              className="flex flex-col justify-center lg:justify-baseline md:items-center lg:items-baseline md:text-center lg:text-left lg:flex-row gap-[12px]"
+              key={item.id}
+            >
               <span dangerouslySetInnerHTML={{ __html: item.img }} />
               <div className="w-full max-w-[160px]">
                 <h4

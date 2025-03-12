@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Loader2, FileText, Trash2, Download } from 'lucide-react';
 import { getVacansies } from '../../../mock/vacansiesData';
-import useVacansies from '../../../hooks/UseVacansies';
 import { useTranslation } from 'react-i18next';
 
 const FormPage = () => {
@@ -11,14 +10,24 @@ const FormPage = () => {
     fullName: '',
     phone: '',
     email: '',
+    vacancy: '',
+    file: null,  
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({
+    fullName: '',
+    phone: '',
+    email: '',
+    vacancy: '', 
+    file: '',  
+  });
   const vacanciesData = getVacansies(t);
 
   const handleFileChange = (event) => {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       setSelectedFiles([{ file, loading: true }]);
+      setFormData((prev) => ({ ...prev, file }));
+      validateInput('file', file); 
 
       setTimeout(() => {
         setSelectedFiles([{ file, loading: false }]);
@@ -28,36 +37,70 @@ const FormPage = () => {
 
   const removeFile = (index) => {
     setSelectedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+    setFormData((prev) => ({ ...prev, file: null })); 
+    setErrors((prev) => ({ ...prev, file: '' })); 
   };
 
-  const validateForm = () => {
+  const validateInput = (name, value) => {
+    let error = '';
+
+    if (!value) {
+      error = t('contact_page.error');
+    } else {
+      if (name === 'fullName') {
+        if (value.length < 5) error = t('contact_page.name_error1');
+        else if (!/[A-Z]/.test(value)) error = t('contact_page.name_error2');
+        else if (!/[a-z]/.test(value)) error = t('contact_page.name_error3');
+      }
+
+      if (name === 'phone') {
+        const phoneRegex = /^\+998\d{9}$/;
+        if (!phoneRegex.test(value))
+          error = t('contact_page.phone_number_error');
+      }
+
+      if (name === 'email') {
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value))
+          error = t('vacancies_form.email_error');
+      }
+
+      if (name === 'vacancy') {
+        if (!vacanciesData.some((item) => item.id === value))
+          error = t('vacancies_form.select_error');
+      }
+
+      if (name === 'file') {
+        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        if (!allowedTypes.includes(value.type)) {
+          error = t('vacancies_form.file_error1');
+        } else if (value.size > 5 * 1024 * 1024) { 
+          error = t('vacancies_form.file_error2');
+        }
+      }
+    }
+
+    setErrors((prev) => ({ ...prev, [name]: error }));
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    validateInput(name, value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     let newErrors = {};
 
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Ism Familiya bo‘sh bo‘lishi mumkin emas!';
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Telefon raqam kiritilishi shart!';
-    } else if (!/^\+998\d{9}$/.test(formData.phone)) {
-      newErrors.phone =
-        'Telefon raqam +998 bilan boshlanishi va 13 ta raqamdan iborat bo‘lishi kerak!';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email kiritilishi shart!';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email noto‘g‘ri formatda!';
-    }
+    Object.keys(formData).forEach((key) => {
+      validateInput(key, formData[key]);
+      if (!formData[key] && key !== 'file') newErrors[key] = t('contact_page.error'); 
+    });
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      alert('Ariza muvaffaqiyatli yuborildi!');
+    if (!Object.values(newErrors).some((error) => error)) {
+      console.log('Form jo‘natildi:', formData);
     }
   };
 
@@ -69,7 +112,7 @@ const FormPage = () => {
             style={{ fontFamily: 'Playfair Display Bold' }}
             className="text-[32px] md:text-[40px] lg:text-[50px] leading-[42px] md:leading-[53px] lg:leading-[74px] font-bold text-[#D18202] mb-6"
           >
-            Ariza qoldirish
+            {t('vacancies_form.title')}
           </h2>
           <form
             onSubmit={handleSubmit}
@@ -79,11 +122,10 @@ const FormPage = () => {
               <div className="row-start-2 lg:row-start-1">
                 <input
                   type="text"
-                  placeholder="Ism Familiya"
+                  name="fullName"
+                  placeholder={t('vacancies_form.name')}
                   value={formData.fullName}
-                  onChange={(e) =>
-                    setFormData({ ...formData, fullName: e.target.value })
-                  }
+                  onChange={handleChange}
                   className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
                 />
                 {errors.fullName && (
@@ -91,12 +133,11 @@ const FormPage = () => {
                 )}
 
                 <input
-                  type="text"
-                  placeholder="+998 99 123 45 67"
+                  type="tel"
+                  name="phone"
+                  placeholder={t('vacancies_form.phone_number')}
                   value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
+                  onChange={handleChange}
                   className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
                 />
                 {errors.phone && (
@@ -105,30 +146,38 @@ const FormPage = () => {
 
                 <input
                   type="email"
-                  placeholder="Email"
+                  name="email"
+                  placeholder={t('vacancies_form.email')}
                   value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
+                  onChange={handleChange}
                   className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm">{errors.email}</p>
                 )}
 
-                <select className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]">
+                <select
+                  name="vacancy"
+                  value={formData.vacancy}
+                  onChange={handleChange}
+                  className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
+                >
+                  <option value="">{t('vacancies_form.select_placeholder')}</option>
                   {vacanciesData.map((item) => (
                     <option key={item.id} value={item.id}>
                       {item.title}
                     </option>
                   ))}
                 </select>
+                {errors.vacancy && (
+                  <p className="text-red-500 text-sm">{errors.vacancy}</p>
+                )}
 
                 <button
                   type="submit"
                   className="hidden lg:block bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 cursor-pointer"
                 >
-                  Ariza topshirish
+                  {t('vacancies_form.button_text')}
                 </button>
               </div>
 
@@ -198,13 +247,16 @@ const FormPage = () => {
                         </defs>
                       </svg>
                       <div>
-                        <p>Drag files here or click to select files</p>
+                        <p>{t('vacancies_form.file_input_text1')}</p>
                         <p className="text-xs text-gray-400">
-                          Each file should not exceed 5MB
+                        {t('vacancies_form.file_input_text2')}
                         </p>
                       </div>
                     </div>
                   </label>
+                )}
+                {errors.file && (
+                  <p className="text-red-500 text-sm mt-2">{errors.file}</p>
                 )}
               </div>
 
@@ -212,7 +264,7 @@ const FormPage = () => {
                 type="submit"
                 className="block lg:hidden bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 row-start-4 md:row-start-3 col-span-2 cursor-pointer"
               >
-                Ariza topshirish
+                {t('vacancies_form.button_text')}
               </button>
 
               <div className="col-span-2">
@@ -220,12 +272,7 @@ const FormPage = () => {
                   style={{ fontFamily: 'SF Pro Display Light' }}
                   className="text-[16px] lg:text-[20px] leading-[19px] lg:leading-[28px] "
                 >
-                  Bizning HR mutaxassislarimiz olingan barcha rezyumelarni
-                  diqqat bilan ko'rib chiqadilar. Sizning ish tajribangiz,
-                  ko'nikma va malakalaringiz hozirda mavjud bo'sh ish o'rinlari
-                  talablariga javob bermasa ham, biz sizning rezyumeingizni
-                  albatta ma'lumotlar bazamizga qo'shamiz va mos narsa paydo
-                  bo'lganda siz bilan bog'lanamiz.
+                  {t('vacancies_form.desc')}
                 </p>
               </div>
             </div>

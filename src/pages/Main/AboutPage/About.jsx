@@ -1,26 +1,13 @@
 import React from 'react';
-import portfolio from '../../../assets/logo/portfolio.svg';
-import clock from '../../../assets/logo/clock.svg';
-import key from '../../../assets/logo/key.svg';
-import area from '../../../assets/logo/area.svg';
 import aboutBg from '../../../assets/images/about-bg.png';
-import aboutBgCard1 from '../../../assets/images/about-card-bg.png';
-import aboutBgCard2 from '../../../assets/images/about-card-bg2.png';
-import aboutBgCard3 from '../../../assets/images/about-card-bg3.png';
-import aboutBgCard4 from '../../../assets/images/about-card-bg4.png';
-import aboutBgCard5 from '../../../assets/images/about-card-bg5.png';
 import { useTranslation } from 'react-i18next';
+import { aboutData, factData } from '../../../mock/about';
 
 const About = () => {
   const { t } = useTranslation();
 
-  const cards = [
-    { id: 1, text: t('about.fact_card1'), image: aboutBgCard1 },
-    { id: 2, text: t('about.fact_card2'), image: aboutBgCard2 },
-    { id: 3, text: t('about.fact_card3'), image: aboutBgCard3 },
-    { id: 4, text: t('about.fact_card4'), image: aboutBgCard4 },
-    { id: 5, text: t('about.fact_card5'), image: aboutBgCard5 },
-  ];
+  const about = aboutData(t);
+  const fact = factData(t);
 
   return (
     <section className="py-[60px] sm:py-[100px]">
@@ -30,7 +17,7 @@ const About = () => {
           style={{
             backgroundImage: `url(${aboutBg})`,
             backgroundPosition: 'right bottom',
-            backgroundSize: 'contain', 
+            backgroundSize: 'contain',
           }}
         >
           <h2
@@ -50,51 +37,20 @@ const About = () => {
             style={{ fontFamily: 'SF Pro Display Regular' }}
             className="mt-[32px] md:mt-[84px] grid grid-cols-2 md:flex items-center gap-2.5 md:gap-[30px] md:flex-wrap"
           >
-            <li>
-              <div className="w-[50px] h-[50px] flex justify-center items-center bg-[#D18202] rounded-full">
-                <img src={portfolio} alt="portfolio" width={20} height={20} />
-              </div>
-              <h3 className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[190px] mt-[8px]">
-                {t('about.card1_title')}
-              </h3>
-              <p className="text-[40px] md:text-[70px] text-[#D18202] leading-[47px] md:leading-[84px] mt-[12px]">
-                {t('about.card1_desc')}
-              </p>
-            </li>
-            <li>
-              <div className="w-[50px] h-[50px] flex justify-center items-center bg-[#D18202] rounded-full">
-                <img src={clock} alt="portfolio" width={20} height={20} />
-              </div>
-              <h3 className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[190px] mt-[8px]">
-                {t('about.card2_title')}
-              </h3>
-              <p className="text-[40px] md:text-[70px] text-[#D18202] leading-[47px] md:leading-[84px] mt-[12px]">
-                {t('about.card2_desc')}
-              </p>
-            </li>
-            <li>
-              <div className="w-[50px] h-[50px] flex justify-center items-center bg-[#D18202] rounded-full">
-                <img src={key} alt="portfolio" width={20} height={20} />
-              </div>
-              <h3 className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[190px] mt-[8px]">
-                {t('about.card3_title')}
-              </h3>
-              <p className="text-[40px] md:text-[70px] text-[#D18202] leading-[47px] md:leading-[84px] mt-[12px]">
-                {t('about.card3_desc')}
-              </p>
-            </li>
-            <li>
-              <div className="w-[50px] h-[50px] flex justify-center items-center bg-[#D18202] rounded-full">
-                <img src={area} alt="portfolio" width={20} height={20} />
-              </div>
-              <h3 className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[190px] mt-[8px]">
-                {t('about.card4_title')}
-                <sup>2</sup>
-              </h3>
-              <p className="text-[40px] md:text-[70px] text-[#D18202] leading-[47px] md:leading-[84px] mt-[12px]">
-                77 000
-              </p>
-            </li>
+            {about?.map((item) => (
+              <li key={item.id}>
+                <div className="w-[50px] h-[50px] flex justify-center items-center bg-[#D18202] rounded-full">
+                  <img src={item.img} alt={item.title} width={20} height={20} />
+                </div>
+                <h3 className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[190px] mt-[8px]">
+                  {item.title}
+                </h3>
+                <p className="text-[40px] md:text-[70px] text-[#D18202] leading-[47px] md:leading-[84px] mt-[12px]">
+                  {item.desc}
+                </p>
+              </li>
+            ))}
+
           </ul>
         </div>
 
@@ -108,11 +64,11 @@ const About = () => {
           style={{ fontFamily: 'SF Pro Display Light' }}
           className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[890px] mt-[20px]"
         >
-         {t('about.fact_desc')}
+          {t('about.fact_desc')}
         </p>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-[16px] mt-[10px] md:mt-[60px]">
-          {cards.slice(0, 2).map((card) => (
+          {fact?.slice(0, 2).map((card) => (
             <li
               key={card.id}
               className="relative rounded-lg overflow-hidden w-full h-[180px] sm:h-[280px] md:h-[380px] bg-no-repeat bg-center cursor-pointer bg-cover"
@@ -131,7 +87,7 @@ const About = () => {
         </ul>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px] pt-[16px]">
-          {cards.slice(2).map((card) => (
+          {fact?.slice(2).map((card) => (
             <li
               key={card.id}
               className="relative rounded-lg overflow-hidden w-full h-[180px] sm:h-[280px] md:h-[380px] bg-cover bg-center cursor-pointer"

@@ -116,7 +116,7 @@ export default function Hero() {
             <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
 
-          <div className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px]">
+          <a href='/' className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px]">
             <img
               src={logobg}
               alt="logobg"
@@ -127,7 +127,7 @@ export default function Hero() {
               alt="Logo"
               className="absolute inset-0 w-[120px] h-[90px] mx-auto mt-[5px]"
             />
-          </div>
+          </a>
 
           <div className="flex items-center 2xl:gap-[40px]">
             <div className="flex items-center 2xl:space-x-4">
@@ -211,7 +211,6 @@ export default function Hero() {
           </div>
         </nav>
 
-        {/* MOBILE MUNE */}
         {showMobileMenu && (
           <nav
             ref={mobileMenuRef}
@@ -240,7 +239,7 @@ export default function Hero() {
             <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[20px] font-semibold text-white ">
               <li className="w-full text-center">
                 <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
-                  Kompaniya haqida
+                {t('navbar.nav1')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
@@ -250,12 +249,12 @@ export default function Hero() {
                     setShowMobileMenu(false);
                   }}
                 >
-                  Loyihalar
+                  {t('navbar.nav2')}
                 </a>
               </li>
               <li className="w-full text-center">
                 <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
-                  Yangiliklar
+                {t('navbar.nav3')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
@@ -268,7 +267,7 @@ export default function Hero() {
                   to="/vacancies"
                   onClick={() => setShowMobileMenu(false)}
                 >
-                  Vakansiyalar
+                  {t('navbar.nav4')}
                 </NavLink>
               </li>
             </ul>
@@ -278,11 +277,11 @@ export default function Hero() {
             </button>
 
             <p className="text-[#FFFFFFB2] text-[18px] mt-[38px] text-center">
-              Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy
+            {t('footer.location')}
             </p>
 
             <h5 className="text-[#AAAAAA] text-[18px] mt-[16px] text-center uppercase">
-              Call center
+            {t('footer.call_center')}
             </h5>
 
             <a
@@ -369,13 +368,13 @@ export default function Hero() {
             className="text-[40px] md:text-[56px] lg:text-[70px] leading-[50px] md:leading-[70px] font-bold w-[100%]"
             style={{ fontFamily: 'Playfair Display Bold' }}
           >
-            Qurilish kompaniyasi nomi
+            {t('hero.title')}
           </h1>
           <p className="text-[20px] md:text-[24px] mt-[13px]">
-            Qurilish Toshkent shahrida joylashgan
+          {t('hero.subtitle')}
           </p>
           <button className="mt-5 bg-[#D18202] text-white text-[18px] py-[10px] px-[30px] rounded-[48px] hover:bg-yellow-600 transition-all duration-300 cursor-pointer">
-            Konsultatsiya olish
+          {t('hero.button_text')}
           </button>
         </div>
 

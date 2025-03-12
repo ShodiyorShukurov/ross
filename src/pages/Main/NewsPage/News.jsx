@@ -97,7 +97,7 @@ const NewsSlider = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full max-h-[300px] md:max-h-[450px]"
+                  className="w-full h-full max-h-[300px] md:max-h-[450px] rounded-[16px]"
                 />
                 <div className='p-[5px]'>
                   <h3 className="text-[16px] sm:text-[24px] leading-[28px] mt-[10px] sm:mt-[16px]">

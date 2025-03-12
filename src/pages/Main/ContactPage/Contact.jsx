@@ -50,7 +50,7 @@ const Contact = () => {
 
     Object.keys(formData).forEach((key) => {
       validateInput(key, formData[key]);
-      if (!formData[key]) newErrors[key] =  t('contact_page.error');
+      if (!formData[key]) newErrors[key] = t('contact_page.error');
     });
 
     setErrors(newErrors);
@@ -68,16 +68,16 @@ const Contact = () => {
           style={{
             backgroundImage: `url(${bg})`,
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: "top left",
-            backgroundSize: 'contain'
+            backgroundPosition: 'top left',
+            backgroundSize: 'contain',
           }}
         >
-          <div className='px-[16px] pt-[32px] sm:px-[50px] sm:pt-[50px]'>
+          <div className="px-[16px] pt-[32px] sm:px-[50px] sm:pt-[50px]">
             <h3
               style={{ fontFamily: 'Playfair Display Bold' }}
               className="text-[#D18202] font-bold text-[32px] sm:text-[36px] leading-[42px] sm:leading-[47px] w-full max-w-[550px]"
             >
-               {t('contact_page.title')}
+              {t('contact_page.title')}
             </h3>
             <p
               style={{ fontFamily: 'SF Pro Display Light' }}
@@ -87,7 +87,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className='px-[16px] py-[32px] sm:p-[50px]'>
+          <div className="px-[16px] py-[32px] sm:p-[50px]">
             <form
               onSubmit={handleSubmit}
               className="w-full "
@@ -131,7 +131,7 @@ const Contact = () => {
                 style={{ fontFamily: 'SF Pro Display Regular' }}
                 className="bg-[#D18202] text-white text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer w-full sm:w-fit"
               >
-                Malumotlarni yuborish
+                {t('contact_page.button_text')}
                 <span className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-auto sm:ml-[20px]">
                   <img
                     src={buttonIcon}

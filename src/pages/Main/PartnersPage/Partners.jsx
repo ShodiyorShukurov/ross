@@ -37,7 +37,7 @@ const Partners = () => {
               className={`flex items-center cursor-pointer transition-all duration-300 
                 ${activeId === item.id ? 'grayscale-0 scale-110 opacity-100' : 'grayscale opacity-70'} 
                 hover:grayscale-0 hover:scale-110 hover:opacity-100`}
-              onClick={() => setActiveId(item.id)} // Mobil qurilmalar uchun bosilganda aktiv bo‘lishi
+              onClick={() => setActiveId(item.id)} 
             >
               <img
                 src={item.img}

@@ -104,7 +104,10 @@ export default function Hero({ module }) {
             <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
 
-          <div className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px]">
+          <a
+            href="/"
+            className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px]"
+          >
             <img
               src={logobg}
               alt="logobg"
@@ -115,7 +118,7 @@ export default function Hero({ module }) {
               alt="Logo"
               className="absolute inset-0 w-[90px] h-[90px] mx-auto mt-[5px]"
             />
-          </div>
+          </a>
 
           <div className="flex items-center 2xl:gap-[40px]">
             <div className="flex items-center 2xl:space-x-4">
@@ -228,22 +231,22 @@ export default function Hero({ module }) {
             <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[20px] font-semibold text-white ">
               <li className="w-full text-center">
                 <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
-                  Kompaniya haqida
+                  {t('navbar.nav1')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <span
+                <a
+                  href="#projects"
                   onClick={() => {
                     setShowMobileMenu(false);
-                    scrollToProjects();
                   }}
                 >
-                  Loyihalar
-                </span>
+                  {t('navbar.nav2')}
+                </a>
               </li>
               <li className="w-full text-center">
                 <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
-                  Yangiliklar
+                  {t('navbar.nav3')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
@@ -256,7 +259,7 @@ export default function Hero({ module }) {
                   to="/vacancies"
                   onClick={() => setShowMobileMenu(false)}
                 >
-                  Vakansiyalar
+                  {t('navbar.nav4')}
                 </NavLink>
               </li>
             </ul>
@@ -266,11 +269,11 @@ export default function Hero({ module }) {
             </button>
 
             <p className="text-[#FFFFFFB2] text-[18px] mt-[38px] text-center">
-              Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy
+              {t('footer.location')}
             </p>
 
             <h5 className="text-[#AAAAAA] text-[18px] mt-[16px] text-center uppercase">
-              Call center
+              {t('footer.call_center')}
             </h5>
 
             <a
@@ -360,7 +363,7 @@ export default function Hero({ module }) {
             {t('news.news_page_title')}
           </h1>
           <p className="text-[20px] md:text-[24px] lg:text-[28px] mt-[16px] w-full leading-[23px] md:leading-[33px]">
-          {t('news.news_page_subtitle')}
+            {t('news.news_page_subtitle')}
           </p>
         </div>
       </div>

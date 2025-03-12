@@ -26,7 +26,7 @@
         "card2_desc": "5 yil",
         "card3_title": "Bizning loyihalarimizda odamlar yashaydi",
         "card3_desc": "1000",
-        "card4_title": "Turar joy hududlari M",
+        "card4_title": "Turar joy hududlari M2",
         "card4_desc": "77 000",
         "fact_title": "Kompaniya haqida 5 ta fakt",
         "fact_desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
@@ -123,12 +123,14 @@
         "name": "Ism Familya",
         "phone_number": "+998 99 123 45 67",
         "email": "Email",
+        "select_placeholder": "Vakansiyalar",
         "button_text": "Ariza topshirish",
         "file_input_text1": "Drag files here or click to select files",
         "file_input_text2": "Attach as many files as you like, each file should not exceed 5mb",
-        "name_error": "Ism Familiya bo‘sh bo‘lishi mumkin emas!",
-        "phone_number_error1": "Telefon raqam kiritilishi shart!",
-        "phone_number_error2": "Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak"
+        "email_error": "Email noto‘g‘ri formatda!",
+        "select_error": "Telefon raqam kiritilishi shart!",
+        "file_error1": "Faqat .doc, .docx yoki .pdf fayllar qo‘llab-quvvatlanadi!",
+        "file_error2": "Fayl hajmi 5MB dan oshmasligi kerak!"
     },
     "projects1": {
         "title": "Balance",
@@ -201,6 +203,8 @@
         "links10": "Yangi hayot",
         "title": "FIRST CLASS development",
         "location": "Toshkent shahri Yunusobod tumani, Yangi shahar 64A uy",
-        "call_center": "Call center"
+        "call_center": "Call center",
+        "text1":"©All rights reserved",
+        "text2":"© 2025 «COMPANIYA NOMI» MChJ"
     }
 }

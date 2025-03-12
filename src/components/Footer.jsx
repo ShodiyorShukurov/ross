@@ -17,7 +17,7 @@ const Footer = () => {
               <img
                 className="w-[150px] lg:w-full h-[150px] lg:h-full"
                 src={logo}
-                alt="Company Logo"
+                alt="Ross"
               />
             </a>
           </div>
@@ -264,8 +264,8 @@ const Footer = () => {
         </div>
       </div>
       <div className=" flex flex-col justify-center items-center bg-[#f7f7f7] pt-[20px] text-[#AAAAAA] text-[16px] leading-[19px] pb-[10px]">
-        <p>©All rights reserved</p>
-        <p>© 2025 «COMPANIYA NOMI» MChJ </p>
+        <p>{t('footer.text1')}</p>
+        <p>{t('footer.text2')}</p>
       </div>
     </footer>
   );

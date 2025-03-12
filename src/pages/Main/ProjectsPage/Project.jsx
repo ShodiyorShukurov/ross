@@ -42,10 +42,9 @@ const Project = () => {
           {t('project.project_desc')}
         </p>
 
-        {/* Filter Buttons */}
         <ul
-          className="flex items-center gap-2 sm:gap-4 my-4 md:my-6 bg-white p-1 rounded-full w-fit 
-             sm:w-fit flex-nowrap sm:flex-wrap overflow-x-auto sm:justify-center "
+          className="flex items-center gap-2 sm:gap-4 my-4 md:my-6 bg-white p-1 rounded-full w-full 
+             sm:w-fit flex-nowrap sm:flex-wrap  sm:justify-center"
         >
           {buttons.map((btn) => (
             <li key={btn.label} className="cursor-pointer">
@@ -118,9 +117,7 @@ const Project = () => {
                       to={'/projects/' + item.id}
                     >
                       {t('project.card_button')}
-                      <motion.span
-                        className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-auto lg:ml-[20px]"
-                      >
+                      <motion.span className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-auto lg:ml-[20px]">
                         <img
                           src={buttonIcon}
                           alt="buttonIcon"
