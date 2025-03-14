@@ -10,13 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@react-google-maps/api": "^2.20.6",
     "@tailwindcss/vite": "^4.0.6",
     "framer-motion": "^12.4.7",
     "i18next": "^24.2.2",
     "lucide-react": "^0.475.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-i18next": "^15.4.1",
     "react-router-dom": "^7.2.0",
     "sass": "^1.85.0",

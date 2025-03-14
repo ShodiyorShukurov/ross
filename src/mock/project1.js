@@ -1,9 +1,22 @@
+import fact_card1 from '../assets/centraVista/IMG_1897.JPG';
+import fact_card3 from '../assets/centraVista/videokuzatuv.jpg';
+import fact_card4 from '../assets/centraVista/prohinkali.jpg';
+import fact_card5 from '../assets/centraVista/dud.jpg';
+import img1 from '../assets/centraVista/IMG_1897.JPG';
+import img2 from '../assets/centraVista/IMG_1911.JPG';
+import img4 from '../assets/centraVista/IMG_1900.JPG';
+import img5 from '../assets/centraVista/IMG_1916.JPG';
+import img6 from '../assets/centraVista/XXXL.jpg';
+import img7 from '../assets/centraVista/s.jpg';
+
 const id1 = (t) => ({
   projectData: {
     id: 1,
     hero: {
       title: t('projects1.title'),
       subtitle: t('projects1.subtitle'),
+      button1: t('projects1.button_text1'),
+      button2: t('projects1.button_text2'),
       desc: [
         {
           id: 1,
@@ -26,7 +39,7 @@ const id1 = (t) => ({
         {
           id: 4,
           place: t('projects1.sports_complex'),
-          location: t('sports_complex_location'),
+          location: t('projects1.sports_complex_location'),
           img: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"> <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM13.6695 15.9999H10.3295L8.95053 17.8969L9.5044 19.6031C10.2897 19.8607 11.1286 20 12 20C12.8714 20 13.7103 19.8607 14.4956 19.6031L15.0485 17.8969L13.6695 15.9999ZM5.29354 10.8719L4.00222 11.8095L4 12C4 13.7297 4.54894 15.3312 5.4821 16.6397L7.39254 16.6399L8.71453 14.8199L7.68654 11.6499L5.29354 10.8719ZM18.7055 10.8719L16.3125 11.6499L15.2845 14.8199L16.6065 16.6399L18.5179 16.6397C19.4511 15.3312 20 13.7297 20 12L19.997 11.809L18.7055 10.8719ZM14.2914 4.33299L12.9995 5.27293V7.78993L15.6935 9.74693L17.9325 9.01993L18.4867 7.3168C17.467 5.90685 15.9988 4.84254 14.2914 4.33299ZM9.70857 4.33299C8.00078 4.84265 6.53236 5.90735 5.51261 7.31778L6.06653 9.01993L8.30554 9.74693L10.9995 7.78993V5.27293L9.70857 4.33299Z" fill="#D18202" /></svg>',
         },
       ],
@@ -35,13 +48,12 @@ const id1 = (t) => ({
       title: t('projects1.title'),
       desc: t('projects1.image_desc'),
       images: [
-        'https://placehold.co/400x500',
-        'https://placehold.co/400x250',
-        'https://placehold.co/400x250',
-        'https://placehold.co/400x250',
-        'https://placehold.co/400x500',
-        'https://placehold.co/400x500',
-        'https://placehold.co/400x500',
+        img1,
+        img7,
+        img6,
+        img2,
+        img4,
+        img5,
       ],
     },
     fact_page: {
@@ -51,7 +63,7 @@ const id1 = (t) => ({
         {
           id: 1,
           title: t('projects1.fact_card1'),
-          image: 'https://placehold.co/400x500',
+          image: fact_card1,
         },
         {
           id: 2,
@@ -61,17 +73,17 @@ const id1 = (t) => ({
         {
           id: 3,
           title: t('projects1.fact_card3'),
-          image: 'https://placehold.co/400x500',
+          image: fact_card3,
         },
         {
           id: 4,
           title: t('projects1.fact_card4'),
-          image: 'https://placehold.co/400x500',
+          image: fact_card4,
         },
         {
           id: 5,
           title: t('projects1.fact_card5'),
-          image: 'https://placehold.co/400x500',
+          image: fact_card5,
         },
       ],
       area_cards: [
@@ -112,7 +124,7 @@ const id1 = (t) => ({
     },
     map_page: {
       title: t('projects1.location_title'),
-      position: { lat: 41.295, lng: 69.2405 },
+      position: { lat: 41.322163, lng: 69.283195 },
       foot: t('projects1.foot'),
       foot_location: [
         t('projects1.foot_text1'),

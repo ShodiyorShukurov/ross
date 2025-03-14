@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import nrg from '../../../assets/images/nrg.png';
-import BIgroup from '../../../assets/images/BIgroup.png';
-import alutex from '../../../assets/images/alutex.png';
-import enter from '../../../assets/images/enter.png';
-import korzinka from '../../../assets/images/korzinka.png';
-import atlant from '../../../assets/images/atlant.png';
+import payme from '../../../assets/partners/Payme.png';
+import PhilipMorris from '../../../assets/partners/Philip Morris.png';
+import PwClogo from '../../../assets/partners/PwC-logo.svg';
+import RCMTBIG from '../../../assets/partners/RCMT_BIG.svg';
+import tbc from '../../../assets/partners/TBC.svg';
+import ucell from '../../../assets/partners/ucell.svg';
+import VFS_Global_Logo from '../../../assets/partners/VFS_Global_Logo.png';
+import Pro from '../../../assets/partners/pro.png';
 import { useTranslation } from 'react-i18next';
 
 const Partners = () => {
@@ -12,12 +14,14 @@ const Partners = () => {
   const [activeId, setActiveId] = useState(null); // Mobil uchun state
 
   const partnersArr = [
-    { id: 1, img: nrg },
-    { id: 2, img: BIgroup },
-    { id: 3, img: alutex },
-    { id: 4, img: enter },
-    { id: 5, img: korzinka },
-    { id: 6, img: atlant },
+    { id: 1, img: payme },
+    { id: 2, img: PhilipMorris },
+    { id: 3, img: PwClogo },
+    { id: 4, img: RCMTBIG },
+    { id: 5, img: tbc },
+    { id: 6, img: ucell },
+    { id: 7, img: VFS_Global_Logo },
+    { id: 8, img: Pro },
   ];
 
   return (

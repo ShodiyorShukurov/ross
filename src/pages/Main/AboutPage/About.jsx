@@ -29,9 +29,8 @@ const About = () => {
           <p
             style={{ fontFamily: 'SF Pro Display Light' }}
             className="text-[16px] md:text-[20px] leading-[24px] w-full max-w-[860px] mt-[36px]"
-          >
-            {t('about.desc')}
-          </p>
+            dangerouslySetInnerHTML={{ __html: t('about.desc') }}
+          />
 
           <ul
             style={{ fontFamily: 'SF Pro Display Regular' }}
@@ -50,7 +49,6 @@ const About = () => {
                 </p>
               </li>
             ))}
-
           </ul>
         </div>
 
@@ -62,7 +60,7 @@ const About = () => {
         </h2>
         <p
           style={{ fontFamily: 'SF Pro Display Light' }}
-          className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[890px] mt-[20px]"
+          className="text-[16px] md:text-[24px] leading-[19px] md:leading-[100%] w-full max-w-[890px] mt-[20px]"
         >
           {t('about.fact_desc')}
         </p>
@@ -97,7 +95,7 @@ const About = () => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[36px] leading-[20px] md:leading-[48px] w-full max-w-[360px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[36px] leading-[20px] md:leading-[48px] w-full max-w-[400px]"
               >
                 {card.id}. {card.text}
               </h3>

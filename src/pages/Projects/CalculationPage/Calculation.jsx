@@ -2,7 +2,7 @@ import React from 'react';
 
 const Calculation = ({ module }) => {
   const [squareMeters, setSquareMeters] = React.useState('');
-  const pricePerM2 = 20;
+  const pricePerM2 = module?.calculator_page.area_sum;
 
   return (
     <section className="pb-12 md:pb-[100px]">

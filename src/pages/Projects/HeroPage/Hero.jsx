@@ -343,28 +343,32 @@ export default function Hero({ module }) {
         )}
 
         <ul className="absolute grid grid-cols-2  left-1/2 lg:left-auto transform -translate-x-1/2  lg:translate-0 lg:grid-cols-1 gap-[24px] md:gap-[40px] text-[#fff] bottom-0 md:bottom-20 w-full p-[16px] md:p-0 md:w-auto">
-          {module?.hero.desc.map((item) => (
-            <li
-              className="flex flex-col justify-center lg:justify-baseline md:items-center lg:items-baseline md:text-center lg:text-left lg:flex-row gap-[12px]"
-              key={item.id}
-            >
-              <span dangerouslySetInnerHTML={{ __html: item.img }} />
-              <div className="w-full max-w-[160px]">
-                <h4
-                  style={{ fontFamily: 'SF Pro Display SemiBold' }}
-                  className="text-[20px] font-semibold text-nowrap"
-                >
-                  {item.place}
-                </h4>
-                <p
-                  style={{ fontFamily: 'SF Pro Display Medium' }}
-                  className="text-[16px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] w-[160px]"
-                >
-                  {item.location}
-                </p>
-              </div>
-            </li>
-          ))}
+          {module?.hero.desc.map((item) =>
+            item.place ? (
+              <li
+                className="flex flex-col justify-center lg:justify-baseline md:items-center lg:items-baseline md:text-center lg:text-left lg:flex-row gap-[12px]"
+                key={item.id}
+              >
+                <span dangerouslySetInnerHTML={{ __html: item.img }} />
+                <div className="w-full max-w-[160px]">
+                  <h4
+                    style={{ fontFamily: 'SF Pro Display SemiBold' }}
+                    className="text-[20px] font-semibold text-nowrap"
+                  >
+                    {item.place}
+                  </h4>
+                  <p
+                    style={{ fontFamily: 'SF Pro Display Medium' }}
+                    className="text-[16px] text-[#FFFFFFCC] font-medium leading-[19px] mt-[8px] w-[160px]"
+                  >
+                    {item.location}
+                  </p>
+                </div>
+              </li>
+            ) : (
+              ''
+            )
+          )}
         </ul>
 
         <div className="lg:absolute flex flex-col justify-end text-center items-center text-[#fff] lg:left-1/2 transform lg:-translate-x-1/2 lg:bottom-20 h-[50vh] lg:h-auto w-full lg:w-auto">
@@ -375,13 +379,13 @@ export default function Hero({ module }) {
             {module?.hero.title}
           </h1>
           <p className="text-[20px] md:text-[24px] mt-[13px] w-full lg:max-w-[300px]  leading-[33px]">
-            Hayotingiz balansini saqlash uchun eng to‘g‘ri tanlov!
+            {module?.hero.subtitle}
           </p>
           <button className="mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
-            Ariza qoldirish
+            {module?.hero.button1}
           </button>
           <button className="hidden md:block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
-            Qo'ngiroq qilish
+            {module?.hero.button2}
           </button>
         </div>
       </div>

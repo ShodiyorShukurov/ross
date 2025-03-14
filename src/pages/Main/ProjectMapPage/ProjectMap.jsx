@@ -98,11 +98,8 @@ const ProjectMap = () => {
                   ? window.google.maps.Animation.BOUNCE
                   : null
               }
-              onMouseOver={() => {
-                if (window.innerWidth > 768) setHoveredLocation(location); // Desktop: hover
-              }}
               onClick={() => {
-                if (window.innerWidth <= 768) setHoveredLocation(location); // Mobile: click
+                setHoveredLocation(location);
               }}
             />
           ))}
