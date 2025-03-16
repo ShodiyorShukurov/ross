@@ -38,8 +38,8 @@ const Projects = () => {
       <main>
         <Balance module={projectData} />
         <Fact module={projectData} />
-        <Calculation module={projectData} />
-        <BuildingMap module={projectData}/>
+        {projectData?.id == 3 ? '' : <Calculation module={projectData} />}
+        <BuildingMap module={projectData} />
         <Contact />
         <Project />
       </main>

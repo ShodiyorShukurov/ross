@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-import bg1 from '../../../assets/images/hero-bg.png';
-import bg2 from '../../../assets/images/hero-bg.png';
-import bg3 from '../../../assets/images/about-bg.png';
+import bg1 from '../../../assets/mainCarousel/view_01.jpg';
+import bg2 from '../../../assets/mainCarousel/view_001.jpg';
+import bg3 from '../../../assets/mainCarousel/view_02.png';
+import bg4 from '../../../assets/mainCarousel/view_005.jpg';
+import bg5 from '../../../assets/mainCarousel/Q2.jpg';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
-import logo from '../../../assets/logo/ross.svg';
+import logo from '../../../assets/logo/ross.png';
 import carouselItem from '../../../assets/logo/carousel item.svg';
 import burgerMenu from '../../../assets/logo/burgerMenu.svg';
 import close from '../../../assets/logo/close.svg';
@@ -12,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
-  const backgrounds = [bg1, bg2, bg3];
+  const backgrounds = [bg1, bg2, bg3, bg4, bg5];
   const [activeIndex, setActiveIndex] = useState(0);
   const savedLang = localStorage.getItem('lng') || 'uz';
   const [language, setLanguage] = useState(savedLang.toUpperCase());
@@ -132,7 +134,7 @@ export default function Hero() {
           <div className="flex items-center 2xl:gap-[40px]">
             <div className="flex items-center 2xl:space-x-4">
               <a
-                href="tel:+998911777222"
+                href="tel:+998 99 986 70 07"
                 className="hidden 2xl:flex items-center font-medium text-[16px] sm:text-[18px]"
               >
                 <div className="w-[50px] h-[50px] rounded-full border-[2px] flex items-center justify-center">
@@ -146,7 +148,7 @@ export default function Hero() {
                   style={{ fontFamily: 'SF Pro Display Medium' }}
                   className="ml-[12px]"
                 >
-                  91 177 72 22
+                  99 986 70 07
                 </span>
               </a>
               <button className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
@@ -285,17 +287,17 @@ export default function Hero() {
             </h5>
 
             <a
-              href="tel:+998 91 177 72 22"
+              href="tel:+998 99 986 70 07"
               className="text-[#D18202] text-[24px] font-bold text-center block cursor-pointer mt-[6px]"
             >
-              +998 91 177 72 22
+              +998 99 986 70 07
             </a>
 
             <a
-              href="malito:www.kompaniyanomi@gmail.com"
+              href="malito:rossfoundationuz@gmail.com"
               className="text-[#FFFFFFB2] text-[20px] font-medium text-center block cursor-pointer mt-[16px]"
             >
-              www.kompaniyanomi@gmail.com
+              rossfoundationuz@gmail.com
             </a>
 
             <div

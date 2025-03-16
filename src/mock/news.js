@@ -1,4 +1,4 @@
-import card1 from '../assets/images/newsCard1.png';
+import card1 from '../assets/news/news1.jpg';
 import card2 from '../assets/images/newsCard2.png';
 import card3 from '../assets/images/newsCard3.png';
 import card4 from '../assets/images/newsCard4.png';

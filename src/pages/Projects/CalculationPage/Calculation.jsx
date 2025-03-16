@@ -76,7 +76,7 @@ const Calculation = ({ module }) => {
             </div>
           </div>
 
-          <div className="bg-white py-4 md:py-[20px] px-6 md:px-[40px] rounded-[16px] flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4 md:gap-0">
+          <div className="bg-white py-4 md:py-[20px] px-6 md:px-[40px] rounded-[16px] flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-4 md:gap-0">
             <div>
               <h4
                 style={{ fontFamily: 'Playfair Display Bold' }}

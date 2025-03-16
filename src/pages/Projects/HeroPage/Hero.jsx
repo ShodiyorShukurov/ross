@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import bg1 from '../../../assets/images/hero-bg.png';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
-import logo from '../../../assets/logo/ross.svg';
+import logo from '../../../assets/logo/ross.png';
 import burgerMenu from '../../../assets/logo/burgerMenu.svg';
 import close from '../../../assets/logo/close.svg';
 import { NavLink } from 'react-router-dom';
@@ -110,7 +110,7 @@ export default function Hero({ module }) {
           <div className="flex items-center 2xl:gap-[40px]">
             <div className="flex items-center 2xl:space-x-4">
               <a
-                href="tel:+998911777222"
+                href="tel:+998 99 986 70 07"
                 className="hidden 2xl:flex items-center font-medium text-[16px] sm:text-[18px]"
               >
                 <div className="w-[50px] h-[50px] rounded-full border-[2px] flex items-center justify-center">
@@ -124,7 +124,7 @@ export default function Hero({ module }) {
                   style={{ fontFamily: 'SF Pro Display Medium' }}
                   className="ml-[12px]"
                 >
-                  91 177 72 22
+                  99 986 70 07
                 </span>
               </a>
               <button className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
@@ -264,17 +264,17 @@ export default function Hero({ module }) {
             </h5>
 
             <a
-              href="tel:+998 91 177 72 22"
+              href="tel:+998 99 986 70 07"
               className="text-[#D18202] text-[24px] font-bold text-center block cursor-pointer mt-[6px]"
             >
-              +998 91 177 72 22
+              +998 99 986 70 07
             </a>
 
             <a
-              href="malito:www.kompaniyanomi@gmail.com"
+              href="malito:rossfoundationuz@gmail.com"
               className="text-[#FFFFFFB2] text-[20px] font-medium text-center block cursor-pointer mt-[16px]"
             >
-              www.kompaniyanomi@gmail.com
+              rossfoundationuz@gmail.com
             </a>
 
             <div
@@ -378,15 +378,15 @@ export default function Hero({ module }) {
           >
             {module?.hero.title}
           </h1>
-          <p className="text-[20px] md:text-[24px] mt-[13px] w-full lg:max-w-[300px]  leading-[33px]">
+          <p className="text-[20px] md:text-[24px] mt-[13px] w-full lg:max-w-[400px]  leading-[33px]">
             {module?.hero.subtitle}
           </p>
           <button className="mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
             {module?.hero.button1}
           </button>
-          <button className="hidden md:block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
+          <a href='tel:+998 99 986 70 07' className="hidden md:block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
             {module?.hero.button2}
-          </button>
+          </a>
         </div>
       </div>
     </div>

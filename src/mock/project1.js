@@ -1,4 +1,6 @@
+import bg from '../assets/centraVista/IMG_1911.JPG'
 import fact_card1 from '../assets/centraVista/IMG_1897.JPG';
+import fact_card2 from '../assets/centraVista/IMG_3986.JPG';
 import fact_card3 from '../assets/centraVista/videokuzatuv.jpg';
 import fact_card4 from '../assets/centraVista/prohinkali.jpg';
 import fact_card5 from '../assets/centraVista/dud.jpg';
@@ -13,6 +15,7 @@ const id1 = (t) => ({
   projectData: {
     id: 1,
     hero: {
+      bg: bg,
       title: t('projects1.title'),
       subtitle: t('projects1.subtitle'),
       button1: t('projects1.button_text1'),
@@ -68,7 +71,7 @@ const id1 = (t) => ({
         {
           id: 2,
           title: t('projects1.fact_card2'),
-          image: 'https://placehold.co/400x500',
+          image: fact_card2,
         },
         {
           id: 3,

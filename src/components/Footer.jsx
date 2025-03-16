@@ -187,16 +187,16 @@ const Footer = () => {
             <a
               style={{ fontFamily: 'SF Pro Display Bold' }}
               className="text-[#D18202] text-[24px] mt-[4px]"
-              href="tel:+998 91 177 72 22"
+              href="tel:+998 99 986 70 07"
             >
-              +998 91 177 72 22
+              +998 99 986 70 07
             </a>
             <a
               style={{ fontFamily: 'SF Pro Medium' }}
-              href="mailto:kompaniyanomi@gmail.com"
+              href="mailto:rossfoundationuz@gmail.com"
               className="hover:underline mt-[40px] text-[#151515] font-medium"
             >
-              www.kompaniyanomi@gmail.com
+              rossfoundationuz@gmail.com
             </a>
             <div
               style={{ fontFamily: 'SF Pro Medium' }}

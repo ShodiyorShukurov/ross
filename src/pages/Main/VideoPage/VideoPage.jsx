@@ -28,8 +28,8 @@ const {t} = useTranslation()
           className="mt-[25px] sm:mt-[65px] mx-auto w-full rounded-[16px]"
           width="914"
           height="660"
-          src="https://www.youtube.com/embed/2h03zPELyL0"
-          title="Hamma muammolaringizni umumiy bir jihati bor | Iqtibos podcast #37"
+          src="https://www.youtube.com/embed/UHSfJxewUws?si=wyaGG57x-LRsvUS4"
+          title="YouTube video player "
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen

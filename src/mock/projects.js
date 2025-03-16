@@ -1,5 +1,7 @@
 import card1Img from '../assets/centraVista/IMG_1906.JPG';
 import card2Img from '../assets/nurafshon/Q2.jpg';
+import card3Img from '../assets/Asia Medline/IMG_1925.JPG'
+import card4Img from '../assets/The Knowledge center/IMG_2039.JPG'
 
 export const getProjectsData = (t) => [
   {
@@ -22,7 +24,7 @@ export const getProjectsData = (t) => [
     id: 3,
     title: t('project.card3_title'),
     location: t('project.card3_location'),
-    bgImg: card1Img,
+    bgImg: card3Img,
     type: 'done',
     isActive: false,
   },
@@ -30,7 +32,7 @@ export const getProjectsData = (t) => [
     id: 4,
     title: t('project.card4_title'),
     location: t('project.card4_location'),
-    bgImg: card2Img,
+    bgImg: card4Img,
     type: 'done',
     isActive: false,
   },
