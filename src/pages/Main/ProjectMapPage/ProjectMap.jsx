@@ -8,10 +8,11 @@ import {
 import marker from '../../../assets/logo/Frame.png';
 import location from '../../../assets/logo/location.svg';
 import { useTranslation } from 'react-i18next';
-import project1 from '../../../assets/centraVista/IMG_1911.JPG'
-import project2 from '../../../assets/nurafshon/Q2.jpg'
-import project3 from '../../../assets/Asia Medline/IMG_1930.JPG'
-import project4 from '../../../assets/The Knowledge center/IMG_2039.JPG'
+import project1 from '../../../assets/centraVista/IMG_1911.JPG';
+import project2 from '../../../assets/nurafshon/Q2.jpg';
+import project3 from '../../../assets/Asia Medline/IMG_1930.JPG';
+import project4 from '../../../assets/The Knowledge center/IMG_2039.JPG';
+import project5 from '../../../assets/MaxRoy/view_001.jpg';
 
 const containerStyle = {
   width: '100%',
@@ -37,7 +38,7 @@ const ProjectMap = () => {
     },
     {
       id: 2,
-      position: { lat: 41.341622, lng:  69.233231 },
+      position: { lat: 41.341622, lng: 69.233231 },
       title: t('project_map.location2_subtitle'),
       description: t('project_map.location2_title'),
       district: t('project_map.location2_desc'),
@@ -45,7 +46,7 @@ const ProjectMap = () => {
     },
     {
       id: 3,
-      position: { lat: 41.3267500, lng: 69.2930240 },
+      position: { lat: 41.32675, lng: 69.293024 },
       title: t('project_map.location3_subtitle'),
       description: t('project_map.location3_title'),
       district: t('project_map.location3_desc'),
@@ -58,6 +59,14 @@ const ProjectMap = () => {
       description: t('project_map.location4_title'),
       district: t('project_map.location4_desc'),
       image: project4,
+    },
+    {
+      id: 5,
+      position: { lat: 41.329199, lng: 69.280078 },
+      title: t('project_map.location5_subtitle'),
+      description: t('project_map.location5_title'),
+      district: t('project_map.location5_desc'),
+      image: project5,
     },
   ];
 

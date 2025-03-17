@@ -105,6 +105,15 @@ const Footer = () => {
                 <NavLink to="/projects/4" className="block mb-2 hover:underline">
                   {t('footer.links10')}
                 </NavLink>
+                <NavLink to="/projects/5" className="block mb-2 hover:underline">
+                  {t('footer.links11')}
+                </NavLink>
+                <a href="#" className="block mb-2 hover:underline">
+                  {t('footer.links12')}
+                </a>
+                <a href="3" className="block mb-2 hover:underline">
+                  {t('footer.links13')}
+                </a>
               </div>
             </div>
           </div>
@@ -163,6 +172,15 @@ const Footer = () => {
                 <NavLink to="/projects/4" className="mb-[24px] hover:underline">
                   {t('footer.links10')}
                 </NavLink>
+                <NavLink to="/projects/5" className="mb-[24px] hover:underline">
+                  {t('footer.links11')}
+                </NavLink>
+                <a href="#" className="mb-[24px] hover:underline">
+                  {t('footer.links12')}
+                </a>
+                <a href="#" className="mb-[24px] hover:underline">
+                  {t('footer.links13')}
+                </a>
               </div>
             </div>
           </div>

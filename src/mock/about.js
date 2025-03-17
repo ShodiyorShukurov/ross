@@ -2,9 +2,9 @@ import portfolio from '../assets/logo/portfolio.svg';
 import clock from '../assets/logo/clock.svg';
 import key from '../assets/logo/key.svg';
 import area from '../assets/logo/area.svg';
-import aboutBgCard1 from '../assets/images/about-card-bg.png';
+import aboutBgCard1 from '../assets/MaxRoy/view_005.jpg';
 import aboutBgCard2 from '../assets/images/about-card-bg2.png';
-import aboutBgCard3 from '../assets/MaxRoy/view_005.jpg';
+import aboutBgCard3 from '../assets/images/about-card-bg3.png';
 import aboutBgCard4 from '../assets/images/about-card-bg4.png';
 import aboutBgCard5 from '../assets/images/about-card-bg5.png';
 
