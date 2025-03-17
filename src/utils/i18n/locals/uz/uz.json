@@ -13,7 +13,7 @@
         "button_text": "Konsultatsiya olish"
     },
     "vacancies_hero": {
-        "title": "First Class kompaniyasi bilan ozruyingizdagi ishni toping",
+        "title": "Ros Foundation bilan ozruyingizdagi ishni toping",
         "subtitle": "Siz kutgan ayni jamoa!",
         "button_text": "Jamoaga qo'shilish"
     },
@@ -363,14 +363,14 @@
         "links5": "Lokatsiya",
         "links6": "Kredit Kalkulyator",
         "links_title2": "LOYIHALAR",
-        "links7": "Balance",
-        "links8": "Gorizont",
-        "links9": "Brooklyn",
-        "links10": "Yangi hayot",
+        "links7": "CentraVista Biznes Markazi",
+        "links8": "Nurafshon Biznes Markazi",
+        "links9": "Asia Medline",
+        "links10": "The Knowledge Center",
         "title": "Ross Foundation",
         "location": "Toshkent shahri, Yunusobod tumani, Abdulla Qodiriy ko‘chasi, 1A-uy",
         "call_center": "Call center",
-        "text1":"©All rights reserved",
-        "text2":"© 2025 «COMPANIYA NOMI» MChJ"
+        "text1":"© Barcha huquqlar himoyalangan",
+        "text2":"© 2025 «Ross Foundation» MChJ"
     }
 }

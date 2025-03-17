@@ -36,4 +36,20 @@ export const getProjectsData = (t) => [
     type: 'done',
     isActive: false,
   },
+  {
+    id: 5,
+    title: t('project.card4_title'),
+    location: t('project.card4_location'),
+    bgImg: card4Img,
+    type: 'isHold',
+    isActive: true,
+  },
+  {
+    id: 5,
+    title: t('project.card4_title'),
+    location: t('project.card4_location'),
+    bgImg: card4Img,
+    type: 'isHold',
+    isActive: true,
+  },
 ];

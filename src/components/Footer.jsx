@@ -93,18 +93,18 @@ const Footer = () => {
                   isOpen1 ? 'max-h-[500px]' : 'max-h-0'
                 }`}
               >
-                <a href="#" className="block mb-2 hover:underline">
+                <NavLink to="/projects/1" className="block mb-2 hover:underline">
                   {t('footer.links7')}
-                </a>
-                <a href="#" className="block mb-2 hover:underline">
+                </NavLink>
+                <NavLink to="/projects/2" className="block mb-2 hover:underline">
                   {t('footer.links8')}
-                </a>
-                <a href="#" className="block mb-2 hover:underline">
+                </NavLink>
+                <NavLink to="/projects/3" className="block mb-2 hover:underline">
                   {t('footer.links9')}
-                </a>
-                <a href="#" className="block mb-2 hover:underline">
+                </NavLink>
+                <NavLink to="/projects/4" className="block mb-2 hover:underline">
                   {t('footer.links10')}
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -151,18 +151,18 @@ const Footer = () => {
                 >
                   {t('footer.links_title2')}
                 </h3>
-                <a href="#" className="mb-[24px] hover:underline">
+                <NavLink to="/projects/1" className="mb-[24px] hover:underline">
                   {t('footer.links7')}
-                </a>
-                <a href="#" className="mb-[24px] hover:underline">
+                </NavLink>
+                <NavLink to="/projects/2" className="mb-[24px] hover:underline">
                   {t('footer.links8')}
-                </a>
-                <a href="#" className="mb-[24px] hover:underline">
+                </NavLink>
+                <NavLink to="/projects/3" className="mb-[24px] hover:underline">
                   {t('footer.links9')}
-                </a>
-                <a href="#" className="mb-[24px] hover:underline">
+                </NavLink>
+                <NavLink to="/projects/4" className="mb-[24px] hover:underline">
                   {t('footer.links10')}
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@ const Footer = () => {
               </a>
               <a
                 className="flex gap-[10px] items-center text-[#151515] hover:text-[#D18202] transition-all duration-300"
-                href="https://www.telegram.com"
+                href="https://t.me/rossfoundation"
                 target="blanck"
               >
                 <svg

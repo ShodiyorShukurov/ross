@@ -325,7 +325,7 @@ export default function Hero() {
               </a>
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.telegram.com"
+                href="https://t.me/rossfoundation"
                 target="blanck"
               >
                 <svg
