@@ -69,7 +69,7 @@ const NewsPages = () => {
           </select>
         </div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-[60px]">
+        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-[60px]">
           <AnimatePresence>
             {filteredArr?.map((item) => (
               <motion.li
@@ -91,7 +91,7 @@ const NewsPages = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full max-h-[200px] md:max-h-[450px] rounded-[16px]"
+                  className="w-full max-h-[200px] md:min-h-[450px] rounded-[16px] object-cover"
                 />
                 <div className="p-[5px]">
                   <h3 className="text-[24px] leading-[28px] mt-[16px]">

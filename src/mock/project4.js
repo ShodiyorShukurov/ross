@@ -1,8 +1,8 @@
 import fact_card1 from '../assets/The Knowledge center/IMG_2043.JPG';
-import fact_card2 from '../assets/Asia Medline/IMG_4032.JPG';
+import fact_card2 from '../assets/The Knowledge center/card-img4.jpg';
 import fact_card3 from '../assets/The Knowledge center/card-img.jpg';
 import fact_card4 from '../assets/The Knowledge center/card-img2.jpg';
-import fact_card5 from '../assets/The Knowledge center/IMG_2039.JPG';
+import fact_card5 from '../assets/The Knowledge center/card-img3.jpg';
 import img1 from '../assets/The Knowledge center/IMG_2043.JPG';
 import img2 from '../assets/The Knowledge center/IMG_2039.JPG';
 import img4 from '../assets/The Knowledge center/IMG_2045.JPG';

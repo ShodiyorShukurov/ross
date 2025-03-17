@@ -6,11 +6,13 @@ import 'swiper/css/navigation';
 import calendar from '../../../assets/logo/calendar.svg';
 import { useTranslation } from 'react-i18next';
 import { getNewsData } from '../../../mock/news';
+import { useNavigate } from 'react-router-dom';
 
 const NewsSlider = () => {
   const [isActive, setIsActive] = React.useState('');
   const { t } = useTranslation();
   const newsData = getNewsData(t);
+  const navigate = useNavigate()
 
   return (
     <section className="py-10">
@@ -20,7 +22,7 @@ const NewsSlider = () => {
             style={{ fontFamily: 'Playfair Display Bold' }}
             className="text-[#D18202] text-[32px] md:text-[40px] xl:text-[56px] font-bold"
           >
-           {t('news.news_detail_title2')}
+            {t('news.news_detail_title2')}
           </h2>
 
           <div className="flex space-x-2">
@@ -93,13 +95,14 @@ const NewsSlider = () => {
               <div
                 style={{ fontFamily: 'SF Pro Display Medium' }}
                 className="overflow-hidden cursor-pointer"
+                onClick={() => navigate('/news/' + item.id)}
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full max-h-[300px] md:max-h-[450px]"
+                  className={`w-full h-full max-h-[300px] md:min-h-[450px] rounded-[16px] object-cover`}
                 />
-                <div className='p-[5px]'>
+                <div className="p-[5px]">
                   <h3 className="text-[16px] sm:text-[24px] leading-[28px] mt-[10px] sm:mt-[16px]">
                     {item.title}
                   </h3>

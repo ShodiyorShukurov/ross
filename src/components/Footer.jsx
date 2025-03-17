@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../assets/logo/ross.svg';
 import accardion from '../assets/logo/accardion.svg';
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -47,18 +48,18 @@ const Footer = () => {
                   isOpen ? 'max-h-[500px]' : 'max-h-0'
                 }`}
               >
-                <a href="#" className="block mb-2 hover:underline">
+                <NavLink to="/" className="block mb-2 hover:underline">
                   {t('footer.links1')}
-                </a>
-                <a href="#" className="block mb-2 hover:underline">
+                </NavLink>
+                <NavLink href="/news" className="block mb-2 hover:underline">
                   {t('footer.links2')}
-                </a>
+                </NavLink>
                 <a href="#" className="block mb-2 hover:underline">
                   {t('footer.links3')}
                 </a>
-                <a href="#" className="block mb-2 hover:underline">
+                <NavLink to="/vacancies" className="block mb-2 hover:underline">
                   {t('footer.links4')}
-                </a>
+                </NavLink>
                 <a href="#" className="block mb-2 hover:underline">
                   {t('footer.links5')}
                 </a>
@@ -87,7 +88,6 @@ const Footer = () => {
                 </span>
               </button>
 
-              {/* Agar isOpen true bo‘lsa, menyu ochiladi */}
               <div
                 className={`overflow-hidden transition-max-height duration-500 ease-in-out mx-auto text-center ${
                   isOpen1 ? 'max-h-[500px]' : 'max-h-0'
@@ -121,18 +121,18 @@ const Footer = () => {
                 >
                   {t('footer.links_title1')}
                 </h3>
-                <a href="#" className="mb-[24px] hover:underline">
+                <NavLink to="/" className="mb-[24px] hover:underline">
                   {t('footer.links1')}
-                </a>
-                <a href="#" className="mb-[24px] hover:underline">
+                </NavLink>
+                <NavLink to="/news" className="mb-[24px] hover:underline">
                   {t('footer.links2')}
-                </a>
+                </NavLink>
                 <a href="#" className="mb-[24px] hover:underline">
                   {t('footer.links3')}
                 </a>
-                <a href="#" className="mb-[24px] hover:underline">
+                <NavLink to="/vacancies" className="mb-[24px] hover:underline">
                   {t('footer.links4')}
-                </a>
+                </NavLink>
                 <a href="#" className="mb-[24px] hover:underline">
                   {t('footer.links5')}
                 </a>

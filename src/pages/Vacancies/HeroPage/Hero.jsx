@@ -123,7 +123,7 @@ export default function Hero() {
           <div className="flex items-center 2xl:gap-[40px]">
             <div className="flex items-center 2xl:space-x-4">
               <a
-                href="tel:+998911777222"
+                href="tel:+998 99 986 70 07"
                 className="hidden 2xl:flex items-center font-medium text-[16px] sm:text-[18px]"
               >
                 <div className="w-[50px] h-[50px] rounded-full border-[2px] flex items-center justify-center">
@@ -137,7 +137,7 @@ export default function Hero() {
                   style={{ fontFamily: 'SF Pro Display Medium' }}
                   className="ml-[12px]"
                 >
-                  91 177 72 22
+                  99 986 70 07
                 </span>
               </a>
               <button className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
@@ -231,12 +231,12 @@ export default function Hero() {
             <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[20px] font-semibold text-white ">
               <li className="w-full text-center">
                 <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
-                  {t('navbar.nav1')}
+                {t('navbar.nav1')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
                 <a
-                  href="#projects"
+                href='#projects'
                   onClick={() => {
                     setShowMobileMenu(false);
                   }}
@@ -246,12 +246,12 @@ export default function Hero() {
               </li>
               <li className="w-full text-center">
                 <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
-                  {t('navbar.nav3')}
+                {t('navbar.nav3')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
                 <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
-                  Kontakt
+                {t('navbar.nav4')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
@@ -259,7 +259,7 @@ export default function Hero() {
                   to="/vacancies"
                   onClick={() => setShowMobileMenu(false)}
                 >
-                  {t('navbar.nav4')}
+                  {t('navbar.nav5')}
                 </NavLink>
               </li>
             </ul>
@@ -269,25 +269,25 @@ export default function Hero() {
             </button>
 
             <p className="text-[#FFFFFFB2] text-[18px] mt-[38px] text-center">
-              {t('footer.location')}
+            {t('footer.location')}
             </p>
 
             <h5 className="text-[#AAAAAA] text-[18px] mt-[16px] text-center uppercase">
-              {t('footer.call_center')}
+            {t('footer.call_center')}
             </h5>
 
             <a
-              href="tel:+998 91 177 72 22"
+              href="tel:+998 99 986 70 07"
               className="text-[#D18202] text-[24px] font-bold text-center block cursor-pointer mt-[6px]"
             >
-              +998 91 177 72 22
+              +998 99 986 70 07
             </a>
 
             <a
-              href="malito:www.kompaniyanomi@gmail.com"
+              href="malito:rossfoundationuz@gmail.com"
               className="text-[#FFFFFFB2] text-[20px] font-medium text-center block cursor-pointer mt-[16px]"
             >
-              www.kompaniyanomi@gmail.com
+              rossfoundationuz@gmail.com
             </a>
 
             <div
@@ -354,7 +354,6 @@ export default function Hero() {
             </div>
           </nav>
         )}
-
         <div className="absolute flex flex-col text-center items-center text-[#fff] left-1/2 transform -translate-x-1/2 bottom-20 w-[100%]">
           <h1
             className="text-[40px] md:text-[60px] leading-[53px ] md:leading-[70px] font-bold w-[100%] lg:max-w-[700px]"

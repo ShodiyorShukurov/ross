@@ -112,7 +112,7 @@ export default function Hero({ module }) {
           <div className="flex items-center 2xl:gap-[40px]">
             <div className="flex items-center 2xl:space-x-4">
               <a
-                href="tel:+998911777222"
+                href="tel:+998 99 986 70 07"
                 className="hidden 2xl:flex items-center font-medium text-[16px] sm:text-[18px]"
               >
                 <div className="w-[50px] h-[50px] rounded-full border-[2px] flex items-center justify-center">
@@ -126,7 +126,7 @@ export default function Hero({ module }) {
                   style={{ fontFamily: 'SF Pro Display Medium' }}
                   className="ml-[12px]"
                 >
-                  91 177 72 22
+                  99 986 70 07
                 </span>
               </a>
               <button className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
@@ -240,7 +240,7 @@ export default function Hero({ module }) {
               </li>
               <li className="w-full text-center">
                 <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
-                  Kontakt
+                  {t('navbar.nav4')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
@@ -248,7 +248,7 @@ export default function Hero({ module }) {
                   to="/vacancies"
                   onClick={() => setShowMobileMenu(false)}
                 >
-                  {t('navbar.nav4')}
+                  {t('navbar.nav5')}
                 </NavLink>
               </li>
             </ul>
@@ -266,17 +266,17 @@ export default function Hero({ module }) {
             </h5>
 
             <a
-              href="tel:+998 91 177 72 22"
+              href="tel:+998 99 986 70 07"
               className="text-[#D18202] text-[24px] font-bold text-center block cursor-pointer mt-[6px]"
             >
-              +998 91 177 72 22
+              +998 99 986 70 07
             </a>
 
             <a
-              href="malito:www.kompaniyanomi@gmail.com"
+              href="malito:rossfoundationuz@gmail.com"
               className="text-[#FFFFFFB2] text-[20px] font-medium text-center block cursor-pointer mt-[16px]"
             >
-              www.kompaniyanomi@gmail.com
+              rossfoundationuz@gmail.com
             </a>
 
             <div

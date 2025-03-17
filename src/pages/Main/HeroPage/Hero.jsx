@@ -261,7 +261,7 @@ export default function Hero() {
               </li>
               <li className="w-full text-center">
                 <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
-                  Kontakt
+                {t('navbar.nav4')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
@@ -269,7 +269,7 @@ export default function Hero() {
                   to="/vacancies"
                   onClick={() => setShowMobileMenu(false)}
                 >
-                  {t('navbar.nav4')}
+                  {t('navbar.nav5')}
                 </NavLink>
               </li>
             </ul>
