@@ -382,7 +382,7 @@ export default function Hero({ module }) {
             {module?.hero.subtitle}
           </p>
           {module?.hero.button1 ? (
-            <button className="mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
+            <button className="mb-[20px] md:0 mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
               {module?.hero.button1}
             </button>
           ) : (
