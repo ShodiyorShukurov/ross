@@ -8,6 +8,10 @@ import {
 import marker from '../../../assets/logo/Frame.png';
 import location from '../../../assets/logo/location.svg';
 import { useTranslation } from 'react-i18next';
+import project1 from '../../../assets/centraVista/IMG_1911.JPG'
+import project2 from '../../../assets/nurafshon/Q2.jpg'
+import project3 from '../../../assets/Asia Medline/IMG_1930.jpg'
+import project4 from '../../../assets/The Knowledge center/IMG_2039.JPG'
 
 const containerStyle = {
   width: '100%',
@@ -25,27 +29,35 @@ const ProjectMap = () => {
   const locations = [
     {
       id: 1,
-      position: { lat: 41.295, lng: 69.2405 },
+      position: { lat: 41.322163, lng: 69.283195 },
       title: t('project_map.location1_subtitle'),
       description: t('project_map.location1_title'),
       district: t('project_map.location1_desc'),
-      image: 'https://placehold.co/600x400',
+      image: project1,
     },
     {
       id: 2,
-      position: { lat: 41.3205, lng: 69.2256 },
-      title: t('project_map.location1_subtitle'),
+      position: { lat: 41.341622, lng:  69.233231 },
+      title: t('project_map.location2_subtitle'),
       description: t('project_map.location2_title'),
       district: t('project_map.location2_desc'),
-      image: 'https://placehold.co/600x400',
+      image: project2,
     },
     {
       id: 3,
-      position: { lat: 41.3101, lng: 69.2554 },
-      title: t('project_map.location1_subtitle'),
+      position: { lat: 41.3267500, lng: 69.2930240 },
+      title: t('project_map.location3_subtitle'),
       description: t('project_map.location3_title'),
       district: t('project_map.location3_desc'),
-      image: 'https://placehold.co/600x400',
+      image: project3,
+    },
+    {
+      id: 4,
+      position: { lat: 41.342476, lng: 69.207431 },
+      title: t('project_map.location4_subtitle'),
+      description: t('project_map.location4_title'),
+      district: t('project_map.location4_desc'),
+      image: project4,
     },
   ];
 

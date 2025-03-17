@@ -1,8 +1,8 @@
-import fact_card1 from '../assets/nurafshon/Q 2D.jpg';
-import fact_card2 from '../assets/nurafshon/lift.jpg';
+import fact_card1 from '../assets/Asia Medline/IMG_1921.JPG';
+import fact_card2 from '../assets/Asia Medline/IMG_4032.JPG';
 import fact_card3 from '../assets/Asia Medline/Arena_Mini.jpg';
-import fact_card4 from '../assets/nurafshon/work.jpg';
-import fact_card5 from '../assets/nurafshon/parking.jpg';
+import fact_card4 from '../assets/Asia Medline/yuqori_xizmat.jpg';
+import fact_card5 from '../assets/Asia Medline/IMG_1928.JPG';
 import img1 from '../assets/Asia Medline/IMG_1921.JPG';
 import img2 from '../assets/Asia Medline/IMG_1925.JPG';
 import img4 from '../assets/Asia Medline/IMG_1928.JPG';
@@ -118,7 +118,7 @@ const id1 = (t) => ({
     },
     map_page: {
       title: t('projects3.location_title'),
-      position: { lat: 41.341622, lng: 69.233231 },
+      position: { lat: 41.3267500, lng: 69.2930240 },
       foot: t('projects3.foot'),
       foot_location: [
         t('projects3.foot_text1'),

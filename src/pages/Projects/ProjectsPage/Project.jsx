@@ -4,10 +4,11 @@ import location from '../../../assets/logo/location.svg';
 import buttonIcon from '../../../assets/logo/right.svg';
 import { getProjectsData } from '../../../mock/projects';
 import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Project = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const projects = getProjectsData(t);
   const [selectedButton, setSelectedButton] = React.useState('all');
@@ -21,7 +22,7 @@ const Project = () => {
   const filteredArr =
     selectedButton === 'all'
       ? projects
-      : projects.filter((arr) => arr.type === selectedButton && arr.isActive);
+      : projects.filter((arr) => arr.type === selectedButton);
 
   return (
     <section
@@ -42,10 +43,9 @@ const Project = () => {
           {t('project.project_desc')}
         </p>
 
-        {/* Filter Buttons */}
         <ul
-          className="flex items-center gap-2 sm:gap-4 my-4 md:my-6 bg-white p-1 rounded-full w-fit 
-             sm:w-fit flex-nowrap sm:flex-wrap overflow-x-auto sm:justify-center "
+          className="flex items-center gap-2 sm:gap-4 my-4 md:my-6 bg-white p-1 rounded-full w-full 
+             sm:w-fit flex-nowrap sm:flex-wrap  sm:justify-center"
         >
           {buttons.map((btn) => (
             <li key={btn.label} className="cursor-pointer">
@@ -70,19 +70,20 @@ const Project = () => {
             {filteredArr.map((item) => (
               <motion.div
                 key={item.id}
-                className="relative bg-cover bg-center rounded-[16px] overflow-hidden sm:h-auto project-card"
+                className="relative bg-cover bg-center rounded-[16px] overflow-hidden sm:h-auto project-card cursor-pointer"
                 style={{
                   backgroundImage: `url(${item.bgImg})`,
                   height: '495px',
                 }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
+                exit={{ opacity: 0, scale: 0.9 }} 
                 whileHover={{
                   scale: 1.03,
                   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)',
                 }}
                 transition={{ duration: 0.3 }}
+                onClick={() => navigate('/projects/' + item.id)}
               >
                 {!item.isActive ? (
                   <span className="relative text-[#CACACA] font-light py-[10px] px-[16px] bg-[#EDEDED] rounded-[48px] block w-fit mt-[16px] sm:mt-[32px] ml-auto mr-[16px] sm:mr-[32px] z-50">
@@ -118,9 +119,7 @@ const Project = () => {
                       to={'/projects/' + item.id}
                     >
                       {t('project.card_button')}
-                      <motion.span
-                        className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-auto lg:ml-[20px]"
-                      >
+                      <motion.span className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-auto lg:ml-[20px]">
                         <img
                           src={buttonIcon}
                           alt="buttonIcon"

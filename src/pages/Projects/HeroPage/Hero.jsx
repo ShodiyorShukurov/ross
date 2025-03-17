@@ -381,10 +381,17 @@ export default function Hero({ module }) {
           <p className="text-[20px] md:text-[24px] mt-[13px] w-full lg:max-w-[400px]  leading-[33px]">
             {module?.hero.subtitle}
           </p>
-          <button className="mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
-            {module?.hero.button1}
-          </button>
-          <a href='tel:+998 99 986 70 07' className="hidden md:block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
+          {module?.hero.button1 ? (
+            <button className="mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
+              {module?.hero.button1}
+            </button>
+          ) : (
+            ''
+          )}
+          <a
+            href="tel:+998 99 986 70 07"
+            className="hidden md:block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]"
+          >
             {module?.hero.button2}
           </a>
         </div>

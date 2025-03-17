@@ -2,7 +2,27 @@ import React from 'react';
 
 const Calculation = ({ module }) => {
   const [squareMeters, setSquareMeters] = React.useState('');
-  const pricePerM2 = module?.calculator_page.area_sum;
+  const [selectedFloor, setSelectedFloor] = React.useState(
+    module?.calculator_page.floor1 ? module?.calculator_page.floor1 : '1 qavat'
+  );
+  console.log(selectedFloor);
+  const [pricePerM2, setPricePerM2] = React.useState(
+    module?.id !== 2
+      ? module?.calculator_page.area_sum
+      : selectedFloor == '1 qavat'
+      ? module?.calculator_page.area_sum1
+      : module?.calculator_page.area_sum2
+  );
+
+  React.useEffect(() => {
+    setPricePerM2(
+      module?.id !== 2
+        ? module?.calculator_page.area_sum
+        : selectedFloor == '1 qavat'
+        ? module?.calculator_page.area_sum1
+        : module?.calculator_page.area_sum2
+    );
+  }, [selectedFloor, module]);
 
   return (
     <section className="pb-12 md:pb-[100px]">
@@ -31,15 +51,27 @@ const Calculation = ({ module }) => {
                 <option value={module?.calculator_page.block1}>
                   {module?.calculator_page.block1}
                 </option>
-                <option value={module?.calculator_page.block2}>
-                  {module?.calculator_page.block2}
-                </option>
-                <option value={module?.calculator_page.block3}>
-                  {module?.calculator_page.block3}
-                </option>
-                <option value={module?.calculator_page.block4}>
-                  {module?.calculator_page.block4}
-                </option>
+                {module?.calculator_page.block2 ? (
+                  <option value={module?.calculator_page.block2}>
+                    {module?.calculator_page.block2}
+                  </option>
+                ) : (
+                  ''
+                )}
+                {module?.calculator_page.block3 ? (
+                  <option value={module?.calculator_page.block3}>
+                    {module?.calculator_page.block3}
+                  </option>
+                ) : (
+                  ''
+                )}
+                {module?.calculator_page.block4 ? (
+                  <option value={module?.calculator_page.block4}>
+                    {module?.calculator_page.block4}
+                  </option>
+                ) : (
+                  ''
+                )}
               </select>
 
               <div
@@ -68,10 +100,44 @@ const Calculation = ({ module }) => {
               <select
                 style={{ fontFamily: 'SF Pro Regular' }}
                 className="w-full py-3 px-4 rounded-lg bg-white text-gray-700 text-[16px] sm:text-[18px] outline-none"
+                value={selectedFloor}
+                onChange={(e) => setSelectedFloor(e.target.value)}
               >
-                <option value={module?.calculator_page.floor1}>{module?.calculator_page.floor1}</option>
-                <option value={module?.calculator_page.floor2}>{module?.calculator_page.floor2}</option>
-                <option value={module?.calculator_page.floor3}>{module?.calculator_page.floor3}</option>
+                {module?.calculator_page?.floor1 && (
+                  <option value={module.calculator_page.floor1}>
+                    {module.calculator_page.floor1}
+                  </option>
+                )}
+                {module?.calculator_page?.floor2 && (
+                  <option value={module.calculator_page.floor2}>
+                    {module.calculator_page.floor2}
+                  </option>
+                )}
+                {module?.calculator_page?.floor3 && (
+                  <option value={module.calculator_page.floor3}>
+                    {module.calculator_page.floor3}
+                  </option>
+                )}
+                {module?.calculator_page?.floor4 && (
+                  <option value={module.calculator_page.floor4}>
+                    {module.calculator_page.floor4}
+                  </option>
+                )}
+                {module?.calculator_page?.floor5 && (
+                  <option value={module.calculator_page.floor5}>
+                    {module.calculator_page.floor5}
+                  </option>
+                )}
+                {module?.calculator_page?.floor6 && (
+                  <option value={module.calculator_page.floor6}>
+                    {module.calculator_page.floor6}
+                  </option>
+                )}
+                {module?.calculator_page?.floor7 && (
+                  <option value={module.calculator_page.floor7}>
+                    {module.calculator_page.floor7}
+                  </option>
+                )}
               </select>
             </div>
           </div>
@@ -82,7 +148,7 @@ const Calculation = ({ module }) => {
                 style={{ fontFamily: 'Playfair Display Bold' }}
                 className="text-[#D18202] font-bold text-[24px] md:text-[32px] leading-8 md:leading-[42px]"
               >
-               {module?.hero.title}
+                {module?.hero.title}
               </h4>
               <p
                 style={{ fontFamily: 'SF Pro Display Medium' }}
@@ -132,7 +198,7 @@ const Calculation = ({ module }) => {
               }}
               className="py-2 md:py-[15px] px-6 md:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] rounded-[70px] w-full md:w-auto cursor-pointer"
             >
-             {module?.calculator_page.calculator_button}
+              {module?.calculator_page.calculator_button}
             </button>
           </div>
         </div>
