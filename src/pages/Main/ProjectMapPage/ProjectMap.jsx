@@ -10,7 +10,7 @@ import location from '../../../assets/logo/location.svg';
 import { useTranslation } from 'react-i18next';
 import project1 from '../../../assets/centraVista/IMG_1911.JPG'
 import project2 from '../../../assets/nurafshon/Q2.jpg'
-import project3 from '../../../assets/Asia Medline/IMG_1930.jpg'
+import project3 from '../../../assets/Asia Medline/IMG_1930.JPG'
 import project4 from '../../../assets/The Knowledge center/IMG_2039.JPG'
 
 const containerStyle = {
