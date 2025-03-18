@@ -77,13 +77,17 @@ const Project = () => {
                 }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }} 
+                exit={{ opacity: 0, scale: 0.9 }}
                 whileHover={{
                   scale: 1.03,
                   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)',
                 }}
                 transition={{ duration: 0.3 }}
-                onClick={() => navigate('/projects/' + item.id)}
+                onClick={
+                  item.id !== 6 && item.id !== 7
+                    ? () => navigate('/projects/' + item.id)
+                    : undefined
+                }
               >
                 {!item.isActive ? (
                   <span className="relative text-[#CACACA] font-light py-[10px] px-[16px] bg-[#EDEDED] rounded-[48px] block w-fit mt-[16px] sm:mt-[32px] ml-auto mr-[16px] sm:mr-[32px] z-50">
@@ -98,21 +102,25 @@ const Project = () => {
                     style={{ fontFamily: 'Playfair Display Bold' }}
                     className="text-[20px] sm:text-[28px] lg:text-[36px] font-semibold leading-[36px] lg:leading-[48px]"
                   >
-                    {item?.title.toUpperCase()}
+                    {item?.title?.toUpperCase()}
                   </h3>
-                  <p className="text-[14px] sm:text-[20px] lg:text-[22px] mt-[8px] leading-[16px] sm:leading-[18px] font-normal flex items-center">
-                    <span className="mr-[8px]">
-                      <img
-                        src={location}
-                        alt="location icon"
-                        width={20}
-                        height={20}
-                      />
-                    </span>
-                    {item.location}
-                  </p>
+                  {item.location ? (
+                    <p className="text-[14px] sm:text-[20px] lg:text-[22px] mt-[8px] leading-[16px] sm:leading-[18px] font-normal flex items-center">
+                      <span className="mr-[8px]">
+                        <img
+                          src={location}
+                          alt="location icon"
+                          width={20}
+                          height={20}
+                        />
+                      </span>
+                      {item.location}
+                    </p>
+                  ) : (
+                    ''
+                  )}
 
-                  {item.isActive ? (
+                  {item.isActive && item.id !== 6 && item.id !== 7 ? (
                     <NavLink
                       transition={{ duration: 0.3 }}
                       className="bg-[#D18202] text-[16px] sm:text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[16px] sm:mt-[24px] flex items-center cursor-pointer w-full lg:w-fit hover:bg-[#EDEDED] hover:text-[#CACACA]"
