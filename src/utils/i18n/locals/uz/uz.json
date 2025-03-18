@@ -124,7 +124,7 @@
         "name_error1": "Kamida 5 ta belgi kiritish kerak",
         "name_error2": "Kamida bitta katta harf bo‘lishi kerak",
         "name_error3": "Kamida bitta kichik harf bo‘lishi kerak",
-        "phone_number_error": "Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak"
+        "phone_number_error": "Telefon raqam +998 bilan boshlanishi va +998912345678 tartibida kiritilishi kerak"
     },
     "vacancies_page": {
         "title": "Karyerangizni biz bilan boshlang",

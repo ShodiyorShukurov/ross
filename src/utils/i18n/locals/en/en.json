@@ -124,7 +124,7 @@
         "name_error1": "You must enter at least 5 characters",
         "name_error2": "At least one uppercase letter is required",
         "name_error3": "At least one lowercase letter is required",
-        "phone_number_error": "The phone number must start with +998 and contain 12 digits"
+        "phone_number_error": "The phone number must start with +998 and be entered in the format +998912345678."
     },
     "vacancies_page": {
         "title": "Karyerangizni biz bilan boshlang",
