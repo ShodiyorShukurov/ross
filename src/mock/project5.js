@@ -2,7 +2,7 @@ import fact_card1 from '../assets/MaxRoy/view_008.png';
 import fact_card2 from '../assets/MaxRoy/view_007.jpg';
 import fact_card3 from '../assets/MaxRoy/view_004.jpg';
 import fact_card4 from '../assets/MaxRoy/view_009.png';
-import fact_card5 from '../assets/MaxRoy/view_010.png';
+import fact_card5 from '../assets/MaxRoy/view_003.jpg';
 import img1 from '../assets/MaxRoy/view_001.jpg';
 import img2 from '../assets/MaxRoy/view_002.jpg';
 import img4 from '../assets/MaxRoy/view_003.jpg';
