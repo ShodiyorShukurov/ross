@@ -5,10 +5,12 @@ import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const { t } = useTranslation();
+  const [isLoading, setIsLoading] = React.useState(false);
 
-  const [formData, setFormData] = React.useState({
+  const [data, setData] = React.useState({
     fullName: '',
     phone: '',
+    category: 'Sheet1',
   });
 
   const [errors, setErrors] = React.useState({
@@ -40,28 +42,60 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setData((prev) => ({ ...prev, [name]: value }));
     validateInput(name, value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
 
-    Object.keys(formData).forEach((key) => {
-      validateInput(key, formData[key]);
-      if (!formData[key]) newErrors[key] = t('contact_page.error');
+    Object.keys(data).forEach((key) => {
+      validateInput(key, data[key]);
+      if (!data[key]) newErrors[key] = t('contact_page.error');
     });
+
+    setIsLoading(true);
 
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some((error) => error)) {
-      console.log('Form jo‘natildi:', formData);
+      const formData1 = new FormData();
+      formData1.append('fullName', data.fullName);
+      formData1.append('phone', data.phone);
+      formData1.append('category', data.category);
+      try {
+        await fetch(
+          'https://script.google.com/macros/s/AKfycbxq0kDCmMzddTgoozV0iC3iZMw19eLw8XSI4DN90FIpyObtSqAgOGhvmETROnhkFkPLRw/exec',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: formData1,
+            mode: 'no-cors',
+            redirect: 'follow',
+          }
+        );
+
+        console.log("Ma'lumotlar yuborildi:", data);
+        setData({
+          fullName: '',
+          phone: '',
+          message: '',
+        });
+        alert(t('contact_page.success'));
+      } catch (error) {
+        console.error('Fetch xatosi:', error);
+        alert(t('contact_page.error_message'));
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
   return (
-    <section className="py-[60px] sm:py-[100px]">
+    <section className="py-[60px] sm:py-[100px]" id="contact">
       <div className="container">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 bg-[#fff] rounded-[16px]"
@@ -96,7 +130,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="fullName"
-                value={formData.fullName}
+                value={data.fullName}
                 onChange={handleChange}
                 className={`w-full bg-transparent border-b py-3 text-black placeholder:text-#AAAAAA focus:border-[#D18202] transition-all outline-none  ${
                   errors.fullName
@@ -115,7 +149,7 @@ const Contact = () => {
                 <input
                   type="tel"
                   name="phone"
-                  value={formData.phone}
+                  value={data.phone}
                   onChange={handleChange}
                   className={`w-full bg-transparent border-b py-3 text-black placeholder:text-#AAAAAA focus:border-[#D18202] transition-all outline-none ${
                     errors.phone ? 'border-red-500 mb-[10px]' : 'border-black'
@@ -129,16 +163,44 @@ const Contact = () => {
 
               <button
                 style={{ fontFamily: 'SF Pro Display Regular' }}
-                className="bg-[#D18202] text-white text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer w-full sm:w-fit"
+                className={`bg-[#D18202] text-white text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[24px] flex items-center cursor-pointer w-full sm:w-fit ${
+                  isLoading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+                disabled={isLoading}
               >
-                {t('contact_page.button_text')}
+                {isLoading
+                  ? t('contact_page.loading_text')
+                  : t('contact_page.button_text')}
                 <span className="w-[46px] h-[46px] bg-white rounded-full flex justify-center items-center ml-auto sm:ml-[20px]">
-                  <img
-                    src={buttonIcon}
-                    alt="buttonIcon"
-                    width={20}
-                    height={20}
-                  />
+                  {isLoading ? (
+                    <svg
+                      className="animate-spin h-5 w-5 text-[#D18202]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                      ></path>
+                    </svg>
+                  ) : (
+                    <img
+                      src={buttonIcon}
+                      alt="buttonIcon"
+                      width={20}
+                      height={20}
+                    />
+                  )}
                 </span>
               </button>
             </form>

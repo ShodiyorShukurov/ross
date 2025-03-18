@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MoreInfoNews = ({ module }) => {
-  console.log(module);
+ 
   return (
     <section className="pt-[40px] lg:pt-[60px]">
       <div className="container">

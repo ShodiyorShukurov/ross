@@ -53,14 +53,24 @@ export default function Hero({ module }) {
     };
   }, [showMobileMenu, isDropdownOpen]);
 
-  const scrollToProjects = () => {
-    navigate('/');
-    setTimeout(() => {
-      const projectsSection = document.getElementById('projects');
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  const scrollToProjects = (arg) => {
+    if (arg == t('navbar.nav4')) {
+      navigate('/');
+      setTimeout(() => {
+        const projectsSection = document.getElementById('contact');
+        if (projectsSection) {
+          projectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+          projectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
     setShowMobileMenu(false);
   };
 
@@ -93,13 +103,17 @@ export default function Hero({ module }) {
               <NavLink to="/">{t('navbar.nav1')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <span onClick={() => scrollToProjects()}>{t('navbar.nav2')}</span>
+              <span onClick={() => scrollToProjects(t('navbar.nav2'))}>
+                {t('navbar.nav2')}
+              </span>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
               <NavLink to="/news">{t('navbar.nav3')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              {t('navbar.nav4')}
+              <span onClick={() => scrollToProjects(t('navbar.nav4'))}>
+                {t('navbar.nav4')}
+              </span>
             </li>
             <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
@@ -235,14 +249,15 @@ export default function Hero({ module }) {
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <a
-                  href="#projects"
+                <span
+                  className="cursor-pointer"
                   onClick={() => {
+                    scrollToProjects(t('navbar.nav2'));
                     setShowMobileMenu(false);
                   }}
                 >
                   {t('navbar.nav2')}
-                </a>
+                </span>
               </li>
               <li className="w-full text-center">
                 <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
@@ -250,9 +265,15 @@ export default function Hero({ module }) {
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => {
+                    scrollToProjects(t('navbar.nav4'));
+                    setShowMobileMenu(false);
+                  }}
+                >
                   {t('navbar.nav4')}
-                </NavLink>
+                </span>
               </li>
               <li className="w-full text-center">
                 <NavLink
@@ -296,7 +317,7 @@ export default function Hero({ module }) {
             >
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/rossfoundationuz?igsh=MWZrZXpodHZuaXM3cg%3D%3D&utm_source=qr"
                 target="blanck"
               >
                 <svg
@@ -334,7 +355,7 @@ export default function Hero({ module }) {
               </a>
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/1BTz2u8aVD/?mibextid=wwXIfr"
                 target="blanck"
               >
                 <svg

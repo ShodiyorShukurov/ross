@@ -40,7 +40,7 @@ const Projects = () => {
         <Fact module={projectData} />
         {projectData?.id == 3 || projectData?.id == 4 || projectData?.id == 5 ? '' : <Calculation module={projectData} />}
         <BuildingMap module={projectData} />
-        <Contact />
+        <Contact module={projectData}/>
         <Project />
       </main>
       <Footer />

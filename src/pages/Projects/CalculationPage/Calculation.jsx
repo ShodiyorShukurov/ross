@@ -5,7 +5,7 @@ const Calculation = ({ module }) => {
   const [selectedFloor, setSelectedFloor] = React.useState(
     module?.calculator_page.floor1 ? module?.calculator_page.floor1 : '1 qavat'
   );
-  console.log(selectedFloor);
+
   const [pricePerM2, setPricePerM2] = React.useState(
     module?.id !== 2
       ? module?.calculator_page.area_sum

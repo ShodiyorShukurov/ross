@@ -9,11 +9,11 @@
     },
     "hero": {
         "title": "Ross Foundation",
-        "subtitle": "Construction in Tashkent City",
+        "subtitle": "Construction, energy, and innovative solutions.",
         "button_text": "Get a Consultation"
     },
     "vacancies_hero": {
-        "title": "Find Your Dream Job with First Class Company",
+        "title": "Find Your Dream Job with Ross Foundation Company",
         "subtitle": "The Team You've Been Waiting For!",
         "button_text": "Join the Team"
     },
@@ -86,7 +86,9 @@
         "news_page_title": "News",
         "news_page_subtitle": "Stay updated with the latest news from our company",
         "news_page_body_title": "News",
-        "news_detail_title1": "Be neighbors with your friends and get a bonus!",
+        "news1_detail_title1": "Construction of a modern restaurant and a prestigious hotel has begun in the center of Tashkent.",
+        "news2_detail_title1": "Grow your business with us. Rent comfortable offices for your business!",
+        "news3_detail_title1": "Become part of a growing team!",
         "news_detail_title2": "Related News",
         "sana": "Date",
         "all": "All",

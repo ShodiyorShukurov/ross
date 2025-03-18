@@ -113,12 +113,15 @@ export default function Hero() {
               <NavLink to="/news">{t('navbar.nav3')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              {t('navbar.nav4')}
+              <a href="#contact"> {t('navbar.nav4')}</a>
             </li>
             <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
 
-          <a href='/' className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px]">
+          <a
+            href="/"
+            className="relative w-[70px] sm:w-[100px] h-[80px] sm:h-[100px]"
+          >
             <img
               src={logobg}
               alt="logobg"
@@ -151,9 +154,9 @@ export default function Hero() {
                   99 986 70 07
                 </span>
               </a>
-              <button className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
+              <a href='#contact' className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
                 {t('navbar.nav_button')}
-              </button>
+              </a>
             </div>
 
             <div className="relative z-50">
@@ -241,12 +244,12 @@ export default function Hero() {
             <ul className="flex flex-col items-center justify-center space-y-6 mt-[50px] md:mt-[100px] text-[20px] font-semibold text-white ">
               <li className="w-full text-center">
                 <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
-                {t('navbar.nav1')}
+                  {t('navbar.nav1')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
                 <a
-                href='#projects'
+                  href="#projects"
                   onClick={() => {
                     setShowMobileMenu(false);
                   }}
@@ -256,13 +259,13 @@ export default function Hero() {
               </li>
               <li className="w-full text-center">
                 <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
-                {t('navbar.nav3')}
+                  {t('navbar.nav3')}
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
-                {t('navbar.nav4')}
-                </NavLink>
+                <a href="#contact" onClick={() => setShowMobileMenu(false)}>
+                  {t('navbar.nav4')}
+                </a>
               </li>
               <li className="w-full text-center">
                 <NavLink
@@ -274,16 +277,20 @@ export default function Hero() {
               </li>
             </ul>
 
-            <button className="bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer mx-auto block mt-[32px]">
+            <a
+              href="#contact"
+              onClick={() => setShowMobileMenu(false)}
+              className="w-fit bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer mx-auto block mt-[32px]"
+            >
               {t('navbar.nav_button')}
-            </button>
+            </a>
 
             <p className="text-[#FFFFFFB2] text-[18px] mt-[38px] text-center">
-            {t('footer.location')}
+              {t('footer.location')}
             </p>
 
             <h5 className="text-[#AAAAAA] text-[18px] mt-[16px] text-center uppercase">
-            {t('footer.call_center')}
+              {t('footer.call_center')}
             </h5>
 
             <a
@@ -306,7 +313,7 @@ export default function Hero() {
             >
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/rossfoundationuz?igsh=MWZrZXpodHZuaXM3cg%3D%3D&utm_source=qr"
                 target="blanck"
               >
                 <svg
@@ -344,7 +351,7 @@ export default function Hero() {
               </a>
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/1BTz2u8aVD/?mibextid=wwXIfr"
                 target="blanck"
               >
                 <svg
@@ -373,11 +380,11 @@ export default function Hero() {
             {t('hero.title')}
           </h1>
           <p className="text-[20px] md:text-[24px] mt-[13px]">
-          {t('hero.subtitle')}
+            {t('hero.subtitle')}
           </p>
-          <button className="mt-5 bg-[#D18202] text-white text-[18px] py-[10px] px-[30px] rounded-[48px] hover:bg-yellow-600 transition-all duration-300 cursor-pointer">
-          {t('hero.button_text')}
-          </button>
+          <a href='#contact' className="mt-5 bg-[#D18202] text-white text-[18px] py-[10px] px-[30px] rounded-[48px] hover:bg-yellow-600 transition-all duration-300 cursor-pointer">
+            {t('hero.button_text')}
+          </a>
         </div>
 
         <div className="flex justify-center items-center space-x-3 mt-10 absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">

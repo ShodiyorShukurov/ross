@@ -86,7 +86,7 @@ export default function Hero({ module }) {
               <NavLink to="/news">{t('navbar.nav3')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              {t('navbar.nav4')}
+              <a href="#contact"> {t('navbar.nav4')}</a>
             </li>
             <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
@@ -127,9 +127,9 @@ export default function Hero({ module }) {
                   99 986 70 07
                 </span>
               </a>
-              <button className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
+              <a href='#contact' className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
                 {t('navbar.nav_button')}
-              </button>
+              </a>
             </div>
 
             <div className="relative z-50">
@@ -237,9 +237,9 @@ export default function Hero({ module }) {
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
+                <a href="#contact" onClick={() => setShowMobileMenu(false)}>
                   {t('navbar.nav4')}
-                </NavLink>
+                </a>
               </li>
               <li className="w-full text-center">
                 <NavLink
@@ -251,9 +251,9 @@ export default function Hero({ module }) {
               </li>
             </ul>
 
-            <button className="bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer mx-auto block mt-[32px]">
+            <a href='#contact' onClick={() => setShowMobileMenu(false)} className="w-fit bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer mx-auto block mt-[32px]">
               {t('navbar.nav_button')}
-            </button>
+            </a>
 
             <p className="text-[#FFFFFFB2] text-[18px] mt-[38px] text-center">
               {t('footer.location')}
@@ -283,7 +283,7 @@ export default function Hero({ module }) {
             >
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/rossfoundationuz?igsh=MWZrZXpodHZuaXM3cg%3D%3D&utm_source=qr"
                 target="blanck"
               >
                 <svg
@@ -321,7 +321,7 @@ export default function Hero({ module }) {
               </a>
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/1BTz2u8aVD/?mibextid=wwXIfr"
                 target="blanck"
               >
                 <svg
@@ -371,7 +371,7 @@ export default function Hero({ module }) {
           )}
         </ul>
 
-        <div className="lg:absolute flex flex-col justify-end text-center items-center text-[#fff] lg:left-1/2 transform lg:-translate-x-1/2 lg:bottom-20 h-[50vh] lg:h-auto w-full lg:w-auto">
+        <div className="lg:absolute flex flex-col justify-end text-center items-center text-[#fff] lg:left-1/2 transform lg:-translate-x-1/2 lg:bottom-20 h-[60vh] lg:h-auto w-full lg:w-auto">
           <h1
             className="text-[40px] md:text-[60px] leading-[53px] lg:text-[70px] md:leading-[70px] font-bold w-[100%] "
             style={{ fontFamily: 'Playfair Display Bold' }}
@@ -382,15 +382,15 @@ export default function Hero({ module }) {
             {module?.hero.subtitle}
           </p>
           {module?.hero.button1 ? (
-            <button className="mb-[20px] md:mb-0 mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
+            <a href='#contact' className="mb-0 mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
               {module?.hero.button1}
-            </button>
+            </a>
           ) : (
             ''
           )}
           <a
             href="tel:+998 99 986 70 07"
-            className="hidden md:block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]"
+            className="block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]"
           >
             {module?.hero.button2}
           </a>

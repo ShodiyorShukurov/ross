@@ -222,7 +222,7 @@ const Footer = () => {
             >
               <a
                 className="flex gap-[10px] items-center text-[#151515] hover:text-[#D18202] transition-all duration-300"
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/rossfoundationuz?igsh=MWZrZXpodHZuaXM3cg%3D%3D&utm_source=qr"
                 target="blanck"
               >
                 <svg
@@ -260,7 +260,7 @@ const Footer = () => {
               </a>
               <a
                 className="flex gap-[10px] items-center text-[#151515] hover:text-[#D18202] transition-all duration-300"
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/1BTz2u8aVD/?mibextid=wwXIfr"
                 target="blanck"
               >
                 <svg

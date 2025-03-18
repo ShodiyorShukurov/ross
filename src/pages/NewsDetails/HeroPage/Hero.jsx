@@ -6,7 +6,7 @@ import logo from '../../../assets/logo/ross.png';
 import calendar from '../../../assets/logo/calendar.svg';
 import burgerMenu from '../../../assets/logo/burgerMenu.svg';
 import close from '../../../assets/logo/close.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export default function Hero({ module }) {
@@ -17,6 +17,7 @@ export default function Hero({ module }) {
   const menuRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     i18n.changeLanguage(savedLang);
@@ -53,6 +54,27 @@ export default function Hero({ module }) {
     };
   }, [showMobileMenu, isDropdownOpen]);
 
+  const scrollToProjects = (arg) => {
+    if (arg == t('navbar.nav4')) {
+      navigate('/');
+      setTimeout(() => {
+        const projectsSection = document.getElementById('contact');
+        if (projectsSection) {
+          projectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+          projectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+    setShowMobileMenu(false);
+  };
+
   return (
     <div
       className="relative min-h-screen bg-center transition-all duration-500"
@@ -82,13 +104,17 @@ export default function Hero({ module }) {
               <NavLink to="/">{t('navbar.nav1')}</NavLink>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <a href="#projects">{t('navbar.nav2')}</a>
+              <span onClick={() => scrollToProjects(t('navbar.nav2'))}>
+                {t('navbar.nav2')}
+              </span>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
               <a href="#news">{t('navbar.nav3')}</a>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              {t('navbar.nav4')}
+              <span onClick={() => scrollToProjects(t('navbar.nav4'))}>
+                {t('navbar.nav4')}
+              </span>
             </li>
             <NavLink to="/vacancies">{t('navbar.nav5')}</NavLink>
           </ul>
@@ -223,15 +249,15 @@ export default function Hero({ module }) {
                   {t('navbar.nav1')}
                 </NavLink>
               </li>
-              <li className="w-full text-center">
-                <a
-                  href="#projects"
+              <li className="w-full text-center cursor-pointer">
+                <span
                   onClick={() => {
+                    scrollToProjects(t('navbar.nav2'));
                     setShowMobileMenu(false);
                   }}
                 >
                   {t('navbar.nav2')}
-                </a>
+                </span>
               </li>
               <li className="w-full text-center">
                 <NavLink to="/news" onClick={() => setShowMobileMenu(false)}>
@@ -239,9 +265,14 @@ export default function Hero({ module }) {
                 </NavLink>
               </li>
               <li className="w-full text-center">
-                <NavLink to="/" onClick={() => setShowMobileMenu(false)}>
+                <span
+                  onClick={() => {
+                    scrollToProjects(t('navbar.nav4'));
+                    setShowMobileMenu(false);
+                  }}
+                >
                   {t('navbar.nav4')}
-                </NavLink>
+                </span>
               </li>
               <li className="w-full text-center">
                 <NavLink
@@ -285,7 +316,7 @@ export default function Hero({ module }) {
             >
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/rossfoundationuz?igsh=MWZrZXpodHZuaXM3cg%3D%3D&utm_source=qr"
                 target="blanck"
               >
                 <svg
@@ -323,7 +354,7 @@ export default function Hero({ module }) {
               </a>
               <a
                 className="flex gap-[10px] items-center hover:text-[#D18202] transition-all duration-300"
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/1BTz2u8aVD/?mibextid=wwXIfr"
                 target="blanck"
               >
                 <svg
@@ -348,7 +379,7 @@ export default function Hero({ module }) {
             className="text-[40px] md:text-[60px] lg:text-[80px] leading-[53px] md:leading-[70px] lg:leading-[96px] font-bold w-full max-w-[1350px] "
             style={{ fontFamily: 'Playfair Display Bold' }}
           >
-            {t('news.news_detail_title1')}
+            {module?.main_title}
           </h1>
           <button className="p-[12px] text-[14px] text-[#00000080] bg-white mt-[24px] w-fit leading-[16px] flex gap-2.5 rounded-[20px] items-center">
             <img src={calendar} alt="calendar" width={18} height={18} />

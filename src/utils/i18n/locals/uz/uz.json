@@ -9,11 +9,11 @@
     },
     "hero": {
         "title": "Ross Foundation",
-        "subtitle": "Qurilish Toshkent shahrida joylashgan",
+        "subtitle": "Qurilish, energetika va innovatsion yechimlar.",
         "button_text": "Konsultatsiya olish"
     },
     "vacancies_hero": {
-        "title": "Ros Foundation bilan ozruyingizdagi ishni toping",
+        "title": "Ross Foundation bilan ozruyingizdagi ishni toping",
         "subtitle": "Siz kutgan ayni jamoa!",
         "button_text": "Jamoaga qo'shilish"
     },
@@ -86,7 +86,9 @@
         "news_page_title": "Yangiliklar",
         "news_page_subtitle": "Kompaniyamizdagi eng so’nggi yangiliklar bilan tanishing",
         "news_page_body_title": "Yangiliklar",
-        "news_detail_title1": "Do'stlaringiz bilan qo'shni bo'ling va bonusga ega bo'ling!",
+        "news1_detail_title1": "Toshkent markazida zamonaviy restoran va nufuzli mehmonxona qurilishi boshlandi.",
+        "news2_detail_title1": " Biznesingizni biz bilan rivojlantiring. Biznesingiz uchun qulay ofislarni ijaraga oling!",
+        "news3_detail_title1": "O'suvchi jamoaning bir qismiga aylaning!",
         "news_detail_title2": "O‘xshash yangiliklar",
         "sana": "Sana",
         "all": "Barchasi",
