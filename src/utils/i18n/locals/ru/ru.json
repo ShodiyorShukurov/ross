@@ -13,7 +13,7 @@
         "button_text": "Получить консультацию"
     },
     "vacancies_hero": {
-        "title": "Найдите работу своей мечты с компанией Ross Foundation",
+        "title": "Найдите работу мечты с Ross Foundation",
         "subtitle": "Команда, которую вы ждали!",
         "button_text": "Присоединиться к команде"
     },
@@ -124,7 +124,8 @@
         "name_error1": "Необходимо ввести минимум 5 символов",
         "name_error2": "Должна быть хотя бы одна заглавная буква",
         "name_error3": "Должна быть хотя бы одна строчная буква",
-        "phone_number_error": "Номер телефона должен начинаться с +998 и быть введён в формате +998912345678."
+        "phone_number_error": "Номер телефона должен начинаться с +998 и быть введён в формате +998912345678.",
+        "loading_text": "Отправка..."
     },
     "vacancies_page": {
         "title": "Karyerangizni biz bilan boshlang",
@@ -171,8 +172,8 @@
         "school_location": "10 минут пешком до школы №43",
         "business_center": "",
         "business_center_location": "",
-        "sports_complex": "Спортивный комплекс",
-        "sports_complex_location": "3 минуты пешком до спорткомплекса Чехов Юлдуз",
+        "sports_complex": "",
+        "sports_complex_location": "",
         "image_desc": "CentraVista — это не просто офисное здание, а современная экосистема, предлагающая премиальные возможности для вашего бизнеса.",
         "fact_title": "5 фактов о проекте",
         "fact_desc": "Премиальный бизнес-центр в центре Ташкента, выбранный международными компаниями — штаб-квартиры таких крупных фирм, как UCELL, TBC, PayMe, PWC, RSM, VFS Global (UK Visa Center).",

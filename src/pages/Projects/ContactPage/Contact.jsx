@@ -2,8 +2,9 @@ import React from 'react';
 import buttonIcon from '../../../assets/logo/right.svg';
 import bg from '../../../assets/images/form.png';
 import { useTranslation } from 'react-i18next';
+import { API } from '../../../utils/Constants';
 
-const Contact = ({module}) => {
+const Contact = ({ module }) => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -11,8 +12,8 @@ const Contact = ({module}) => {
     fullName: '',
     phone: '',
     category: 'Sheet3',
-    project: module?.hero.title,
   });
+  console.log(module?.hero.title);
 
   const [errors, setErrors] = React.useState({
     fullName: '',
@@ -50,52 +51,53 @@ const Contact = ({module}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
-
+  
     Object.keys(data).forEach((key) => {
       validateInput(key, data[key]);
       if (!data[key]) newErrors[key] = t('contact_page.error');
     });
-
-    // setIsLoading(true);
-
+  
+    setIsLoading(true);
     setErrors(newErrors);
-console.log(data)
+  
     if (!Object.values(newErrors).some((error) => error)) {
       const formData1 = new FormData();
-      formData1.append('fullName', data.fullName);
-      formData1.append('phone', data.phone);
-      formData1.append('category', data.category);
-      formData1.append('project', data.project);
-      console.log(...formData1)
+      formData1.append("fullName", data.fullName);
+      formData1.append("phone", data.phone);
+      formData1.append("category", data.category);
+      formData1.append("project", module?.hero.title);
+  
+      console.log(...formData1);
+  
       try {
-        await fetch(
-          'https://script.google.com/macros/s/AKfycbxq0kDCmMzddTgoozV0iC3iZMw19eLw8XSI4DN90FIpyObtSqAgOGhvmETROnhkFkPLRw/exec',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: formData1,
-            mode: 'no-cors',
-            redirect: 'follow',
-          }
-        );
-
-        console.log("Ma'lumotlar yuborildi:", data);
-        setData({
-          fullName: '',
-          phone: '',
-          message: '',
+        await fetch(API, {
+          method: "POST",
+          body: formData1, // ✅ `Content-Type` kerak emas
+          mode: "no-cors",
+          redirect: "follow",
         });
-        alert(t('contact_page.success'));
+  
+        console.log("✅ Ma'lumotlar yuborildi:", data);
+        alert(t("contact_page.success")); // ✅ Alert chiqaramiz
+  
+        setTimeout(() => {
+          window.location.reload(); // ✅ Alert yopilgandan keyin sahifani yangilash
+        }, 100); // ⏳ 100ms kutish
+  
+        setData({
+          fullName: "",
+          phone: "",
+          project: "",
+        });
       } catch (error) {
-        console.error('Fetch xatosi:', error);
-        alert(t('contact_page.error_message'));
+        console.error("❌ Fetch xatosi:", error);
+        alert(t("contact_page.error_message"));
       } finally {
         setIsLoading(false);
       }
     }
   };
+  
 
   return (
     <section className="py-[60px] sm:py-[100px]" id="contact">

@@ -2,6 +2,7 @@ import React from 'react';
 import buttonIcon from '../../../assets/logo/right.svg';
 import bg from '../../../assets/images/form.png';
 import { useTranslation } from 'react-i18next';
+import { API } from '../../../utils/Constants';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -56,7 +57,6 @@ const Contact = () => {
     });
 
     setIsLoading(true);
-
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some((error) => error)) {
@@ -64,29 +64,37 @@ const Contact = () => {
       formData1.append('fullName', data.fullName);
       formData1.append('phone', data.phone);
       formData1.append('category', data.category);
-      try {
-        await fetch(
-          'https://script.google.com/macros/s/AKfycbxq0kDCmMzddTgoozV0iC3iZMw19eLw8XSI4DN90FIpyObtSqAgOGhvmETROnhkFkPLRw/exec',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: formData1,
-            mode: 'no-cors',
-            redirect: 'follow',
-          }
-        );
 
-        console.log("Ma'lumotlar yuborildi:", data);
-        setData({
-          fullName: '',
-          phone: '',
-          message: '',
+      try {
+        const response = await fetch(API, {
+          method: 'POST',
+          body: formData1, // ✅ `Content-Type` avtomatik aniqlanadi
         });
-        alert(t('contact_page.success'));
+
+        if (!response.ok) {
+          throw new Error(`Server xatosi: ${response.status}`);
+        }
+
+        const result = await response.json();
+        console.log('✅ Serverdan javob:', result);
+
+        if (result.status === 'success') {
+          alert(t('contact_page.success')); // ✅ Foydalanuvchi alertni yopishi kerak
+
+          setTimeout(() => {
+            window.location.reload(); // ✅ Alert yopilgandan keyin sahifani yangilaydi
+          }, 100); // ⏳ 100ms kutish (alertdan keyin)
+
+          setData({
+            fullName: '',
+            phone: '',
+            message: '',
+          });
+        } else {
+          alert('Xatolik: ' + result.message);
+        }
       } catch (error) {
-        console.error('Fetch xatosi:', error);
+        console.error('❌ Fetch xatosi:', error);
         alert(t('contact_page.error_message'));
       } finally {
         setIsLoading(false);

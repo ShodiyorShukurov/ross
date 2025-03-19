@@ -19,10 +19,7 @@ const containerStyle = {
   height: '700px',
 };
 
-const center = {
-  lat: 41.2995,
-  lng: 69.2401,
-};
+const center = { lat: 41.336, lng: 69.259392 };
 
 const ProjectMap = () => {
   const { t } = useTranslation();

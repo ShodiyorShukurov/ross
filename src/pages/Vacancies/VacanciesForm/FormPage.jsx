@@ -2,32 +2,47 @@ import React, { useState } from 'react';
 import { Loader2, FileText, Trash2, Download } from 'lucide-react';
 import { getVacansies } from '../../../mock/vacansiesData';
 import { useTranslation } from 'react-i18next';
+import { API } from '../../../utils/Constants';
 
 const FormPage = () => {
   const { t } = useTranslation();
   const [selectedFiles, setSelectedFiles] = useState([]);
-  const [formData, setFormData] = useState({
+  const [data, setData] = useState({
     fullName: '',
     phone: '',
     email: '',
     vacancy: '',
-    file: null,  
+    category: 'Sheet2',
+    fileName: null,
   });
   const [errors, setErrors] = useState({
     fullName: '',
     phone: '',
     email: '',
-    vacancy: '', 
-    file: '',  
+    vacancy: '',
+    file: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
   const vacanciesData = getVacansies(t);
 
   const handleFileChange = (event) => {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       setSelectedFiles([{ file, loading: true }]);
-      setFormData((prev) => ({ ...prev, file }));
-      validateInput('file', file); 
+
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        const base64String = reader.result.split(',')[1];
+        setData((prev) => ({
+          ...prev,
+          fileName: file.name,
+          fileType: file.type,
+          fileData: base64String,
+        }));
+        validateInput('file', file);
+      };
+
+      reader.readAsDataURL(file);
 
       setTimeout(() => {
         setSelectedFiles([{ file, loading: false }]);
@@ -37,8 +52,8 @@ const FormPage = () => {
 
   const removeFile = (index) => {
     setSelectedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
-    setFormData((prev) => ({ ...prev, file: null })); 
-    setErrors((prev) => ({ ...prev, file: '' })); 
+    setData((prev) => ({ ...prev, file: null }));
+    setErrors((prev) => ({ ...prev, file: '' }));
   };
 
   const validateInput = (name, value) => {
@@ -70,10 +85,14 @@ const FormPage = () => {
       }
 
       if (name === 'file') {
-        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        const allowedTypes = [
+          'application/pdf',
+          'application/msword',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        ];
         if (!allowedTypes.includes(value.type)) {
           error = t('vacancies_form.file_error1');
-        } else if (value.size > 5 * 1024 * 1024) { 
+        } else if (value.size > 5 * 1024 * 1024) {
           error = t('vacancies_form.file_error2');
         }
       }
@@ -84,23 +103,77 @@ const FormPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setData((prev) => ({ ...prev, [name]: value }));
     validateInput(name, value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let newErrors = {};
 
-    Object.keys(formData).forEach((key) => {
-      validateInput(key, formData[key]);
-      if (!formData[key] && key !== 'file') newErrors[key] = t('contact_page.error'); 
+    let newErrors = {};
+    Object.keys(data).forEach((key) => {
+      validateInput(key, data[key]);
+      if (
+        !data[key] &&
+        key !== 'fileData' &&
+        key !== 'email' &&
+        key !== 'vacancy'
+      ) {
+        newErrors[key] = t('contact_page.error');
+      }
     });
 
     setErrors(newErrors);
 
-    if (!Object.values(newErrors).some((error) => error)) {
-      console.log('Form jo‘natildi:', formData);
+    if (Object.keys(newErrors).length === 0) {
+      setIsLoading(true);
+
+      const payload = {
+        fullName: data.fullName,
+        phone: data.phone,
+        category: data.category,
+        email: data.email || '',
+        jobTitle: data.vacancy || '',
+        fileName: data.fileName || '',
+        fileType: data.fileType || '',
+        fileData: data.fileData || '',
+      };
+
+      console.log('📤 Yuborilayotgan JSON:', payload);
+
+      try {
+        const response = await fetch(API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          mode: 'no-cors',
+          redirect: 'follow',
+        });
+
+        const result = await response.json();
+        console.log('✅ Serverdan javob:', result);
+
+        if (result.status === 'success') {
+          alert("Ma'lumotlar muvaffaqiyatli yuborildi!");
+          setData({
+            fullName: '',
+            phone: '',
+            email: '',
+            vacancy: '',
+            category: '',
+            fileName: '',
+            fileType: '',
+            fileData: '',
+          });
+        } else {
+          alert('Xatolik: ' + result.message);
+        }
+      } catch (error) {
+        console.error('❌ Fetch xatosi:', error);
+        alert('Serverga ulanishda xatolik yuz berdi.');
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -124,7 +197,7 @@ const FormPage = () => {
                   type="text"
                   name="fullName"
                   placeholder={t('vacancies_form.name')}
-                  value={formData.fullName}
+                  value={data.fullName}
                   onChange={handleChange}
                   className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
                 />
@@ -136,7 +209,7 @@ const FormPage = () => {
                   type="tel"
                   name="phone"
                   placeholder={t('vacancies_form.phone_number')}
-                  value={formData.phone}
+                  value={data.phone}
                   onChange={handleChange}
                   className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
                 />
@@ -148,7 +221,7 @@ const FormPage = () => {
                   type="email"
                   name="email"
                   placeholder={t('vacancies_form.email')}
-                  value={formData.email}
+                  value={data.email}
                   onChange={handleChange}
                   className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
                 />
@@ -158,11 +231,13 @@ const FormPage = () => {
 
                 <select
                   name="vacancy"
-                  value={formData.vacancy}
+                  value={data.vacancy}
                   onChange={handleChange}
                   className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
                 >
-                  <option value="">{t('vacancies_form.select_placeholder')}</option>
+                  <option value="">
+                    {t('vacancies_form.select_placeholder')}
+                  </option>
                   {vacanciesData.map((item) => (
                     <option key={item.id} value={item.id}>
                       {item.title}
@@ -175,9 +250,14 @@ const FormPage = () => {
 
                 <button
                   type="submit"
-                  className="hidden lg:block bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 cursor-pointer"
+                  className={`hidden lg:block bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 row-start-4 md:row-start-3 col-span-2 cursor-pointer ${
+                    isLoading ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
+                  disabled={isLoading}
                 >
-                  {t('vacancies_form.button_text')}
+                  {isLoading
+                    ? t('vacancies_form.button_text')
+                    : t('vacancies_form.button_text')}
                 </button>
               </div>
 
@@ -249,7 +329,7 @@ const FormPage = () => {
                       <div>
                         <p>{t('vacancies_form.file_input_text1')}</p>
                         <p className="text-xs text-gray-400">
-                        {t('vacancies_form.file_input_text2')}
+                          {t('vacancies_form.file_input_text2')}
                         </p>
                       </div>
                     </div>
@@ -262,9 +342,14 @@ const FormPage = () => {
 
               <button
                 type="submit"
-                className="block lg:hidden bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 row-start-4 md:row-start-3 col-span-2 cursor-pointer"
+                className={`block lg:hidden bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 row-start-4 md:row-start-3 col-span-2 cursor-pointer ${
+                  isLoading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+                disabled={isLoading}
               >
-                {t('vacancies_form.button_text')}
+                {isLoading
+                  ? t('vacancies_form.button_text')
+                  : t('vacancies_form.button_text')}
               </button>
 
               <div className="col-span-2">

@@ -13,7 +13,7 @@
         "button_text": "Konsultatsiya olish"
     },
     "vacancies_hero": {
-        "title": "Ross Foundation bilan ozruyingizdagi ishni toping",
+        "title": "Ross Foundation bilan orzuyingizdagi ishni toping",
         "subtitle": "Siz kutgan ayni jamoa!",
         "button_text": "Jamoaga qo'shilish"
     },
@@ -124,7 +124,8 @@
         "name_error1": "Kamida 5 ta belgi kiritish kerak",
         "name_error2": "Kamida bitta katta harf bo‘lishi kerak",
         "name_error3": "Kamida bitta kichik harf bo‘lishi kerak",
-        "phone_number_error": "Telefon raqam +998 bilan boshlanishi va +998912345678 tartibida kiritilishi kerak"
+        "phone_number_error": "Telefon raqam +998 bilan boshlanishi va +998912345678 tartibida kiritilishi kerak",
+        "loading_text": "Yuborilmoqda..."
     },
     "vacancies_page": {
         "title": "Karyerangizni biz bilan boshlang",
@@ -171,8 +172,8 @@
         "school_location": "43 maktab gacha 10 daqiqalik yo’l",
         "business_center": "",
         "business_center_location": "",
-        "sports_complex": "Sport kompleksi",
-        "sports_complex_location": "Chekhov Yulduz sport kompleksi uchun 3 daqiqalik yo’l",
+        "sports_complex": "",
+        "sports_complex_location": "",
         "image_desc": "CentraVista – bu nafaqat ofis binosi, balki sizning biznesingiz uchun premium darajadagi imkoniyatlarni taqdim etuvchi zamonaviy ekotizimdir.",
         "fact_title": "Loyiha haqida 5 ta fakt",
         "fact_desc": "Toshkentning markazida joylashgan premium biznes markazi Xalqaro kompaniyalar tanlagan ofis hududi – UCELL, TBC, PayMe, PWC, RSM, VFS Global (UK Visa Center) kabi yirik kompaniyalarning qarorgohi",

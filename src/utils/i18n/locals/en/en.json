@@ -13,7 +13,7 @@
         "button_text": "Get a Consultation"
     },
     "vacancies_hero": {
-        "title": "Find Your Dream Job with Ross Foundation Company",
+        "title": "Find Your Dream Job with Ross Foundation",
         "subtitle": "The Team You've Been Waiting For!",
         "button_text": "Join the Team"
     },
@@ -124,7 +124,8 @@
         "name_error1": "You must enter at least 5 characters",
         "name_error2": "At least one uppercase letter is required",
         "name_error3": "At least one lowercase letter is required",
-        "phone_number_error": "The phone number must start with +998 and be entered in the format +998912345678."
+        "phone_number_error": "The phone number must start with +998 and be entered in the format +998912345678.",
+        "loading_text": "Sending..."
     },
     "vacancies_page": {
         "title": "Karyerangizni biz bilan boshlang",
@@ -171,8 +172,8 @@
         "school_location": "10-minute walk to School No. 43",
         "business_center": "",
         "business_center_location": "",
-        "sports_complex": "Sports Complex",
-        "sports_complex_location": "3-minute walk to Chekhov Yulduz Sports Complex",
+        "sports_complex": "",
+        "sports_complex_location": "",
         "image_desc": "CentraVista is not just an office building, but a modern ecosystem offering premium opportunities for your business.",
         "fact_title": "5 Facts About the Project",
         "fact_desc": "A premium business center in the heart of Tashkent, chosen by international companies – headquarters of major firms like UCELL, TBC, PayMe, PWC, RSM, VFS Global (UK Visa Center).",
