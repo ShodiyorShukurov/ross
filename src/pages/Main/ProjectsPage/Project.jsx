@@ -83,11 +83,7 @@ const Project = () => {
                   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)',
                 }}
                 transition={{ duration: 0.3 }}
-                onClick={
-                  item.id !== 6 && item.id !==7
-                    ? () => navigate('/projects/' + item.id)
-                    : undefined
-                }
+                onClick={() => navigate('/projects/' + item.id)}
               >
                 {!item.isActive ? (
                   <span className="relative text-[#CACACA] font-light py-[10px] px-[16px] bg-[#EDEDED] rounded-[48px] block w-fit mt-[16px] sm:mt-[32px] ml-auto mr-[16px] sm:mr-[32px] z-50">
@@ -120,7 +116,7 @@ const Project = () => {
                     ''
                   )}
 
-                  {item.isActive && item.id !==6 && item.id !==7  ? (
+                  {item.isActive && item.id !== 6 && item.id !== 7 ? (
                     <NavLink
                       transition={{ duration: 0.3 }}
                       className="bg-[#D18202] text-[16px] sm:text-[18px] leading-[26px] pl-[30px] py-[2px] pr-[2px] rounded-[48px] mt-[16px] sm:mt-[24px] flex items-center cursor-pointer w-full lg:w-fit hover:bg-[#EDEDED] hover:text-[#CACACA]"

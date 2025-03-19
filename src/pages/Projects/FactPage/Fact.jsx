@@ -11,6 +11,7 @@ const Fact = ({ module }) => {
         >
           {module?.fact_page.title}
         </h2>
+
         <p
           style={{ fontFamily: 'SF Pro Display Light' }}
           className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[890px] mt-[20px]"
@@ -19,7 +20,7 @@ const Fact = ({ module }) => {
         </p>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-[16px] mt-[10px] md:mt-[60px]">
-          {module?.fact_page.fact_cards.slice(0, 2).map((card) => (
+          {module?.fact_page?.fact_cards?.slice(0, 2).map((card) => (
             <li
               key={card.id}
               className="relative rounded-lg overflow-hidden w-full h-[180px] sm:h-[280px] md:h-[380px] bg-no-repeat bg-center cursor-pointer bg-cover"
@@ -38,7 +39,7 @@ const Fact = ({ module }) => {
         </ul>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px] pt-[16px]">
-          {module?.fact_page.fact_cards.slice(2).map((card) => (
+          {module?.fact_page?.fact_cards?.slice(2).map((card) => (
             <li
               key={card.id}
               className="relative rounded-lg overflow-hidden w-full h-[180px] sm:h-[280px] md:h-[380px] bg-cover bg-center cursor-pointer"
@@ -62,7 +63,7 @@ const Fact = ({ module }) => {
             backgroundImage: `url(${factBg})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom right',
-            backgroundSize: 'contain'
+            backgroundSize: 'contain',
           }}
         >
           {module?.fact_page.area_cards.map((item) => (

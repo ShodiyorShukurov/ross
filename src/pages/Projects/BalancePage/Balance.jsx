@@ -46,29 +46,33 @@ const GallerySection = ({ module }) => {
           </div>
 
           {/* Qo‘shimcha rasmlar */}
-          <div className="flex flex-row md:flex-col gap-2 md:gap-3">
-            <img
-              src={module?.image_page.images[1]}
-              alt="Thumbnail 1"
-              className="w-1/2 md:w-full h-auto max-h-[25vh] md:max-h-[35vh] rounded-xl cursor-pointer object-cover"
-              onClick={() => setIsOpen(true)}
-            />
-            <div
-              className="w-1/2 md:w-full relative rounded-xl cursor-pointer"
-              onClick={() => setIsOpen(true)}
-            >
+          {module?.image_page.images.length > 1 ? (
+            <div className="flex flex-row md:flex-col gap-2 md:gap-3">
               <img
-                src={module?.image_page.images[2]}
-                alt="More Images"
-                className="w-full h-auto max-h-[25vh] md:max-h-[35vh] rounded-xl object-cover"
+                src={module?.image_page.images[1]}
+                alt="Thumbnail 1"
+                className="w-1/2 md:w-full h-auto max-h-[25vh] md:max-h-[35vh] rounded-xl cursor-pointer object-cover"
+                onClick={() => setIsOpen(true)}
               />
-              <div className="absolute inset-0 bg-black/50 flex justify-center items-center rounded-xl">
-                <span className="text-white text-base sm:text-lg md:text-xl font-semibold">
-                  +{module?.image_page.images.slice(3).length}
-                </span>
+              <div
+                className="w-1/2 md:w-full relative rounded-xl cursor-pointer"
+                onClick={() => setIsOpen(true)}
+              >
+                <img
+                  src={module?.image_page.images[2]}
+                  alt="More Images"
+                  className="w-full h-auto max-h-[25vh] md:max-h-[35vh] rounded-xl object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 flex justify-center items-center rounded-xl">
+                  <span className="text-white text-base sm:text-lg md:text-xl font-semibold">
+                    +{module?.image_page.images.slice(3).length}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            ''
+          )}
         </div>
 
         {/* Modal oynasi */}

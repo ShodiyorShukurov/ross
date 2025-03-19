@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next';
 const Vacancies = () => {
   const { changeIdVacansies, id } = useVacansies();
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [modalId, setModalId] = React.useState('');
 
   const vacanciesData = getVacansies(t);
   return (
@@ -47,9 +49,7 @@ const Vacancies = () => {
                 <p className="hidden md:block lg:hidden text-[#000000b3] text-[14px] mb-[4px]">
                   Yo’nalish
                 </p>
-                <p
-                  className="text-[16px] leading-[21px] font-[SF_Pro_Display_Regular] md:font-[SF_Pro_Display_Medium]"
-                >
+                <p className="text-[16px] leading-[21px] font-[SF_Pro_Display_Regular] md:font-[SF_Pro_Display_Medium]">
                   {job.category}
                 </p>
               </div>
@@ -58,27 +58,66 @@ const Vacancies = () => {
                 <p className="hidden md:block lg:hidden text-[#000000b3] text-[14px] mb-[4px]">
                   Ish formati
                 </p>
-                <p
-                  className="text-[16px] leading-[21px] font-[SF_Pro_Display_Regular] md:font-[SF_Pro_Display_Medium]"
-                >
+                <p className="text-[16px] leading-[21px] font-[SF_Pro_Display_Regular] md:font-[SF_Pro_Display_Medium]">
                   {job.format}
                 </p>
               </div>
 
-              <a
-                href="#vacansiesPage"
-                className="bg-[#D18202] text-white py-[10px] px-[30px] rounded-[48px] text-[18px] w-full lg:w-fit mx-auto cursor-pointer md:col-span-3 lg:col-span-1 md:mt-[24px] lg:mt-0 text-center"
-                onClick={() => changeIdVacansies(job.id)}
-              >
-                {t('vacancies_page.button_text')}
-              </a>
+              <div className=" flex gap-3 md:col-span-3 lg:col-span-1  md:mt-[24px] lg:mt-0 text-center">
+                <a
+                  href="#vacansiesPage"
+                  className="bg-[#D18202] text-white py-[10px] px-[30px] rounded-[48px] text-[18px] w-full lg:w-fit mx-auto cursor-pointer"
+                  onClick={() => changeIdVacansies(job.id)}
+                >
+                  {t('vacancies_page.button_text')}
+                </a>
+
+                <a
+                  onClick={() => {
+                    setIsOpen(true);
+                    setModalId(job.id);
+                  }}
+                  className="bg-[#fff] text-black py-[10px] px-[30px] rounded-[48px] text-[18px] w-full lg:w-fit mx-auto cursor-pointer"
+                >
+                  Batafsil
+                </a>
+              </div>
             </div>
           ))}
         </div>
 
-        <img src={vacanciesImg} alt="img" className='h-full w-full min-h-[550px] object-cover'/>
+        <img
+          src={vacanciesImg}
+          alt="img"
+          className="h-full w-full min-h-[550px] object-cover"
+        />
       </section>
       <FormPage id={id} />
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-[#00000070] bg-opacity-50 p-5 sm:p-0"
+          onClick={() => setIsOpen(false)}
+          style={{zIndex: "100000"}}
+        >
+          <div
+            className="bg-white p-6 rounded-lg shadow-lg max-w-96 overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              dangerouslySetInnerHTML={{
+                __html: vacanciesData[modalId - 1].moreInfo,
+              }}
+            />
+            <button
+              onClick={() => setIsOpen(false)}
+              className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 mt-[20px]"
+            >
+              Yopish
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

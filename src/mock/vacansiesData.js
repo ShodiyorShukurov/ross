@@ -4,6 +4,7 @@ export const getVacansies = (t) => [
     title: t('vacancies_page.vacancies1_role'),
     category: t('vacancies_page.vacancies1_direction'),
     format: t('vacancies_page.vacancies1_format'),
+    moreInfo: t('vacancies_page.vacancies1_more'),
   },
   {
     id: '2',

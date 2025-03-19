@@ -38,9 +38,17 @@ const Projects = () => {
       <main>
         <Balance module={projectData} />
         <Fact module={projectData} />
-        {projectData?.id == 3 || projectData?.id == 4 || projectData?.id == 5 ? '' : <Calculation module={projectData} />}
-        <BuildingMap module={projectData} />
-        <Contact module={projectData}/>
+        {projectData?.id == 3 ||
+        projectData?.id == 4 ||
+        projectData?.id == 5 ||
+        projectData?.id == 6 ||
+        projectData?.id == 7 ? (
+          ''
+        ) : (
+          <Calculation module={projectData} />
+        )}
+        {projectData?.id == 7 ? '' : <BuildingMap module={projectData} />}
+        <Contact module={projectData} />
         <Project />
       </main>
       <Footer />

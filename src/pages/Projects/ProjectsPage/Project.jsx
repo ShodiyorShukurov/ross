@@ -83,11 +83,7 @@ const Project = () => {
                   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)',
                 }}
                 transition={{ duration: 0.3 }}
-                onClick={
-                  item.id !== 6 && item.id !== 7
-                    ? () => navigate('/projects/' + item.id)
-                    : undefined
-                }
+                onClick={() => navigate('/projects/' + item.id)}
               >
                 {!item.isActive ? (
                   <span className="relative text-[#CACACA] font-light py-[10px] px-[16px] bg-[#EDEDED] rounded-[48px] block w-fit mt-[16px] sm:mt-[32px] ml-auto mr-[16px] sm:mr-[32px] z-50">
