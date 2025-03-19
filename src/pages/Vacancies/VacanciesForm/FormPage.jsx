@@ -80,7 +80,7 @@ const FormPage = () => {
       }
 
       if (name === 'vacancy') {
-        if (!vacanciesData.some((item) => item.id === value))
+        if (!vacanciesData.some((item) => item.title === value))
           error = t('vacancies_form.select_error');
       }
 
@@ -139,8 +139,6 @@ const FormPage = () => {
         fileData: data.fileData || '',
       };
 
-      console.log('📤 Yuborilayotgan JSON:', payload);
-
       try {
         const response = await fetch(API, {
           method: 'POST',
@@ -150,24 +148,22 @@ const FormPage = () => {
           redirect: 'follow',
         });
 
-        const result = await response.json();
-        console.log('✅ Serverdan javob:', result);
-
-        if (result.status === 'success') {
+        if (response) {
           alert("Ma'lumotlar muvaffaqiyatli yuborildi!");
-          setData({
-            fullName: '',
-            phone: '',
-            email: '',
-            vacancy: '',
-            category: '',
-            fileName: '',
-            fileType: '',
-            fileData: '',
-          });
-        } else {
-          alert('Xatolik: ' + result.message);
+          setTimeout(() => {
+            window.location.reload();
+          }, 100);
         }
+        setData({
+          fullName: '',
+          phone: '',
+          email: '',
+          vacancy: '',
+          category: '',
+          fileName: '',
+          fileType: '',
+          fileData: '',
+        });
       } catch (error) {
         console.error('❌ Fetch xatosi:', error);
         alert('Serverga ulanishda xatolik yuz berdi.');
@@ -239,7 +235,7 @@ const FormPage = () => {
                     {t('vacancies_form.select_placeholder')}
                   </option>
                   {vacanciesData.map((item) => (
-                    <option key={item.id} value={item.id}>
+                    <option key={item.id} value={item.title}>
                       {item.title}
                     </option>
                   ))}
