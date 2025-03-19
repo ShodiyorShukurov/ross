@@ -11,17 +11,7 @@ export const getVacansies = (t) => [
     title: t('vacancies_page.vacancies2_role'),
     category: t('vacancies_page.vacancies2_direction'),
     format: t('vacancies_page.vacancies2_format'),
+    moreInfo: t('vacancies_page.vacancies2_more'),
   },
-  {
-    id: '3',
-    title: t('vacancies_page.vacancies3_role'),
-    category: t('vacancies_page.vacancies3_direction'),
-    format: t('vacancies_page.vacancies3_format'),
-  },
-  {
-    id: '4',
-    title: t('vacancies_page.vacancies4_role'),
-    category: t('vacancies_page.vacancies4_direction'),
-    format: t('vacancies_page.vacancies4_format'),
-  },
+
 ];
