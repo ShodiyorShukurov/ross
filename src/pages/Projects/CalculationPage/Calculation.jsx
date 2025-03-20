@@ -197,7 +197,7 @@ const Calculation = ({ module }) => {
                 borderImageSource:
                   'linear-gradient(180deg, #EBB956 0%, #D7AC56 100%)',
               }}
-              className="py-2 md:py-[15px] px-6 md:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] rounded-[70px] w-full md:w-auto cursor-pointer"
+              className="py-2 md:py-[15px] px-6 md:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] rounded-[70px] w-full md:w-auto cursor-pointer text-center"
 
             >
               {module?.calculator_page.calculator_button}
