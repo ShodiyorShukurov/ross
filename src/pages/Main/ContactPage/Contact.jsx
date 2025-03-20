@@ -68,7 +68,7 @@ const Contact = () => {
       try {
         const response = await fetch(API, {
           method: 'POST',
-          body: formData1, // ✅ `Content-Type` avtomatik aniqlanadi
+          body: formData1, 
         });
 
         if (!response.ok) {
@@ -79,11 +79,11 @@ const Contact = () => {
         console.log('✅ Serverdan javob:', result);
 
         if (result.status === 'success') {
-          alert(t('contact_page.success')); // ✅ Foydalanuvchi alertni yopishi kerak
+          alert(t('contact_page.success')); 
 
           setTimeout(() => {
-            window.location.reload(); // ✅ Alert yopilgandan keyin sahifani yangilaydi
-          }, 100); // ⏳ 100ms kutish (alertdan keyin)
+            window.location.reload(); 
+          }, 100); 
 
           setData({
             fullName: '',

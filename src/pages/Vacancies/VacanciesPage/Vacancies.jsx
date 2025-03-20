@@ -47,7 +47,7 @@ const Vacancies = () => {
 
               <div className="flex flex-col">
                 <p className="hidden md:block lg:hidden text-[#000000b3] text-[14px] mb-[4px]">
-                  Yo’nalish
+                {t('vacancies_page.table_title2')}
                 </p>
                 <p className="text-[16px] leading-[21px] font-[SF_Pro_Display_Regular] md:font-[SF_Pro_Display_Medium]">
                   {job.category}
@@ -56,7 +56,7 @@ const Vacancies = () => {
 
               <div className="flex flex-col">
                 <p className="hidden md:block lg:hidden text-[#000000b3] text-[14px] mb-[4px]">
-                  Ish formati
+                {t('vacancies_page.table_title3')}
                 </p>
                 <p className="text-[16px] leading-[21px] font-[SF_Pro_Display_Regular] md:font-[SF_Pro_Display_Medium]">
                   {job.format}
@@ -79,7 +79,7 @@ const Vacancies = () => {
                   }}
                   className="bg-[#fff] text-black py-[10px] px-[30px] rounded-[48px] text-[18px] w-full lg:w-fit mx-auto cursor-pointer"
                 >
-                  Batafsil
+                 {t('vacancies_page.button_text2')}
                 </a>
               </div>
             </div>
@@ -114,7 +114,7 @@ const Vacancies = () => {
               onClick={() => setIsOpen(false)}
               className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 mt-[20px]"
             >
-              Yopish
+              {t('vacancies_page.close_button')}
             </button>
           </div>
         </div>

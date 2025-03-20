@@ -43,6 +43,7 @@ const id1 = (t) => ({
     fact_page: {
       area_cards: [
         { id: 1, count: t('projects7.area'), text: t('projects7.area_title') },
+        { id: 2, count: t('projects7.home_count'), text: t('projects7.home_count_title') },
         {
           id: 3,
           count: t('projects7.floor'),

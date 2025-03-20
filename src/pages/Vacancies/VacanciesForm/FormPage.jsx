@@ -149,7 +149,7 @@ const FormPage = () => {
         });
 
         if (response) {
-          alert("Ma'lumotlar muvaffaqiyatli yuborildi!");
+          alert(t("contact_page.success"));
           setTimeout(() => {
             window.location.reload();
           }, 100);
@@ -166,7 +166,7 @@ const FormPage = () => {
         });
       } catch (error) {
         console.error('❌ Fetch xatosi:', error);
-        alert('Serverga ulanishda xatolik yuz berdi.');
+        alert(t("contact_page.error_message"));
       } finally {
         setIsLoading(false);
       }

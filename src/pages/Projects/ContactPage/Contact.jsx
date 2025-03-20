@@ -67,22 +67,19 @@ const Contact = ({ module }) => {
       formData1.append("category", data.category);
       formData1.append("project", module?.hero.title);
   
-      console.log(...formData1);
-  
       try {
         await fetch(API, {
           method: "POST",
-          body: formData1, // ✅ `Content-Type` kerak emas
+          body: formData1, 
           mode: "no-cors",
           redirect: "follow",
         });
-  
-        console.log("✅ Ma'lumotlar yuborildi:", data);
-        alert(t("contact_page.success")); // ✅ Alert chiqaramiz
+
+        alert(t("contact_page.success")); 
   
         setTimeout(() => {
-          window.location.reload(); // ✅ Alert yopilgandan keyin sahifani yangilash
-        }, 100); // ⏳ 100ms kutish
+          window.location.reload(); 
+        }, 100);
   
         setData({
           fullName: "",

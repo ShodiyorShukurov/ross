@@ -76,7 +76,7 @@ const About = () => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[36px] leading-[20px] md:leading-[48px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[32px] leading-[20px] md:leading-[48px]"
               >
                 {card.id}. {card.text}
               </h3>
@@ -95,7 +95,7 @@ const About = () => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[36px] leading-[20px] md:leading-[48px] w-full max-w-[400px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[32px] leading-[20px] md:leading-[40px] w-full max-w-[400px]"
               >
                 {card.id}. {card.text}
               </h3>

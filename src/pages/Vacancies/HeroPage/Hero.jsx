@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import bg1 from '../../../assets/images/hero-bg.png';
+import bg1 from '../../../assets/nurafshon/Q6D.jpg';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
 import logo from '../../../assets/logo/ross.png';
