@@ -1,9 +1,11 @@
+import bg from '../assets/images/oncowell.jpg'
 import img1 from '../assets/images/oncowell.jpg'
 
 const id1 = (t) => ({
   projectData: {
     id: 7,
     hero: {
+      bg: bg,
       title: t('projects7.title'),
       subtitle: t('projects7.subtitle'),
       button1: t('projects7.button_text1'),

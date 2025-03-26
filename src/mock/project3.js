@@ -1,3 +1,4 @@
+import bg from '../assets/Asia Medline/IMG_1925.JPG';
 import fact_card1 from '../assets/Asia Medline/IMG_1921.JPG';
 import fact_card2 from '../assets/Asia Medline/IMG_4032.JPG';
 import fact_card3 from '../assets/Asia Medline/Arena_Mini.jpg';
@@ -14,6 +15,7 @@ const id1 = (t) => ({
   projectData: {
     id: 3,
     hero: {
+      bg: bg,
       title: t('projects3.title'),
       subtitle: t('projects3.subtitle'),
       button1: t('projects3.button_text1'),
@@ -118,7 +120,7 @@ const id1 = (t) => ({
     },
     map_page: {
       title: t('projects3.location_title'),
-      position: { lat: 41.3267500, lng: 69.2930240 },
+      position: { lat: 41.32675, lng: 69.293024 },
       foot: t('projects3.foot'),
       foot_location: [
         t('projects3.foot_text1'),

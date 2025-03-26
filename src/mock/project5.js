@@ -1,3 +1,4 @@
+import bg from '../assets/MaxRoy/view_002.jpg';
 import fact_card1 from '../assets/MaxRoy/view_008.png';
 import fact_card2 from '../assets/MaxRoy/view_007.jpg';
 import fact_card3 from '../assets/MaxRoy/view_004.jpg';
@@ -15,6 +16,7 @@ const id1 = (t) => ({
   projectData: {
     id: 5,
     hero: {
+      bg: bg,
       title: t('projects5.title'),
       subtitle: t('projects5.subtitle'),
       button1: t('projects5.button_text1'),

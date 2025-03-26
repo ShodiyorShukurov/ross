@@ -1,4 +1,4 @@
-
+import bg from '../assets/Anhor/anhor2.jpg';
 import img1 from '../assets/Anhor/anhor1.jpg';
 import img2 from '../assets/Anhor/anhor2.jpg';
 import img3 from '../assets/Anhor/anhor3.jpg';
@@ -8,6 +8,7 @@ const id1 = (t) => ({
   projectData: {
     id: 6,
     hero: {
+      bg: bg,
       title: t('projects6.title'),
       subtitle: t('projects6.subtitle'),
       button1: t('projects6.button_text1'),

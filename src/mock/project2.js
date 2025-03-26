@@ -1,3 +1,4 @@
+import bg from '../assets/nurafshon/Q2.jpg'
 import fact_card1 from '../assets/nurafshon/Q 2D.jpg';
 import fact_card2 from '../assets/nurafshon/lift.jpg';  
 import fact_card3 from '../assets/centraVista/videokuzatuv.jpg';
@@ -13,6 +14,7 @@ const id1 = (t) => ({
   projectData: {
     id: 2,
     hero: {
+      bg:bg,
       title: t('projects2.title'),
       subtitle: t('projects2.subtitle'),
       button1: t('projects2.button_text1'),

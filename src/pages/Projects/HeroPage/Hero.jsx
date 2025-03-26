@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import bg1 from '../../../assets/images/hero-bg.png';
 import phone from '../../../assets/logo/phone.svg';
 import logobg from '../../../assets/images/logo-bg.png';
 import logo from '../../../assets/logo/ross.png';
@@ -55,7 +54,7 @@ export default function Hero({ module }) {
     <div
       className="relative min-h-screen bg-center transition-all duration-500"
       style={{
-        backgroundImage: `url(${bg1})`,
+        backgroundImage: `url(${module?.hero.bg})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}

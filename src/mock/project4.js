@@ -1,3 +1,4 @@
+import bg from '../assets/The Knowledge center/IMG_2039.JPG';
 import fact_card1 from '../assets/The Knowledge center/IMG_2043.JPG';
 import fact_card2 from '../assets/The Knowledge center/card-img4.jpg';
 import fact_card3 from '../assets/The Knowledge center/card-img.jpg';
@@ -17,6 +18,7 @@ const id1 = (t) => ({
   projectData: {
     id: 4,
     hero: {
+      bg:bg,
       title: t('projects4.title'),
       subtitle: t('projects4.subtitle'),
       button1: t('projects4.button_text1'),
