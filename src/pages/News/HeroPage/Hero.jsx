@@ -305,7 +305,7 @@ export default function Hero({ module }) {
             </a>
 
             <a
-              href="malito:rossfoundationuz@gmail.com"
+              href="mailto:rossfoundationuz@gmail.com"
               className="text-[#FFFFFFB2] text-[20px] font-medium text-center block cursor-pointer mt-[16px]"
             >
               rossfoundationuz@gmail.com

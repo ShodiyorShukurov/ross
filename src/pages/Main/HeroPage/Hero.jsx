@@ -154,7 +154,10 @@ export default function Hero() {
                   99 986 70 07
                 </span>
               </a>
-              <a href='#contact' className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
+              <a
+                href="#contact"
+                className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer"
+              >
                 {t('navbar.nav_button')}
               </a>
             </div>
@@ -301,7 +304,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="malito:rossfoundationuz@gmail.com"
+              href="mailto:rossfoundationuz@gmail.com"
               className="text-[#FFFFFFB2] text-[20px] font-medium text-center block cursor-pointer mt-[16px]"
             >
               rossfoundationuz@gmail.com
@@ -382,7 +385,10 @@ export default function Hero() {
           <p className="text-[20px] md:text-[24px] mt-[13px]">
             {t('hero.subtitle')}
           </p>
-          <a href='#contact' className="mt-5 bg-[#D18202] text-white text-[18px] py-[10px] px-[30px] rounded-[48px] hover:bg-yellow-600 transition-all duration-300 cursor-pointer">
+          <a
+            href="#contact"
+            className="mt-5 bg-[#D18202] text-white text-[18px] py-[10px] px-[30px] rounded-[48px] hover:bg-yellow-600 transition-all duration-300 cursor-pointer"
+          >
             {t('hero.button_text')}
           </a>
         </div>

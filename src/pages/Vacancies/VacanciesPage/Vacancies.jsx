@@ -101,7 +101,7 @@ const Vacancies = () => {
           style={{zIndex: "100000"}}
         >
           <div
-            className="bg-white p-6 rounded-lg shadow-lg max-w-96 max-h-[500px] overflow-y-auto"
+            className="bg-white p-6 rounded-lg shadow-lg max-w-[750px] max-h-[500px] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div

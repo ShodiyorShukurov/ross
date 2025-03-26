@@ -126,7 +126,10 @@ export default function Hero({ module }) {
                   99 986 70 07
                 </span>
               </a>
-              <a href='#contact' className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer">
+              <a
+                href="#contact"
+                className="hidden 2xl:block bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer"
+              >
                 {t('navbar.nav_button')}
               </a>
             </div>
@@ -250,7 +253,11 @@ export default function Hero({ module }) {
               </li>
             </ul>
 
-            <a href='#contact' onClick={() => setShowMobileMenu(false)} className="w-fit bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer mx-auto block mt-[32px]">
+            <a
+              href="#contact"
+              onClick={() => setShowMobileMenu(false)}
+              className="w-fit bg-[#D18202] text-[#fff] text-[18px] px-[30px] py-[10px] rounded-[48px] hover:bg-yellow-600 cursor-pointer mx-auto block mt-[32px]"
+            >
               {t('navbar.nav_button')}
             </a>
 
@@ -270,7 +277,7 @@ export default function Hero({ module }) {
             </a>
 
             <a
-              href="malito:rossfoundationuz@gmail.com"
+              href="mailto:rossfoundationuz@gmail.com"
               className="text-[#FFFFFFB2] text-[20px] font-medium text-center block cursor-pointer mt-[16px]"
             >
               rossfoundationuz@gmail.com
@@ -381,7 +388,10 @@ export default function Hero({ module }) {
             {module?.hero.subtitle}
           </p>
           {module?.hero.button1 ? (
-            <a href='#contact' className="mb-0 mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]">
+            <a
+              href="#contact"
+              className="mb-0 mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]"
+            >
               {module?.hero.button1}
             </a>
           ) : (
