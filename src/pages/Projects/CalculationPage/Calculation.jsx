@@ -34,7 +34,7 @@ const Calculation = ({ module }) => {
           {module?.calculator_page.title}
         </h2>
 
-        <div className="flex flex-col lg:flex-row items-start md:items-center gap-4 md:gap-[16px] mt-6 md:mt-[50px]">
+        <div className="flex flex-col 2xl:flex-row items-start md:items-center gap-4 md:gap-[16px] mt-6 md:mt-[50px]">
           <div className="flex flex-col gap-4 w-full md:w-[40%]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <h4

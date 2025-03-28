@@ -6,7 +6,7 @@ const UseVacansies = () => {
   const changeIdVacansies = (id) => {
     setId(id);
   };
-console.log(id)
+
   return { changeIdVacansies, id };
 };
 

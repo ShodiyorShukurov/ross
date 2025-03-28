@@ -63,7 +63,7 @@ const Vacancies = () => {
                 </p>
               </div>
 
-              <div className=" flex gap-3 md:col-span-3 lg:col-span-1  md:mt-[24px] lg:mt-0 text-center">
+              <div className=" flex items-center gap-3 md:col-span-3 lg:col-span-1  md:mt-[24px] lg:mt-0 text-center">
                 <a
                   href="#vacansiesPage"
                   className="bg-[#D18202] text-white py-[10px] px-[30px] rounded-[48px] text-[18px] w-full lg:w-fit mx-auto cursor-pointer"
