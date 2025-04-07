@@ -13,7 +13,7 @@ const Contact = ({ module }) => {
     phone: '',
     category: 'Sheet3',
   });
-  console.log(module?.hero.title);
+
 
   const [errors, setErrors] = React.useState({
     fullName: '',

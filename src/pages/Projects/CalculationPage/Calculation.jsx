@@ -1,10 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Calculation = ({ module }) => {
   const [squareMeters, setSquareMeters] = React.useState('');
   const [selectedFloor, setSelectedFloor] = React.useState(
     module?.calculator_page.floor1 ? module?.calculator_page.floor1 : '1 qavat'
   );
+
+  const { t } = useTranslation();
 
   const [pricePerM2, setPricePerM2] = React.useState(
     module?.id !== 2
@@ -93,7 +96,7 @@ const Calculation = ({ module }) => {
                   style={{ fontFamily: 'SF Pro Semi Bold' }}
                   className="text-[#151515] text-sm sm:text-base"
                 >
-                  m²
+                  {t('project.m')}
                 </span>
               </div>
 
@@ -190,7 +193,7 @@ const Calculation = ({ module }) => {
             </div>
 
             <a
-            href='#contact'
+              href="#contact"
               style={{
                 fontFamily: 'SF Pro Display Medium',
                 border: '1px solid',
@@ -198,7 +201,6 @@ const Calculation = ({ module }) => {
                   'linear-gradient(180deg, #EBB956 0%, #D7AC56 100%)',
               }}
               className="py-2 md:py-[15px] px-6 md:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] rounded-[70px] w-full md:w-auto cursor-pointer text-center"
-
             >
               {module?.calculator_page.calculator_button}
             </a>

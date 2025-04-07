@@ -84,7 +84,7 @@ const ProjectMap = () => {
         </p>
       </div>
 
-      <LoadScript googleMapsApiKey="AIzaSyDfe-B3bRqFV6yNU3t7rhMR4Nsm_kzsaf4">
+      <LoadScript googleMapsApiKey="AIzaSyC96nZOqHgpWmMDkbNTmgvgBzvfMUQascI">
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}

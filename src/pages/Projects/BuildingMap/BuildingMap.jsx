@@ -11,7 +11,7 @@ const containerStyle = {
 
 
 const BuildingMap = ({ module }) => {
-  const apiKey = 'AIzaSyDfe-B3bRqFV6yNU3t7rhMR4Nsm_kzsaf4';
+  const apiKey = 'AIzaSyC96nZOqHgpWmMDkbNTmgvgBzvfMUQascI';
 
   const center = {
     lat: module?.map_page.position.lat,
