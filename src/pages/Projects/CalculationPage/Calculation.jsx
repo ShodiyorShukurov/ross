@@ -37,12 +37,12 @@ const Calculation = ({ module }) => {
           {module?.calculator_page.title}
         </h2>
 
-        <div className="flex flex-col 2xl:flex-row items-start md:items-center gap-4 md:gap-[16px] mt-6 md:mt-[50px]">
+        <div className="flex flex-col 2xl:flex-row items-start md:items-center gap-[16px] mt-6 md:mt-[50px]">
           <div className="flex flex-col gap-4 w-full md:w-[40%]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <h4
                 style={{ fontFamily: 'SF Pro Display Bold' }}
-                className="text-xl sm:text-[32px] text-[#D18202] 2xl:whitespace-nowrap"
+                className="text-xl sm:text-[26px] text-[#D18202] leading-[100%]"
               >
                 {module?.calculator_page.subtitle}
               </h4>
@@ -149,7 +149,7 @@ const Calculation = ({ module }) => {
             <div>
               <h4
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="text-[#D18202] font-bold text-[24px] md:text-[32px] leading-8 md:leading-[42px]"
+                className="text-[#D18202] font-bold text-[24px] md:text-[26px] leading-8 md:leading-[100%]"
               >
                 {module?.hero.title}
               </h4>

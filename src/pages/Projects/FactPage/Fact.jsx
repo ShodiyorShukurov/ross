@@ -58,7 +58,7 @@ const Fact = ({ module }) => {
         </ul>
 
         <ul
-          className="bg-[#F1EDE4] px-[20px] md:px-[50px] lg:px-[80px] py-[20px] md:py-[40px] lg:py-[50px] grid grid-cols-2 md:grid-cols-4  text-center rounded-[24px] mt-[16px]"
+          className="bg-[#F1EDE4] px-[20px] md:px-[40px] lg:px-[60px] py-[20px] md:py-[30px] lg:py-[40px] grid grid-cols-2 md:grid-cols-4  text-center rounded-[24px] mt-[16px]"
           style={{
             backgroundImage: `url(${factBg})`,
             backgroundRepeat: 'no-repeat',
@@ -70,7 +70,7 @@ const Fact = ({ module }) => {
             <li key={item.id}>
               <p
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="text-[40px] lg:text-[64px] leading-[53px] lg:leading-[100px]"
+                className="text-[40px] lg:text-[50px] leading-[53px] lg:leading-[100%]"
               >
                 {item.count}
               </p>

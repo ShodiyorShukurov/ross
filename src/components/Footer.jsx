@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo/ross.svg';
+import logo from '../assets/logo/footerLogo.png';
 import accardion from '../assets/logo/accardion.svg';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="max-w-sm mx-auto md:mx-0 lg:row-start-1 lg:order-1">
             <a href="/">
               <img
-                className="w-[150px] lg:w-full h-[150px] lg:h-full"
+                className="w-[200px] lg:w-full h-[200px] lg:h-full"
                 src={logo}
                 alt="Ross"
               />
