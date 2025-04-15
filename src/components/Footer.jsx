@@ -18,7 +18,7 @@ const Footer = () => {
               <img
                 className="w-[200px] lg:w-full h-[200px] lg:h-full"
                 src={logo}
-                alt="Ross"
+                alt="RaiGroup"
               />
             </a>
           </div>
@@ -199,10 +199,10 @@ const Footer = () => {
             </a>
             <a
               style={{ fontFamily: 'SF Pro Medium' }}
-              href="mailto:rossfoundationuz@gmail.com"
+              href="mailto:raigroup@gmail.com"
               className="hover:underline mt-[40px] text-[#151515] font-medium"
             >
-              rossfoundationuz@gmail.com
+              raigroup@gmail.com
             </a>
             <div
               style={{ fontFamily: 'SF Pro Medium' }}

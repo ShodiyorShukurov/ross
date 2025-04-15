@@ -304,10 +304,10 @@ export default function Hero() {
             </a>
 
             <a
-              href="mailto:rossfoundationuz@gmail.com"
+              href="mailto:raigroup@gmail.com"
               className="text-[#FFFFFFB2] text-[20px] font-medium text-center block cursor-pointer mt-[16px]"
             >
-              rossfoundationuz@gmail.com
+              raigroup@gmail.com
             </a>
 
             <div
