@@ -9,8 +9,7 @@ import NewsDetails from './components/NewsDetails';
 const App = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Layout />} />
-      <Route path="/" element={<Navigate to='/home' />} />
+      <Route path="/" element={<Layout />} />
       <Route path="/projects/:id" element={<Projects />} />
       <Route path="/vacancies" element={<Vacancies />} />
       <Route path="/news" element={<News />} />
