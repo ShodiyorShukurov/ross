@@ -70,13 +70,13 @@ const Fact = ({ module }) => {
             <li key={item.id}>
               <p
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="text-[40px] md:text-[36px] xl:leading-[53px] lg:leading-[100%] text-nowrap"
+                className="text-[40px] md:text-[36px leading-[100%] xl:leading-[53px] lg:leading-[100%] text-nowrap"
               > 
                 {item.count}
               </p>
               <span
                 style={{ fontFamily: 'SF Pro Display Medium' }}
-                className="text-[16px] lg:text-[20px] leading-[19px] lg:leading-[24px] mt-[15px] block"
+                className="text-[16px] lg:text-[20px] leading-[19px] lg:leading-[24px] mt-[6px] sm:mt-[15px] block"
               >
                 {item.text}
               </span>

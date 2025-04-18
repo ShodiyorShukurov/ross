@@ -175,7 +175,7 @@ const Calculation = ({ module }) => {
             </div>
           </div>
 
-          <div className="bg-white py-4 md:py-[20px] px-6 md:px-[25px] rounded-[16px] flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-1.5 h-full">
+          <div className="bg-white py-4 md:py-[20px] px-6 md:px-[25px] rounded-[16px] flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-4 lg:gap-1.5 h-full">
             <div>
               <h4
                 style={{ fontFamily: 'Playfair Display Bold' }}
@@ -230,7 +230,7 @@ const Calculation = ({ module }) => {
                 borderImageSource:
                   'linear-gradient(180deg, #EBB956 0%, #D7AC56 100%)',
               }}
-              className="py-2 md:py-[15px] px-6 md:px-[25px] 2xl:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] leading-[100%] rounded-[70px] w-full md:w-auto cursor-pointer text-center"
+              className="py-[16px] md:py-[15px] px-6 md:px-[25px] 2xl:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] leading-[100%] rounded-[70px] w-full md:w-auto cursor-pointer text-center"
             >
               {module?.calculator_page.calculator_button}
             </a>
