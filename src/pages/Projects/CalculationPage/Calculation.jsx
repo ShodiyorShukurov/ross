@@ -38,8 +38,8 @@ const Calculation = ({ module }) => {
         </h2>
 
         <div className="flex flex-col lg:flex-row items-start md:items-center gap-[16px] mt-6 md:mt-[50px]">
-          <div className="flex flex-col gap-4 w-full lg:w-[40%]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-2 w-full lg:w-[40%]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-h-[130px]">
               <h4
                 style={{ fontFamily: 'SF Pro Display Bold' }}
                 className="text-xl sm:text-[26px] text-[#D18202] leading-[100%]"
@@ -145,11 +145,11 @@ const Calculation = ({ module }) => {
             </div>
           </div>
 
-          <div className="bg-white py-4 md:py-[20px] px-6 md:px-[25px] rounded-[16px] flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-1.5">
+          <div className="bg-white py-4 md:py-[20px] px-6 md:px-[25px] rounded-[16px] flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-1.5 h-full">
             <div>
               <h4
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="text-[#D18202] font-bold text-[24px] md:text-[26px] leading-8 md:leading-[100%]"
+                className="text-[#D18202] font-bold text-[24px] md:text-[26px] leading-8 md:leading-[100%] max-w-[300px]"
               >
                 {module?.hero.title}
               </h4>
@@ -170,7 +170,7 @@ const Calculation = ({ module }) => {
               </p>
               <p
                 style={{ fontFamily: 'SF Pro Regular' }}
-                className="text-[16px] md:text-[18px] mt-[1px] md:mt-[10px]"
+                className="text-[16px] md:text-[18px] leading-[100%] mt-[1px] md:mt-[10px]"
               >
                 {module?.calculator_page.area_sum_text}
               </p>
@@ -186,7 +186,7 @@ const Calculation = ({ module }) => {
               </p>
               <p
                 style={{ fontFamily: 'SF Pro Regular' }}
-                className="text-[16px] md:text-[18px] mt-[1px] md:mt-[10px]"
+                className="text-[16px] md:text-[18px] leading-[100%] mt-[1px] md:mt-[10px]"
               >
                 {module?.calculator_page.total_amount}
               </p>
@@ -200,7 +200,7 @@ const Calculation = ({ module }) => {
                 borderImageSource:
                   'linear-gradient(180deg, #EBB956 0%, #D7AC56 100%)',
               }}
-              className="py-2 md:py-[15px] px-6 md:px-[25px] 2xl:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] rounded-[70px] w-full md:w-auto cursor-pointer text-center"
+              className="py-2 md:py-[15px] px-6 md:px-[25px] 2xl:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] leading-[100%] rounded-[70px] w-full md:w-auto cursor-pointer text-center"
             >
               {module?.calculator_page.calculator_button}
             </a>
