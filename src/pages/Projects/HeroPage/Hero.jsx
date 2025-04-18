@@ -390,7 +390,7 @@ export default function Hero({ module }) {
           {module?.hero.button1 ? (
             <a
               href="#contact"
-              className="mb-0 mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]"
+              className="mb-0 mt-[10px] md:mt-5 bg-[#D18202] text-white py-[10px] px-[50px] rounded-[48px] w-[221px] cursor-pointer text-[18px]"
             >
               {module?.hero.button1}
             </a>
@@ -399,7 +399,7 @@ export default function Hero({ module }) {
           )}
           <a
             href="tel:+998 99 986 70 07"
-            className="block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-fit cursor-pointer text-[18px]"
+            className="block mt-5 bg-[#fff] text-[#000] py-[10px] px-[50px] rounded-[48px] w-[221px] cursor-pointer text-[18px]"
           >
             {module?.hero.button2}
           </a>

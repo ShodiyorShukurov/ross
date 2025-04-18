@@ -30,7 +30,7 @@ const Fact = ({ module }) => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[20px] lg:text-[36px] leading-[20px] md:leading-[48px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[20px] lg:text-[36px] leading-[20px] md:leading-[48px] pr-[10px]"
               >
                 {card.title}
               </h3>
@@ -49,7 +49,7 @@ const Fact = ({ module }) => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[20px] lg:text-[36px] leading-[20px] md:leading-[48px] w-full max-w-[360px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[20px] lg:text-[36px] leading-[20px] md:leading-[48px] w-full max-w-[360px] pr-[32px]"
               >
                 {card.title}
               </h3>
@@ -70,8 +70,8 @@ const Fact = ({ module }) => {
             <li key={item.id}>
               <p
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="text-[40px] lg:text-[50px] leading-[53px] lg:leading-[100%]"
-              >
+                className="text-[40px] md:text-[36px] xl:leading-[53px] lg:leading-[100%] text-nowrap"
+              > 
                 {item.count}
               </p>
               <span

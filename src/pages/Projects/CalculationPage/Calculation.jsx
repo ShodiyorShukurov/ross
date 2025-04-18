@@ -37,8 +37,8 @@ const Calculation = ({ module }) => {
           {module?.calculator_page.title}
         </h2>
 
-        <div className="flex flex-col 2xl:flex-row items-start md:items-center gap-[16px] mt-6 md:mt-[50px]">
-          <div className="flex flex-col gap-4 w-full md:w-[40%]">
+        <div className="flex flex-col lg:flex-row items-start md:items-center gap-[16px] mt-6 md:mt-[50px]">
+          <div className="flex flex-col gap-4 w-full lg:w-[40%]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <h4
                 style={{ fontFamily: 'SF Pro Display Bold' }}
@@ -145,7 +145,7 @@ const Calculation = ({ module }) => {
             </div>
           </div>
 
-          <div className="bg-white py-4 md:py-[20px] px-6 md:px-[40px] rounded-[16px] flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-4 md:gap-0">
+          <div className="bg-white py-4 md:py-[20px] px-6 md:px-[25px] rounded-[16px] flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-1.5">
             <div>
               <h4
                 style={{ fontFamily: 'Playfair Display Bold' }}
@@ -200,7 +200,7 @@ const Calculation = ({ module }) => {
                 borderImageSource:
                   'linear-gradient(180deg, #EBB956 0%, #D7AC56 100%)',
               }}
-              className="py-2 md:py-[15px] px-6 md:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] rounded-[70px] w-full md:w-auto cursor-pointer text-center"
+              className="py-2 md:py-[15px] px-6 md:px-[25px] 2xl:px-[50px] bg-[#D18202] text-white text-base md:text-[20px] rounded-[70px] w-full md:w-auto cursor-pointer text-center"
             >
               {module?.calculator_page.calculator_button}
             </a>

@@ -41,7 +41,11 @@ const About = () => {
                 <div className="w-[50px] h-[50px] flex justify-center items-center bg-[#D18202] rounded-full">
                   <img src={item.img} alt={item.title} width={20} height={20} />
                 </div>
-                <h3 className="text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full max-w-[190px] mt-[8px]">
+                <h3
+                  className={`text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full ${
+                    item.id == 4 ? ' max-w-[160px]' : 'max-w-[190px]'
+                  } mt-[8px]`}
+                >
                   {item.title}
                 </h3>
                 <p className="text-[40px] md:text-[70px] text-[#D18202] leading-[47px] md:leading-[84px] mt-[12px]">
@@ -76,7 +80,7 @@ const About = () => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[32px] leading-[20px] md:leading-[48px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[32px] leading-[20px] md:leading-[48px] pr-[10px]"
               >
                 {card.id}. {card.text}
               </h3>
@@ -95,7 +99,7 @@ const About = () => {
 
               <h3
                 style={{ fontFamily: 'Playfair Display Bold' }}
-                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[32px] leading-[20px] md:leading-[40px] w-full max-w-[400px]"
+                className="absolute bottom-5 left-5 text-white font-bold text-[20px] md:text-[32px] leading-[20px] md:leading-[40px] w-full max-w-[400px] pr-[32px]"
               >
                 {card.id}. {card.text}
               </h3>
