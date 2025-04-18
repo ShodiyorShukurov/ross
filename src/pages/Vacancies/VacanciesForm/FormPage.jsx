@@ -149,7 +149,7 @@ const FormPage = () => {
         });
 
         if (response) {
-          alert(t("contact_page.success"));
+          alert(t('contact_page.success'));
           setTimeout(() => {
             window.location.reload();
           }, 100);
@@ -166,7 +166,7 @@ const FormPage = () => {
         });
       } catch (error) {
         console.error('❌ Fetch xatosi:', error);
-        alert(t("contact_page.error_message"));
+        alert(t('contact_page.error_message'));
       } finally {
         setIsLoading(false);
       }
@@ -225,25 +225,40 @@ const FormPage = () => {
                   <p className="text-red-500 text-sm">{errors.email}</p>
                 )}
 
-                <select
-                  name="vacancy"
-                  value={data.vacancy}
-                  onChange={handleChange}
-                  className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px] appearance-none"
-                >
-                  <option value="">
-                    {t('vacancies_form.select_placeholder')}
-                  </option>
-                  {vacanciesData.map((item) => (
-                    <option key={item.id} value={item.title}>
-                      {item.title}
+                <div className="relative">
+                  <select
+                    name="vacancy"
+                    value={data.vacancy}
+                    onChange={handleChange}
+                    className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px] appearance-none"
+                  >
+                    <option value="">
+                      {t('vacancies_form.select_placeholder')}
                     </option>
-                  ))}
-                </select>
+                    {vacanciesData.map((item) => (
+                      <option key={item.id} value={item.title}>
+                        {item.title}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center px-2 pb-3 text-gray-700">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      className="size-4"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
                 {errors.vacancy && (
                   <p className="text-red-500 text-sm">{errors.vacancy}</p>
                 )}
-
                 <button
                   type="submit"
                   className={`hidden lg:block bg-[#D18202] text-white w-full py-[10px] rounded-[48px] text-[20px] mt-4 row-start-4 md:row-start-3 col-span-2 cursor-pointer ${

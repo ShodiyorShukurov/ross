@@ -39,44 +39,58 @@ const Calculation = ({ module }) => {
 
         <div className="flex flex-col lg:flex-row items-start md:items-center gap-[16px] mt-6 md:mt-[50px]">
           <div className="flex flex-col gap-2 w-full lg:w-[40%]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-h-[130px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               <h4
                 style={{ fontFamily: 'SF Pro Display Bold' }}
                 className="text-xl sm:text-[26px] text-[#D18202] leading-[100%]"
               >
                 {module?.calculator_page.subtitle}
               </h4>
-
-              <select
-                style={{ fontFamily: 'SF Pro Bold' }}
-                className="w-full py-3 px-4 rounded-lg appearance-none bg-white text-[#151515] text-[16px] sm:text-[18px] outline-none h-fit"
-              >
-                <option value={module?.calculator_page.block1}>
-                  {module?.calculator_page.block1}
-                </option>
-                {module?.calculator_page.block2 ? (
-                  <option value={module?.calculator_page.block2}>
-                    {module?.calculator_page.block2}
+              <div className="relative">
+                <select
+                  style={{ fontFamily: 'SF Pro Bold' }}
+                  className="w-full py-3 px-4 rounded-lg appearance-none bg-white text-[#151515] text-[16px] sm:text-[18px] outline-none h-fit"
+                >
+                  <option value={module?.calculator_page.block1}>
+                    {module?.calculator_page.block1}
                   </option>
-                ) : (
-                  ''
-                )}
-                {module?.calculator_page.block3 ? (
-                  <option value={module?.calculator_page.block3}>
-                    {module?.calculator_page.block3}
-                  </option>
-                ) : (
-                  ''
-                )}
-                {module?.calculator_page.block4 ? (
-                  <option value={module?.calculator_page.block4}>
-                    {module?.calculator_page.block4}
-                  </option>
-                ) : (
-                  ''
-                )}
-              </select>
-
+                  {module?.calculator_page.block2 ? (
+                    <option value={module?.calculator_page.block2}>
+                      {module?.calculator_page.block2}
+                    </option>
+                  ) : (
+                    ''
+                  )}
+                  {module?.calculator_page.block3 ? (
+                    <option value={module?.calculator_page.block3}>
+                      {module?.calculator_page.block3}
+                    </option>
+                  ) : (
+                    ''
+                  )}
+                  {module?.calculator_page.block4 ? (
+                    <option value={module?.calculator_page.block4}>
+                      {module?.calculator_page.block4}
+                    </option>
+                  ) : (
+                    ''
+                  )}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    className="size-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 style={{ fontFamily: 'SF Pro Regular' }}
                 className="w-full flex items-center rounded-lg px-4 py-3 bg-white"
@@ -100,48 +114,64 @@ const Calculation = ({ module }) => {
                 </span>
               </div>
 
-              <select
-                style={{ fontFamily: 'SF Pro Regular' }}
-                className="w-full py-3 px-4 rounded-lg bg-white appearance-none text-gray-700 text-[16px] sm:text-[18px] outline-none"
-                value={selectedFloor}
-                onChange={(e) => setSelectedFloor(e.target.value)}
-              >
-                {module?.calculator_page?.floor1 && (
-                  <option value={module.calculator_page.floor1}>
-                    {module.calculator_page.floor1}
-                  </option>
-                )}
-                {module?.calculator_page?.floor2 && (
-                  <option value={module.calculator_page.floor2}>
-                    {module.calculator_page.floor2}
-                  </option>
-                )}
-                {module?.calculator_page?.floor3 && (
-                  <option value={module.calculator_page.floor3}>
-                    {module.calculator_page.floor3}
-                  </option>
-                )}
-                {module?.calculator_page?.floor4 && (
-                  <option value={module.calculator_page.floor4}>
-                    {module.calculator_page.floor4}
-                  </option>
-                )}
-                {module?.calculator_page?.floor5 && (
-                  <option value={module.calculator_page.floor5}>
-                    {module.calculator_page.floor5}
-                  </option>
-                )}
-                {module?.calculator_page?.floor6 && (
-                  <option value={module.calculator_page.floor6}>
-                    {module.calculator_page.floor6}
-                  </option>
-                )}
-                {module?.calculator_page?.floor7 && (
-                  <option value={module.calculator_page.floor7}>
-                    {module.calculator_page.floor7}
-                  </option>
-                )}
-              </select>
+              <div className="relative">
+                <select
+                  style={{ fontFamily: 'SF Pro Regular' }}
+                  className="w-full py-3 px-4 rounded-lg appearance-none bg-white text-gray-700 text-[16px] sm:text-[18px] outline-none"
+                  value={selectedFloor}
+                  onChange={(e) => setSelectedFloor(e.target.value)}
+                >
+                  {module?.calculator_page?.floor1 && (
+                    <option value={module.calculator_page.floor1}>
+                      {module.calculator_page.floor1}
+                    </option>
+                  )}
+                  {module?.calculator_page?.floor2 && (
+                    <option value={module.calculator_page.floor2}>
+                      {module.calculator_page.floor2}
+                    </option>
+                  )}
+                  {module?.calculator_page?.floor3 && (
+                    <option value={module.calculator_page.floor3}>
+                      {module.calculator_page.floor3}
+                    </option>
+                  )}
+                  {module?.calculator_page?.floor4 && (
+                    <option value={module.calculator_page.floor4}>
+                      {module.calculator_page.floor4}
+                    </option>
+                  )}
+                  {module?.calculator_page?.floor5 && (
+                    <option value={module.calculator_page.floor5}>
+                      {module.calculator_page.floor5}
+                    </option>
+                  )}
+                  {module?.calculator_page?.floor6 && (
+                    <option value={module.calculator_page.floor6}>
+                      {module.calculator_page.floor6}
+                    </option>
+                  )}
+                  {module?.calculator_page?.floor7 && (
+                    <option value={module.calculator_page.floor7}>
+                      {module.calculator_page.floor7}
+                    </option>
+                  )}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    className="size-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
 
