@@ -49,7 +49,7 @@ const Calculation = ({ module }) => {
 
               <select
                 style={{ fontFamily: 'SF Pro Bold' }}
-                className="w-full py-3 px-4 rounded-lg bg-white text-[#151515] text-[16px] sm:text-[18px] outline-none h-fit"
+                className="w-full py-3 px-4 rounded-lg appearance-none bg-white text-[#151515] text-[16px] sm:text-[18px] outline-none h-fit"
               >
                 <option value={module?.calculator_page.block1}>
                   {module?.calculator_page.block1}
@@ -102,7 +102,7 @@ const Calculation = ({ module }) => {
 
               <select
                 style={{ fontFamily: 'SF Pro Regular' }}
-                className="w-full py-3 px-4 rounded-lg bg-white text-gray-700 text-[16px] sm:text-[18px] outline-none"
+                className="w-full py-3 px-4 rounded-lg bg-white appearance-none text-gray-700 text-[16px] sm:text-[18px] outline-none"
                 value={selectedFloor}
                 onChange={(e) => setSelectedFloor(e.target.value)}
               >

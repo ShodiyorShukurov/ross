@@ -229,7 +229,7 @@ const FormPage = () => {
                   name="vacancy"
                   value={data.vacancy}
                   onChange={handleChange}
-                  className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px]"
+                  className="w-full bg-[#F7F7F7] mb-4 py-[20px] pl-[15px] rounded-[10px] outline-0 text-[16px] appearance-none"
                 >
                   <option value="">
                     {t('vacancies_form.select_placeholder')}

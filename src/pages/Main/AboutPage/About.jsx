@@ -43,7 +43,9 @@ const About = () => {
                 </div>
                 <h3
                   className={`text-[16px] md:text-[20px] leading-[19px] md:leading-[24px] w-full ${
-                    item.id == 4 ? ' max-w-[160px]' : 'max-w-[190px]'
+                    (item.id === 4 || item.id === 2) ? 
+                    'md:max-w-[160px] max-w-[120px]' : 
+                    'md:max-w-[190px] max-w-[170px]'
                   } mt-[8px]`}
                 >
                   {item.title}
